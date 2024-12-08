@@ -1,200 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>AI AND GENETICS</title>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Font Awesome -->
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+          <header>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="">About us</a>
+                
+                <a href="">The Space for Social Experiments </a>
+                <a href="">GenAI Academy </a>
+                <a href="">Scientific Forum </a>
+                <a href="">FAQs </a>
+            
 
-            body {
-                margin: 0;
-                padding: 0;
-                height: 100vh;
-                background: linear-gradient(45deg, #020406, #1b2a47);
-                font-family: Arial, sans-serif;
-                color: white;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                overflow: hidden;
-                position: relative;
-                flex-direction: column;
-            }
+            </nav>
+          </header>      
+<div class="carousel">
+    <div class="list">
 
-            /* Horizontal Navbar */
-            .navbar {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                gap: 30px;
-                padding: 15px;
-                z-index: 100;
-            }
 
-            .navbar a {
-                color: white;
-                text-decoration: none;
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-                font-size: 10px;
-                font-weight: 100;
-                letter-spacing: 3px;
-                transition: color 0.3s;
-            }
-
-            .navbar a:hover {
-                color: #00bcd4;
-            }
-
-            /* Social Media Icons */
-            .social-icons {
-                position: fixed;
-                left: 20px;
-                top: 20px;
-                display: flex;
-                gap: 10px;
-                z-index: 100;
-            }
-
-            .social-icons a {
-                color: white;
-                font-size: 14px;
-                transition: color 0.3s;
-            }
-
-            .social-icons a:hover {
-                color: #00bcd4;
-            }
-
-            /* Search Box */
-            .search-box {
-                position: fixed;
-                top: 15px;
-                right: 20px;
-                width: 150px;
-                height: 30px;
-                background-color: rgba(0, 0, 0, 0.6);
-                border-radius: 20px;
-                padding: 5px 10px;
-                border: none;
-                color: white;
-                font-size: 12px;
-                z-index: 100;
-            }
-
-            /* Background Styling with Transparency and Blur */
-            .background {
-                background: url('https://www.pngall.com/wp-content/uploads/10/Body-Cell-Vector-PNG-Free-Image.png') no-repeat center center/cover;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                width: 100%;
-                height: 100%;
-                transform: translate(-50%, -50%);
-                filter: blur(8px); /* Apply the blur effect */
-                z-index: 1;
-                opacity: 0.5; /* Transparency */
-            }
-
-            h1 {
-                position: absolute;
-                top: 40%;
-                left: 50%;
-                transform: translateX(-50%);
-                font-size: 2.5rem;
-                color: white;
-                text-align: center;
-                z-index: 10;
-            }
-
-            /* New AI Image in the center */
-            .ai-image {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 700px; /* Adjusted size */
-                height: auto;
-                z-index: 50;
-            }
-
-            /* Circular Background */
-            .circle-background {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                width: 600px;
-                height: 600px;
-                background: rgba(0, 255, 255, 0.2);
-                border-radius: 50%;
-                box-shadow: 0 0 150px rgba(0, 255, 255, 0.4);
-                transform: translate(-50%, -50%);
-                z-index: 5;
-                animation: rotate 4s linear infinite;
-            }
-
-            @keyframes rotate {
-                0% {
-                    transform: translate(-50%, -50%) rotate(0deg);
-                }
-                100% {
-                    transform: translate(-50%, -50%) rotate(360deg);
-                }
-            }
-
-            /* Box Below the AI Image */
-            .info-box {
-                position: absolute;
-                top: 81%; /* Place below the AI Image */
-                left: 0;
-                width: 100%; /* Full width */
-                height: 200px; /* Fixed height */
-                background-color: rgba(255, 255, 255, 0.8); /* White background with transparency */
-                z-index: 40;
-            }
-        </style>
-    </head>
-    <body>
-        <!-- Horizontal Navbar -->
-        <div class="navbar">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Research</a>
-            <a href="#">Contact</a>
+        <div class="item">
+            <img src="https://tediselmedical.com/wp-content/uploads/2024/07/inteligencia_artificial_innovando_atencion_medica_pic01_20240704_tedisel_medical.jpg">
+            <div class="content">
+                <div class="author">WOMEN</div>
+                <div class="title">AI AND GENETICS</div>
+                <div class="topic">Leveraging Science to Brighten the Future </div>
+                <div class="des">
+                    Welcome to a unique platform where genetics meets artificial intelligence! Discover how cutting-edge AI technologies are transforming genetic research—decoding DNA faster than ever, identifying links between genes and diseases, and paving the way for breakthroughs in precision medicine. Whether you're curious about CRISPR, gene editing, or AI-driven drug discovery, this is your gateway to the future of life sciences and innovation.
+                </div>
+                <div class="buttons">
+                    <button>SEE MORE</button>
+                    <button>SUBSCRBE</button>
+                </div>
+            </div>
         </div>
 
-        <!-- Social Media Icons -->
-        <div class="social-icons">
-            <a href="#" class="fab fa-facebook"></a>
-            <a href="#" class="fab fa-twitter"></a>
-            <a href="#" class="fab fa-linkedin"></a>
-            <a href="#" class="fab fa-instagram"></a>
-            <a href="#" class="fab fa-youtube"></a>
+
+        <div class="item">
+            <img src="https://cff2.earth.com/uploads/2023/06/11162528/Robot-2.jpg">
+            <div class="content">
+                <div class="author">WOMEN</div>
+                <div class="title">AI AND GENETICS</div>
+                <div class="topic">The Space for Social Experiments </div>
+                <div class="des">
+                    The Space for Social Experiments is an environment where researchers, organizations, and individuals design and test new initiatives aimed at understanding human behavior, addressing social challenges, or improving social interactions. This space serves as a laboratory for innovation and progress in society.
+                </div>
+                <div class="buttons">
+                    <button>SEE MORE</button>
+                    <button>SUBSCRBE</button>
+                </div>
+            </div>
         </div>
 
-        <!-- Search Box -->
-        <input type="text" class="search-box" placeholder="Search...">
 
-        <!-- Background with Blur Effect -->
-        <div class="background"></div>
+        <div class="item">
+            <img src="https://www.macaw.nl/app/uploads/AI_kantelpunt_blog.jpg">
+            <div class="content">
+                <div class="author">WOMEN</div>
+                <div class="title">AI AND GENETICS</div>
+                <div class="topic">GenAI Academy </div>
+                <div class="des">
+                    GenAI Academy is a cutting-edge platform dedicated to exploring the intersection of Genetics and Artificial Intelligence. Through innovative courses and hands-on learning, it empowers students to unlock the potential of these transformative fields and shape the future of science and technology.
+                </div>
+                <div class="buttons">
+                    <button>SEE MORE</button>
+                    <button>SUBSCRBE</button>
+                </div>
+            </div>
+        </div>
 
-        <!-- Circular Background -->
-        <div class="circle-background"></div>
+        <div class="item">
+            <img src="https://bgr.com/wp-content/uploads/2016/01/robot-and-human-team.jpg?quality=82&strip=all&w=1020&h=574&crop=1">
+            <div class="content">
+                <div class="author">WOMEN</div>
+                <div class="title">AI AND GENETICS</div>
+                <div class="topic">Scientific Forum</div>
+                <div class="des">
+                    A dynamic platform for exchanging ideas, sharing research, and fostering collaboration among scientists, researchers, and innovators across various disciplines. It serves as a hub for advancing knowledge and addressing global challenges through science.
+                </div>
+                <div class="buttons">
+                    <button>SEE MORE</button>
+                    <button>SUBSCRBE</button>
+                </div>
+            </div>
+        </div>
 
-        <!-- New AI Image in the center -->
-        <img src="https://static.vecteezy.com/system/resources/previews/035/676/081/non_2x/ai-generated-futuristic-robot-avatar-free-png.png" alt="AI Image" class="ai-image">
+    </div>
+    <div class="thumbnail">
+       
 
-        <!-- Box Below AI Image -->
-        <div class="info-box"></div>
+        <div class="item">
+            <img src="https://tediselmedical.com/wp-content/uploads/2024/07/inteligencia_artificial_innovando_atencion_medica_pic01_20240704_tedisel_medical.jpg"><!------------->
+            <div class="content">
+                <div class="title">
+                    AI AND GENETICS
+                </div>
+                <div class="des">
+                    Welcome to a unique platform where genetics meets artificial intelligence!
+                </div>
+            </div>
+        </div>
 
-    </body>
-</html>
+        <div class="item">
+            <img src="https://cff2.earth.com/uploads/2023/06/11162528/Robot-2.jpg"><!------------->
+            <div class="content">
+                <div class="title">
+                    The Space for Social Experiments
+                </div>
+                <div class="des">
+                    The Space for Social Experiments is an ENVIRONMENT! 
+                </div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="https://www.macaw.nl/app/uploads/AI_kantelpunt_blog.jpg"><!------------->
+            <div class="content">
+                <div class="title">
+                    GenAI Academy
+                </div>
+                <div class="des">
+                    GenAI Academy is a cutting-edge platform.
+                </div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="https://bgr.com/wp-content/uploads/2016/01/robot-and-human-team.jpg?quality=82&strip=all&w=1020&h=574&crop=1"><!------------->
+            <div class="content">
+                <div class="title">
+                    Scientific Forum
+                </div>
+                <div class="des">
+                    A dynamic platform for exchanging ideas.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--arrows-->
+    <div class="arrows">
+        <button id="prev"><</button>
+        <button id="next">></button>
+    </div>
+    <div class="time"></div>
+</div>
+    <script src="app.js"></script>
+</body>
+</html> 
+
+
