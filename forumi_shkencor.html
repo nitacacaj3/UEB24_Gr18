@@ -1,7 +1,106 @@
-!DOCTYPE <html>
-    <body>
-        hagsgshha
-        <p>rrjetat</p>
-        <p>ndryshim</p>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Forum</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-image: url('https://pin.it/7sYSgV8aX'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.7); 
+            padding: 10px 20px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Scientific Forum</h1>
+            <nav>
+                <ul>
+                    <li><a href="#community">Community</a></li>
+                    <li><a href="#library">Library</a></li>
+                    <li><a href="#ideas">Ideas</a></li>
+                    <li><a href="#login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="community">
+            <h2>Our Professional Staff</h2>
+            <p>Meet our community of dedicated scientists and researchers who contribute to the forum.</p>
+            <ul>
+                <li>Dr.Gentian Hoxha - Geneticist</li>
+                <li>Ing.Blerta Kelmendi-Engineer</li>
+                <li>Prof.Alban Selimi- Bioinformatics</li>
+            </ul>
+        </section>
+
+        <section id="library">
+            <h2>Library</h2>
+            <p>Explore our extensive library of resources:</p>
+            <ul>
+                <li><a href="https://mitpress.mit.edu/9780262581158/artificial-intelligence-and-molecular-biology/">Genetics Book</a></li>
+                <li><a href="https://archive.org/details/geneticengineeri0000burg">AI and Genetics Engineering</a></li>
+                <li><a href="https://www.researchgate.net/publication/379641716_Bioethics_in_Biomedical_Engineering">Bioethics in Biomedical Engineering</a></li>
+            </ul>
+        </section>
+
+        <section id="ideas">
+            <h2>Ideas and Comments</h2>
+            <p>Share and discuss your thoughts on genetics and AI:</p>
+            <textarea placeholder="Share your idea..."></textarea>
+            <button>Submit</button>
+        </section>
+
+        <section id="login">
+            <h2>Login</h2>
+            <p>Login to participate in the discussion:</p>
+            <form action="#" method="POST">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Scientific Forum. All rights reserved.</p>
+    </footer>
+</body>
 </html>
