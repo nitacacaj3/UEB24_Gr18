@@ -7,213 +7,389 @@
       Hapësira e Eksperimenteve Sociale dhe Etike(Ethics and Society Hub)
     </title>
     <style>
-      body {
-       background-image: url("chatgpt.jpg");
-       background-size: cover;
-       background-position: center;
-      background-attachment: fixed;
-      .Hapesira{
-        background-color: #FF8C00;
-        opacity: 0.8;
-        color: #008B8B;
-        text-align: center;
-        border: radius 20px; 
-      }
-      .pjesa1{
-        background-color: #008B8B;
-        opacity: 0.8;
-        padding: 10px;
-        border-radius:20px ;
-      }
-      p{
-        font-size: 16px;
-        line-height: 1.6;
-        color: white;
-        text-align: center;
-      }
-      .Bioteknologji{
-        background-color: #008B8B;
-        opacity: 0.8;
-        padding: 20px;
-        border-radius: 10px;
-      }
-      a{
-        color:blue;
-        text-decoration: none;
-      }
-      a:hover{
-        color: orange;
-      }
-      img{
-        width:10px;
-        height: 10px;
-        border-radius: 8px;
-        margin-bottom: 20px;
-      }
-      .AI{
-        background-color: #008B8B;
-        opacity: 0.8;
-        padding: 20px;
-        border-radius: 10px;
-      }
-      ul, ol {
-        color: white;
-        margin-left: 20px;
-      }
-      li{
-        margin-bottom: 10px;
-      }
-      h3{
-        color: #FF8C00;
-        font-size: 20px;
-        text-align: center;
-      }
-      .Bioteknologji p{
-        color:white;
-        font-style: italic;
-      }
-      b{
-        font-weight: bold;
-        color:white;
-      }
+      *{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+:root{
+    --primary: #536942;
+    --secondary: #ffd936;
+    --white: #efefef;
+}
+body{
+    font-family: "DM Sans", sans-serif;
+    color:var(--primary);
+}
+#main{
+    background-image: url('/jj.jpg');
+    min-height: 70vh;
+    background-position: bottom-center ;
+    background-size: cover;
+
+}
+a{
+    text-decoration: none ;
+}
+.container{
+    max-width: 1200px;
+    padding: 40px;
+    margin: auto;
+
+
+}
+section{
+    margin: 80px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-list{
+    display: flex;
+    list-style:none;
+    gap: 28px;
+    align-items: center;
+}
+.nav-list a{
+    color: var(--white);
+}
+.btn{
+    padding: 12px 20px;
+    background : transparent;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.btn-secondary{
+    border: 2px solid var(--white);
+    color: var(--white);
+    font-weight:bold ;
+}
+.btn-primary{
+    border:none;
+    background: var(--secondary);
+    color: var(--primary);
+}
+.main-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top:80px ;
+    color: var(--white);
+}
+.main-content.intro-heading{
+    font-size: 50px;
+}
+.main-content .main-heading{
+    font-size:110px ;
+    margin-top: -20px;
+}
+.main-content p{
+    max-width: 250px;
+    margin-bottom: 10px;
+}
+.menu-btn{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display:none;
+    width: 30px;
+}
+.section-title h1{
+    font-size:50px;
+    text-align: center;
+}
+.section-title .line{
+    width: 150px;
+    height: 4px;
+    border: 10px;
+    background: var(--secondary);
+    margin: auto;
+}
+.services{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+.service{
+    width: 350px;
+}
+.service img{
+    max-width: 100%;
+    border-radius: 5px;
+    transition: transform;
+}
+.service img:hover{
+transform:scale(1.05);
+
+}
+#testimonial{
+    background: #f1f2fa;
+}
+#testimonial .container{
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    max-width: 600px;
+    gap: 30px;
+    padding: 50px 16px;
+
+}
+#testimonial h1{
+    font-size: 30px;
+    font-family: "Forum", sans-serif;
+    text-align: center;
+}
+#testimonial .profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+
+}
+
+#about-us .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 120px;
+
+}
+#about-us .container .about-content{
+    max-width: 500px;
+    display: flex;
+    flex-direction: column ;
+    gap: 16px;
+    align-items: start;
+}
+
+#about-us .container .about-content h1{
+    font-family: "Forum", sans-serif;
+    font-size: 30px;
+}
+#questions{
+    min-height: 500px;
+    background-image: url('/AI-Skills-1024x536.jpg.optimal.jpg');
+    background-position: bottom  center;
+    background-size: cover;
+}
+#questions .container{
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    text-align: center;
+}
+#questions h1 {
+    font-size: 50px;
+}
+footer {
+    margin-top: -60px;
+}
+footer .container{
+    display: flex;
+    padding: 20px 16px;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    list-style: none;
+}
+@media screen and ( max-width:520px){
+    .menu-btn{
+        display: block;
+    }
+    
+.nav-list    {
+    flex-direction: column;
+    background: gray;
+    position: absolute;
+    top:0;
+    right: -900px;
+    width:80px;
+    height:100vh;
+    padding-top:80px ;
+    transition: all 0.3s ease;
+}
+.nav-list.active{
+    right:0;
+}
+.nav-list li::not(:last-child){
+    text-align: left;
+    width: 100%;
+    padding: 10px 30px;
+    border-bottom: 1px solid var(--white);
+}
+#about-us .container{
+    flex-direction:  column;
+    gap: 30px;
+}
+footer .container{
+    flex-direction: column ;
+    gap: 16px;
+}
+}
     </style>
   </head>
   <body>
-    <div class="Hapesira">
-      <h2>Hapësira e Eksperimenteve Sociale dhe Etike(Ethics and Society Hub)</h2>
-    <p>
-      Hapësira e eksperimenteve sociale dhe etike është një fushë e ndërlidhur
-      me sociologjinë, psikologjinë dhe filozofinë, e cila shqyrton sjelljen
-      njerëzore në rrethana të ndryshme dhe pasojat e saj morale.
-    </p>
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Ethics and Society Hub</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="main">
+      <div class="container">
+        <nav>
+          <ul class="nav-list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><button class="btn btn-secondary">202-505-3333</button></li>
+          </ul>
+        </nav>
+      </div>
+        <div class="main-content">
+          <h1 class="intro-heading">Ethics and</h1>
+          <h1 class="main-heading">Society Hub</h1>
+          <p>Ethics and Society Hub është një platformë bashkëpunuese e dedikuar
+           për të eksploruar ndërthurjen midis parimeve etike dhe sfidave shoqërore.
+          </p>
+          <button class="btn btn-primary">Get Started</button>
+        </div>
+      </div>
+    <section id="services">
+      <div class="container">
+        <div class="section-title">
+          <h1>our services</h1>
+          <div class="line"></div>
+        </div>
+        <div class="services">
+          <div class="service">
+            <img src="/bioteknologji.webp" alt="">
+            <h3>Bioteknologji</h3>
+            <p>
+              Manipulimi gjenetik përfaqëson një hap të madh në trajtimin e sëmundjeve,
+               përmirësimin e prodhimit bujqësor dhe zgjerimin e mundësive për jetëgjatësinë,
+                por ngre shqetësime etike dhe mundësinë e krijimit të pabarazive gjenetike.
+                 Në anën tjetër, privatësia e të dhënave biologjike është gjithashtu një temë kritike,
+                  pasi informacioni i mbledhur nga analizat e ADN-së mund të keqpërdoret, 
+                  duke çuar në diskriminim gjenetik dhe cenim të privatësisë. Për këtë arsye, 
+                  është e domosdoshme që të krijohen rregullore ndërkombëtare që garantojnë 
+                  përdorimin e përgjegjshëm të këtyre teknologjive dhe mbrojtjen e të drejtave individuale.
+            </p>
+          </div>
+          <div class="service">
+            <img src="/ai.webp" alt="">
+            <h3>AI</h3>
+            <p>
+              Përdorimi i inteligjencës artificiale në diagnostikimin mjekësor ofron mundësi 
+              të jashtëzakonshme për zbulimin e hershëm të sëmundjeve dhe përmirësimin e kujdesit shëndetësor.
+               Megjithatë, kjo teknologji ngre shqetësime etike mbi saktësinë e diagnostikimit,
+                paragjykimet algoritmike dhe transparencën e vendimeve.
+                 Për më tepër, mbrojtja e të dhënave personale të pacientëve është jetike, 
+                 pasi përdorimi i AI kërkon qasje në informacione shumë të ndjeshme. 
+                 Krijimi i politikave rigoroze për privatësinë dhe përdorimin e përgjegjshëm të të dhënave
+                 është thelbësor për të siguruar që përfitimet e AI të mos vijnë në kurriz të të drejtave individuale.
+            </p>
+          </div>
+          <div class="service">
+            <img src="/fotoja.webp" alt="">
+            <h3>Lidhja ndermjet te dyjave</h3>
+            <p>Lidhja ndërmjet bioteknologjisë dhe inteligjencës artificiale (AI)
+               është shumë e ngushtë dhe ka potencialin për të revolucionarizuar 
+               fushat e shkencës dhe shëndetësisë.
+            </p>
+          </div>
+    </section>
+    <section id="testimonial">
+      <div class="container">
+        <img src="/quote.png" alt="">
+        <h1>
+          "Ethics is knowing the difference between
+          what you have a right to do and what is right to do."
+        </h1>
+    <div class="profile">
+      <img src="./potter_stewart.jpg/profile.png" alt="">
+      <h4>Potter Sterwart</h4>
     </div>
-    <br/>
-    <div class="pjesa1">
-      <h3>Diskutime dhe burime që eksplorojnë ndikimin etik dhe social të bioteknologjisë dhe AI :</h3>
-      <ul>
-        <li><b>Bioteknologji:</b></li>
-        <ul>
-          <li>
-            Debati mbi manipulimin gjenetik dhe privatësinë e të dhënave
-            biologjike.
-          </li>
-        </ul>
-        <li><b>AI:</b></li>
-        <ul>
-          <li>
-            Etika e përdorimit të AI në diagnostifikimin mjekësor dhe të dhënat
-            personale.
-          </li>
-          <li>Evente live me ekspertë për diskutime rreth këtyre temave.</li>
-        </ul>
-      </ul>
+      </div>
+    </section>
+    <section id="about-us">
+      <div class="about-content">
+        <h4>ABOUT US</h4>
+        <h1>
+          Pse ka kaq shumë rendesi lidhja 
+          ndermjet gjenetikes dhe AI?
+        </h1>
+        <p>
+          Sepse, gjenetika mund të ndihmojë për të kuptuar më mirë bazën biologjike të sëmundjeve,
+           ndërsa AI mund të përpunojë dhe analizojë të dhëna gjenetike për të identifikuar modele
+           dhe për të parashikuar sjelljen e sëmundjeve, duke ofruar mundësi për trajtime më të personalizuara dhe efektive.
+        </p>
+        <button class="btn btn-primary">Let's Talk Now</button>
+      </div>
+    <div class="about-image">
+      <img src="/pjesa3.jpg" alt="">
     </div>
-    <br>
-    <div class="Bioteknologji">
-      <h3>
-        Temat kryesore të diskutimit mbi etikën dhe ndikimin social të
-        bioteknologjisë:
-      </h3>
-      <p>
-        Këtu është një udhëzues mbi temat dhe burimet që eksplorojnë ndikimin
-        etik dhe social të bioteknologjisë. Fusha e bioteknologjisë hap shumë
-        diskutime të ndërlikuara mbi etikën,ndikimet sociale dhe përgjegjësitë
-        njerëzore në përdorimin e teknologjive të avancuara.
-      </p>
-      <ol>
-        <li><b>Manipulimi gjenetik:</b></li>
-        <ul>
-          <li><b>Çështje etike:</b></li>
-          <ul>
-            <li>A është etike të ndryshojmë gjenet e njeriut?</li>
-            <li>
-              Frika nga krijimi i "fëmijëve të dizajnuar" (designer babies).
-            </li>
-          </ul>
-          <li><b>Ndikimi social:</b></li>
-          <ul>
-            <li>
-              Mund të thellohet pabarazia sociale nëse vetëm grupet e
-              privilegjuara kanë qasje në këto teknologji.
-            </li>
-            <li>
-              Ndryshimet në biodiversitet për shkak të modifikimeve artificiale
-              të organizmave.
-            </li>
-          </ul>
+    </section>
+    <section id="questions">
+      <div class="container">
+        <h1>QUESTIONS?</h1>
+        <p>Whether you're curios about this,
+          we're here to answer any questions.
+        </p>
+        <button class="btn btn-primary">Let's Talk Now</button>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <ul class="footer-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+
         </ul>
-        <br />
-        <li><b>Privatësia e të dhënave biologjike:</b></li>
-        <ul>
-          <li><b>Çështje etike:</b></li>
-          <ul>
-            <li>
-              Si duhet të ruhen dhe mbrohen të dhënat gjenetike të individëve?
-            </li>
-            <li>
-              Kush ka të drejtë mbi informacionin gjenetik – individi apo
-              kompanitë që e analizojnë atë?
-            </li>
-          </ul>
-          <li><b>Ndikimi social:</b></li>
-          <ul>
-            <li>
-              Rreziku i diskriminimit gjenetik (p.sh., nga siguruesit e
-              shëndetit ose punëdhënësit).
-            </li>
-            <li>
-              Tregtia dhe keqpërdorimi i të dhënave gjenetike në tregje globale.
-            </li>
-          </ul>
-        </ul>
-        <br />
-        <li><b> Klonimi dhe krijimi i organizmave të rinj:</b></li>
-        <ul>
-          <li><b>Çështje etike:</b></li>
-          <ul>
-            <li>A duhet të lejohet klonimi i qënieve njerëzore?</li>
-            <li>
-              Si ndikojnë eksperimente të tilla në vlerën dhe dinjitetin
-              njerëzor?
-            </li>
-          </ul>
-          <li><b>Ndikimi social:</b></li>
-          <ul>
-            <li>
-              Klonimi i kafshëve për ushqim apo kërkime mund të sjellë debat për
-              mirëqenien e kafshëve dhe ndikimet ekologjike.
-            </li>
-          </ul>
-        </ul>
-      </ol>
-      <br>
-      <h3>Burime që mund të eksploroni:</h3>
-      <p>Libra:</p>
-      <img src="image.jpg" alt="The Gene: An Intimate History - Siddartha" />
-      <br>
-      <img src="image1.jpg" alt="Altered Inheritance - nga Françoise Baylis">
-      <a href="https://escholarship.org/content/qt78d5x489/qt78d5x489.pdf"target="_blank">CRISPR and the ethics of gene editing</a>></a>
-    </div>
-    <br>
-    <div class="AI:">
-      <h3><b>Çështje kryesore etike dhe sociale të lidhura me AI</b></h3>
-      <p>Inteligjenca Artificiale (AI) ka një ndikim të thellë në shoqëri dhe ngrit një mori çështjesh etike dhe sociale.
-         Disa nga çështjet kryesore përfshijnë pabarazinë dhe diskriminimin që mund të lindin nga algoritmet e AI,
-          të cilat shpesh përjetësojnë paragjykime ekzistuese, duke ndikuar në punësim dhe shërbime publike. 
-          Përdorimi masiv i të dhënave personale për trajnimin e modeleve AI ngre pyetje për privatësinë dhe sigurinë e të dhënave, 
-          duke e bërë më të lehtë për keqbërësit të abuzojnë me informacionin e individëve. Automatizimi i mundshëm i industrive 
-          dhe humbja e vendeve të punës përbëjnë një tjetër shqetësim, pasi AI mund të zëvendësojë njerëzit në profesione të ndryshme. 
-          Po ashtu, përdorimi i AI në armët autonome dhe survejim masiv ngre dilema etike lidhur me përgjegjësinë dhe kontrollin. 
-          Përdorimi i AI gjithashtu mund të ndikojë te marrëdhëniet njerëzore, pasi mund të zëvendësojë ndërveprimin social dhe të çojë në varësi nga teknologjia.
-           Për të trajtuar këto çështje, janë zhvilluar raporte dhe udhëzime etike, si ato nga Komisioni Evropian dhe Stanford AI100,
-           dhe shumë organizata si AI Ethics Lab po punojnë për të siguruar përdorimin e përgjegjshëm të AI.</p>
-            <br>
-            <p>Disa organizata që merrën me etikën e AI:</p>
-            <ol>
-              <li><strong>AI Ethics Lab:</strong>Një organizatë që analizon implikimet etike të AI dhe rekomandon politika.</li>
-              <li><strong>Partnership on AI:</strong>Një koalicion i kompanive të mëdha dhe organizatave akademike që promovojnë AI të përgjegjshme.</li>
-              <li><strong>Future of Life Institute:</strong>Promovon përdorimin etik të teknologjive të reja dhe kufizimin e rreziqeve nga AI.</li>
-            </ol>
-    </div>
+        <img src="" alt="" class="footer">
+        <p>ahshdhhhfh</p>
+      </div>
+    </footer>
+    <script>
+      const navBtn= document.querySelector('.menu-btn');
+      const navList = document.querySelector('.nav-list');
+
+      navBtn.addEventListener("click", function(){
+        navList.classList.toggle("active");
+      });
+     
+
+    </script>
+  </body>
+</html>
+
   </body>
 </html>
