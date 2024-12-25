@@ -186,6 +186,17 @@
         const items = document.querySelectorAll('.list .item');
         const count = items.length;
         let active = 0;
+
+        function runCarousel() {
+            prev.style.display = active === 0 ? 'none' : 'block';
+            next.style.display = active === count - 1 ? 'none' : 'block';
+
+            document.querySelector('.list .item.active')?.classList.remove('active');
+            items[active].classList.add('active');
+
+            const leftTransform = -items[active].offsetWidth * active;
+            list.style.transform = `translateX(${leftTransform}px)`;
+        }
         </script>
 </head>
 <body>
