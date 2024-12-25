@@ -48,7 +48,6 @@
             margin-top: -50px;
         }
 
-<<<<<<< HEAD
         .slider .list {
             position: absolute;
             width: max-content;
@@ -74,18 +73,52 @@
             width: 90%;
             filter: drop-shadow(0 0 20px #000);
         }
-=======
-        .slider {
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden;
-            position: relative;
-            background-color: #17232A;
-            background-image: radial-gradient(#fff3, transparent 50%);
-            margin-top: -50px;
+        .slider .content {
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: #eee;
+            width: max-content;
         }
 
->>>>>>> ef4195c405898306ba0357cd5ce6f8ebb2211d87
+        .slider .content div:nth-child(2) {
+            font-size: 5rem;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .slider .content div:nth-child(2)::before {
+            position: absolute;
+            left: 60%;
+            bottom: 50%;
+            width: 80px;
+            height: 80px;
+            content: '';
+            background-image: url(img/lezaves.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .slider .content div:nth-child(1) {
+            text-align: left;
+            text-transform: uppercase;
+            transform: translateY(20px);
+        }
+
+        .slider .content button {
+            border: 1px solid #eee5;
+            background: transparent;
+            color: #eee;
+            font-family: Poppins, sans-serif;
+            letter-spacing: 5px;
+            padding: 10px 20px;
+            border-radius: 20px;
+        }
+
         </style>
 </head>
 <body>
