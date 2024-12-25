@@ -34,10 +34,12 @@
         header a {
             margin-right: 40px;
         }
+
         :root {
             --width-circle: 150vw;
             --radius: calc(100vw / 6);
         }
+
         .slider {
             width: 100vw;
             height: 100vh;
@@ -73,6 +75,7 @@
             width: 90%;
             filter: drop-shadow(0 0 20px #000);
         }
+
         .slider .content {
             position: absolute;
             bottom: 5%;
@@ -118,6 +121,7 @@
             padding: 10px 20px;
             border-radius: 20px;
         }
+
         #prev,
         #next {
             position: absolute;
@@ -142,6 +146,7 @@
         #next {
             right: 20px;
         }
+
         .circle {
             pointer-events: none;
             position: absolute;
@@ -174,11 +179,40 @@
                 transform: translate(-50%, -50%) rotate(calc(var(--rotate) + 360deg));
             }
         }
-    
-
-        </style>
-        <script>
-            const circle = document.querySelector('.circle');
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#top">Home</a>
+            <a href="">About us</a>
+            <a href="ethicssocietyhub.html">The Space for Social Experiments</a>
+            <a href="kurset.html">GenAI Academy</a>
+            <a href="forumishkencor.html">Scientific Forum</a>
+            <a href="">FAQs</a>
+        </nav>
+    </header>
+    <div class="slider">
+        <div class="list">
+            <div class="item"><img src="" alt=""></div>
+            <div class="item"><img src="labfotot/122-modified.png" alt=""></div>
+            <div class="item"><img src="labfotot/177-modified.png" alt=""></div>
+            <div class="item"><img src="labfotot/188-modified.png" alt=""></div>
+            <div class="item"><img src="labfotot/299-modified.png" alt=""></div>
+        </div>
+        <div class="circle">Genetics and AI work together to uncover complex DNA patterns and advance genetic therapies.</div>
+        <div class="content">
+            <div>AI Lab</div>
+            <div>Virtual Laboratory</div>
+            <button>See more</button>
+        </div>
+        <div class="arrow">
+            <button id="prev">&lt;</button>
+            <button id="next">&gt;</button>
+        </div>
+    </div>
+    <script>
+        const circle = document.querySelector('.circle');
         const slider = document.querySelector('.slider');
         const list = document.querySelector('.list');
         const prev = document.getElementById('prev');
@@ -223,37 +257,6 @@
             newSpan.style.setProperty('--rotate', rotateThisSpan + 'deg');
             circle.appendChild(newSpan);
         });
-        </script>
-</head>
-<body>
-    <header>
-        <nav>
-            <a href="#top">Home</a>
-            <a href="">About us</a>
-            <a href="ethicssocietyhub.html">The Space for Social Experiments</a>
-            <a href="kurset.html">GenAI Academy</a>
-            <a href="forumishkencor.html">Scientific Forum</a>
-            <a href="">FAQs</a>
-        </nav>
-    </header>
-    <div class="slider">
-        <div class="list">
-            <div class="item"><img src="" alt=""></div>
-            <div class="item"><img src="labfotot/122-modified.png" alt=""></div>
-            <div class="item"><img src="labfotot/177-modified.png" alt=""></div>
-            <div class="item"><img src="labfotot/188-modified.png" alt=""></div>
-            <div class="item"><img src="labfotot/299-modified.png" alt=""></div>
-        </div>
-        <div class="circle">Genetics and AI work together to uncover complex DNA patterns and advance genetic therapies.</div>
-        <div class="content">
-            <div>AI Lab</div>
-            <div>Virtual Laboratory</div>
-            <button>See more</button>
-        </div>
-        <div class="arrow">
-            <button id="prev">&lt;</button>
-            <button id="next">&gt;</button>
-        </div>
-    </div>
+    </script>
 </body>
 </html>
