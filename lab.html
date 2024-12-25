@@ -213,6 +213,16 @@
         });
 
         runCarousel();
+
+        const textCircle = circle.innerText.split('');
+        circle.innerText = '';
+        textCircle.forEach((value, key) => {
+            const newSpan = document.createElement('span');
+            newSpan.innerText = value;
+            const rotateThisSpan = (360 / textCircle.length) * key;
+            newSpan.style.setProperty('--rotate', rotateThisSpan + 'deg');
+            circle.appendChild(newSpan);
+        });
         </script>
 </head>
 <body>
