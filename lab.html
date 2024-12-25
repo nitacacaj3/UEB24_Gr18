@@ -197,6 +197,22 @@
             const leftTransform = -items[active].offsetWidth * active;
             list.style.transform = `translateX(${leftTransform}px)`;
         }
+
+        next.addEventListener('click', () => {
+            if (active < count - 1) {
+                active++;
+                runCarousel();
+            }
+        });
+
+        prev.addEventListener('click', () => {
+            if (active > 0) {
+                active--;
+                runCarousel();
+            }
+        });
+
+        runCarousel();
         </script>
 </head>
 <body>
