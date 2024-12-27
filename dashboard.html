@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Community Forum</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
+            color: #333;
+            min-height: 100vh;
+            padding: 10px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background: rgba(44, 62, 80, 0.9);
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .slider {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .slider-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            flex: 0 0 100%;
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .slide img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .slide h4 {
+            margin: 10px 0;
+            font-size: 1.2rem;
+            color: #2c3e50;
+        }
+
+        .slide p {
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        .slider-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+
+        .slider-buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            pointer-events: all;
+        }
+
+        .slider-buttons button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .comment-section {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .comment-section h2 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            color: #2c3e50;
+        }
+
+        .comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            resize: vertical;
+        }
+
+        .comment-form button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .comment-form button:hover {
+            background-color: #2980b9;
+        }
+
+        .comments-display {
+            margin-top: 20px;
+        }
+
+        .comment {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .comment h4 {
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+
+        .comment p {
+            color: #555;
+        }
+
+        .comment small {
+            display: block;
+            color: #888;
+            margin-top: 5px;
+        }
+
+        .reply-form {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .reply-form textarea {
+            width: calc(100% - 40px);
+            margin-left: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            resize: vertical;
+        }
+
+        .reply {
+            margin-left: 20px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-left: 2px solid #3498db;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .slide img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .comment-section {
+                padding: 15px;
+            }
+
+            .comment-form textarea,
+            .reply-form textarea {
+                font-size: 0.9rem;
+            }
+
+            .comment h4, .comment p, .reply h4, .reply p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Professional Community Forum</h1>
+        <p>Ask questions, share ideas, and connect with professionals.</p>
+    </header>
+
+    <!-- Slider -->
+    <div class="slider">
+        <div class="slider-container">
+            <div class="slide">
+                <img src="https://i.pinimg.com/474x/91/73/4f/91734fed094b9261fa922ca11d93afc9.jpg" alt="Professional 1">
+                <h4>Dr. Sarah Smith</h4>
+                <p>Expert in Biomedicine</p>
+            </div>
+            <div class="slide">
+                <img src="https://i.pinimg.com/736x/e8/a6/c7/e8a6c725f7ae32a4731f8ae8d62f35ee.jpg" alt="Professional 2">
+                <h4>Eng. John Doe</h4>
+                <p>Software Engineer in AI</p>
+            </div>
+            <div class="slide">
+                <img src="https://i.pinimg.com/474x/47/01/77/470177c3c1d29dd0e95d9079bac12a19.jpg" alt="Professional 3">
+                <h4>Dr. Jane Wilson</h4>
+                <p>Research Scientist</p>
+            </div>
+        </div>
+        <div class="slider-buttons">
+            <button id="prev">❮</button>
+            <button id="next">❯</button>
+        </div>
+    </div>
+
+    <div class="comment-section">
+        <h2>Comment Section</h2>
+        <form class="comment-form" onsubmit="addComment(event)">
+            <textarea id="commentInput" placeholder="Ask a question or share an idea..." rows="4"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="comments-display" id="commentsDisplay">
+            <!-- Example comments -->
+        </div>
+    </div>
+
+    <script>
+        // JavaScript code from the original solution remains unchanged
+    </script>
+</body>
+</html>
+    <div class="comment-section">
+        <h2>Comment Section</h2>
+        <form class="comment-form" onsubmit="addComment(event)">
+            <textarea id="commentInput" placeholder="Ask a question or share an idea..." rows="4"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="comments-display" id="commentsDisplay">
+            <!-- Example comments -->
+            <div class="comment">
+                <h4>User: Alice</h4>
+                <p>What is the best way to start learning Artificial Intelligence?</p>
+                <small>Posted on: 2024-12-23 10:00 AM</small>
+                <div class="replies">
+                    <div class="reply">
+                        <h4>Dr. Sarah Smith</h4>
+                        <p>I recommend starting with Python and basic machine learning libraries like TensorFlow or Scikit-learn.</p>
+                        <small>Replied on: 2024-12-23 10:15 AM</small>
+                    </div>
+                </div>
+                <form class="reply-form" onsubmit="addReply(event, this)">
+                    <textarea placeholder="Write a reply..." rows="2"></textarea>
+                    <button type="submit">Reply</button>
+                </form>
+            </div>
+            <div class="comment">
+                <h4>User: Bob</h4>
+                <p>How can I contribute to open-source biomedical projects?</p>
+                <small>Posted on: 2024-12-23 11:00 AM</small>
+                <form class="reply-form" onsubmit="addReply(event, this)">
+                    <textarea placeholder="Write a reply..." rows="2"></textarea>
+                    <button type="submit">Reply</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const commentsDisplay = document.getElementById('commentsDisplay');
+
+        function addComment(event) {
+            event.preventDefault();
+            const commentInput = document.getElementById('commentInput');
+            const commentText = commentInput.value.trim();
+
+            if (commentText) {
+                const commentElement = document.createElement('div');
+                commentElement.className = 'comment';
+                commentElement.innerHTML = `
+                    <h4>You</h4>
+                    <p>${commentText}</p>
+                    <small>Posted on: ${new Date().toLocaleString()}</small>
+                    <form class="reply-form" onsubmit="addReply(event, this)">
+                        <textarea placeholder="Write a reply..." rows="2"></textarea>
+                        <button type="submit">Reply</button>
+                    </form>
+                    <div class="replies"></div>
+                `;
+                commentsDisplay.prepend(commentElement); // Add new comments to the top
+                commentInput.value = '';
+            }
+        }
+
+        function addReply(event, form) {
+            event.preventDefault();
+            const replyInput = form.querySelector('textarea');
+            const replyText = replyInput.value.trim();
+
+            if (replyText) {
+                const replyElement = document.createElement('div');
+                replyElement.className = 'reply';
+                replyElement.innerHTML = `
+                    <h4>You</h4>
+                    <p>${replyText}</p>
+                    <small>Replied on: ${new Date().toLocaleString()}</small>
+                `;
+                form.nextElementSibling.appendChild(replyElement);
+                replyInput.value = '';
+            }
+        }
+
+        // Slider functionality
+        const sliderContainer = document.querySelector('.slider-container');
+        const slides = document.querySelectorAll('.slide');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        let currentSlide = 0;
+
+        const updateSlider = () => {
+            sliderContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+        };
+
+        prevButton.addEventListener('click', () => {
+            currentSlide = (currentSlide > 0) ? currentSlide - 1 : slides.length - 1;
+            updateSlider();
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentSlide = (currentSlide < slides.length - 1) ? currentSlide + 1 : 0;
+            updateSlider();
+        });
+    </script>
+</body>
+</html>
