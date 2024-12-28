@@ -1,0 +1,297 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Laboratory</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+        body {
+            font-family: Poppins, sans-serif;
+            background-color: #2b2d2f;
+            color: #eee;
+            margin: 0;
+            font-size: 12px;
+            scroll-behavior: smooth;
+        }
+        h1 {
+            font-family: Poppins;
+            font-size: 70px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #eee;
+        }
+
+        header {
+            width: 1140px;
+            max-width: 80%;
+            margin: auto;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 100;
+        }
+
+        header a {
+            margin-right: 40px;
+            transition: color 0.3s ease;
+        }
+
+        header a:hover {
+            color: #ff6f61;
+        }
+
+        .carousel {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .carousel-item {
+            width: 70%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        .carousel-item:hover {
+            transform: scale(1.05) rotate(-3deg);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+        }
+
+        .carousel-item img {
+            width: 90%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .carousel-item img:hover {
+            transform: rotate(5deg);
+        }
+
+        .carousel-item .description {
+            font-size: 14px;
+            text-align: center;
+            color: #ccc;
+        }
+
+        .description1 {
+            font-size: 40px;
+            font-family: Poppins;
+            text-align: center;
+            color: white;
+        }
+
+        .scroll-button {
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .scroll-button:hover {
+            background-color: #ff4b39;
+        }
+
+        .explore-button {
+            background-color: #25434a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .explore-button:hover {
+            background-color: #517a87;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .chart-container {
+            width: 80%;
+            max-width: 800px;
+            margin: 50px auto;
+        }
+
+        #map {
+            width: 100%;
+            height: 500px;
+            margin-top: 30px;
+        }
+        footer {
+    background-color: #1a1a1a;
+    color: #eee;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-container p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.footer-container .back-to-top {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #577783;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.footer-container .back-to-top:hover {
+    color: #299d95;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#top">Home</a>
+            <a href="">About us</a>
+            <a href="ethicssocietyhub.html">The Space for Social Experiments</a>
+            <a href="kurset.html">GenAI Academy</a>
+            <a href="forumishkencor.html">Scientific Forum</a>
+            <a href="">FAQs</a>
+        </nav>
+    </header>
+    
+    <div class="carousel" id="top">
+        <h1>Virtual Laboratory</h1>
+        
+        <!-- Colorful Chart Here -->
+        <div class="chart-container">
+            <canvas id="aiAchievementsChart"></canvas>
+        </div>
+
+        <div class="carousel-item">
+            <div class="description1">Neuroplasticity</div>
+            <img src="labfotot/122-modified.png" alt="Neuroplasticity">
+            <div class="description">One of the most fascinating discoveries about the brain is its ability to rewire itself, a phenomenon known as neuroplasticity. With the help of AI, researchers have uncovered how specific regions of the brain can adapt after injury, compensating for lost functions or developing new abilities. For instance, AI has been used to analyze brain activity in stroke patients, revealing patterns that guide rehabilitation efforts and improve recovery outcomes. This understanding opens new doors for therapies targeting neurological disorders and enhances our grasp of the brain's remarkable adaptability.</div>
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10856672/"><button class="explore-button">Learn More</button></a>
+        </div>
+
+        <div class="carousel-item">
+            <div class="description1">Lungs' Self-Repair Mechanisms</div>
+            <img src="labfotot/177-modified.png" alt="Lungs Repair">
+            <div class="description">AI has helped researchers uncover groundbreaking insights about the lungs' self-repair mechanisms. For instance, it has been discovered that certain cells within the lungs, known as basal cells, can regenerate damaged tissue by transforming into other specialized cell types. AI-powered imaging and data analysis have significantly advanced our understanding of these processes, paving the way for treatments aimed at repairing lung damage caused by smoking, pollution, or diseases like COPD. This breakthrough offers hope for millions suffering from chronic respiratory conditions.</div>
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10856672/"><button class="explore-button">Learn More</button></a>
+        </div>
+
+        <div class="carousel-item">
+            <div class="description1">Behavior of Cells at a Molecular Level</div>
+            <img src="labfotot/188-modified.png" alt="Cell Behavior">
+            <div class="description">One of the most groundbreaking discoveries in cell biology facilitated by AI is the development of advanced machine learning algorithms that enable deep analysis of cells at a molecular level. AI has revolutionized the ability to identify and classify various cell types, understand gene expression patterns, and predict cellular interactions. This has had profound implications for advancing our understanding of diseases like cancer, where AI models help in discovering new biomarkers and improving precision medicine. Additionally, AI has played a key role in the development of personalized treatments, including immunotherapies, by analyzing how cells respond to different drugs or therapies.</div>
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10856672/"><button class="explore-button">Learn More</button></a>
+        </div>
+
+        <div class="carousel-item">
+            <div class="description1">Genetic Material</div>
+            <img src="labfotot/299-modified.png" alt="Genetic Material">
+            <div class="description">A major breakthrough in understanding DNA cells through AI involves the use of advanced machine learning models to analyze the structure and function of genetic material. AI has enabled scientists to decode complex DNA sequences and understand how genetic variations influence disease development and drug responses. Through deep learning algorithms, AI can predict the folding patterns of DNA, helping to identify mutations that might cause genetic disorders or influence traits. These innovations are crucial for personalized medicine, where AI helps in developing treatments tailored to an individual's genetic makeup.</div>
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10856672/"><button class="explore-button">Learn More</button></a>
+        </div>
+        
+        
+    </div>
+
+    <!-- AI Labs Map -->
+    <div id="map"></div>
+    
+    <script>
+        // Chart Configuration
+        var ctx = document.getElementById('aiAchievementsChart').getContext('2d');
+        var aiAchievementsChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['AI in Healthcare', 'AI in Robotics', 'AI in Neuroscience', 'AI in Genetics', 'AI in Education'],
+                datasets: [{
+                    label: 'AI Achievements (Progress)',
+                    data: [80, 70, 85, 90, 60],
+                    backgroundColor: [
+                        '#37474f', '#90a4ae', '#cfd8dc', '#263238', '	#eceff1'
+                    ],
+                    borderColor: '#333',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                }
+            }
+        });
+
+        // Map Setup
+        var map = L.map('map').setView([20, 0], 2); // Initial map view (latitude, longitude)
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        var labs = [
+            {lat: 37.7749, lon: -122.4194, name: "AI Lab - San Francisco"},
+            {lat: 51.5074, lon: -0.1278, name: "AI Lab - London"},
+            {lat: 34.0522, lon: -118.2437, name: "AI Lab - Los Angeles"},
+            {lat: 48.8566, lon: 2.3522, name: "AI Lab - Paris"},
+            {lat: 35.6895, lon: 139.6917, name: "AI Lab - Tokyo"}
+        ];
+
+        labs.forEach(function(lab) {
+            L.marker([lab.lat, lab.lon]).addTo(map)
+                .bindPopup('<b>' + lab.name + '</b>')
+                .openPopup();
+        });
+    </script>
+
+<footer>
+    <div class="footer-container">
+        <p>&copy; 2024 Virtual Laboratory. All rights reserved.</p>
+        <a href="#top" class="back-to-top">Back to Top</a>
+    </div>
+</footer>
+
+</body>
+</html>

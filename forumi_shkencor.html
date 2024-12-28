@@ -4,18 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scientific Forum</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <a href="dashboard.html" class="button">Login</a>
+
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #eeeeea;
+            background: url('https://i.pinimg.com/736x/90/79/8f/90798f1c0b3f2d836954a8f5922c62b0.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
         }
         header {
-            background: rgba(92, 62, 228, 0.7);
+            background: rgba(61, 114, 240, 0.7);
             padding: 10px 20px;
             text-align: center;
-            color: #ffffff;
         }
         nav {
             display: flex;
@@ -38,8 +42,7 @@
             margin-bottom: 30px;
         }
         footer {
-            background: rgba(104, 50, 241, 0.7);
-            color: white;
+            background:rgba(61, 114, 240, 0.7);
             text-align: center;
             padding: 5px;
             position: fixed;
@@ -50,6 +53,7 @@
             position: relative;
             width: 100%;
             overflow: hidden;
+            text-align: center;
         }
         .community-card {
             display: flex;
@@ -58,13 +62,23 @@
         }
         .community-card div {
             background: #1c1f26;
-            color: white;
             padding: 15px;
-            border-radius: 10px;
+            border-radius: 50%;
             flex: 0 0 25%;
             text-align: center;
             box-sizing: border-box;
+            margin: 0 auto;
         }
+        .community-card div img {
+         width: 150px; 
+         height: 150px;
+          object-fit: cover;
+          border-radius: 50%; 
+          margin-bottom: 10px;
+          background: transparent; /* This removes any default background from the image */
+          border: none; /* Removes any default border around the image */
+}
+
         .community-card div:hover {
             transform: scale(1.05);
         }
@@ -127,18 +141,22 @@
             <div class="community-slider">
                 <div class="community-card">
                     <div>
+                        <img src="https://img.freepik.com/premium-photo/portrait-confident-male-doctor-standing-with-arms-crossed-hospital-corridor-ai-generated_632984-111.jpg" alt="Dr.Alban Selimi">
                         <h4>Dr.Alban Selimi</h4>
                         <p>Certified doctor specialized in Biomedicine.</p>
                     </div>
                     <div>
+                        <img src="https://i.pinimg.com/736x/4e/5f/07/4e5f0715030a8da373d8fe6ed1f9c0a6.jpg" alt="Ing.Blerta Kelmendi">
                         <h4>Ing.Blerta Kelmendi</h4>
                         <p>Software engineer working in Biomedical Engineering.</p>
                     </div>
                     <div>
+                        <img src="https://i.pinimg.com/736x/39/8d/7c/398d7cffff0d7bc7d1e026f5a2d97990.jpg" alt="Msc.Gentian Hoxha">
                         <h4>Msc.Gentian Hoxha</h4>
                         <p>Experienced researcher in Biomedical experiments.</p>
                     </div>
                     <div>
+                        <img src="https://img.freepik.com/premium-photo/portrait-senior-teacher-front-blackboard-distinguished-professor-front-classic-blackboard-ai-generated_538213-54593.jpg" alt="Prof.Hysamedin Ahmeti">
                         <h4>Prof.Hysamedin Ahmeti</h4>
                         <p>PhD in Physics, certified to provide accurate answers.</p>
                     </div>
@@ -158,6 +176,10 @@
                 <li><a href="https://archive.org/details/geneticengineeri0000burg">AI and Genetics Engineering</a></li>
                 <li><a href="https://www.researchgate.net/publication/379641716_Bioethics_in_Biomedical_Engineering">Bioethics in Biomedical Engineering</a></li>
             </ul>
+            <p>Easier Access in the Scientific Library:</p>
+            <ul>
+                <li><a href="https://openlibrary.org/">Get full access to all the Scientific Books</a></li>
+            </ul>
         </section>
 
         <section id="ideas" class="section">
@@ -170,12 +192,16 @@
         <section id="login" class="section">
             <h2>Login</h2>
             <p>You must log in to post comments or share ideas.</p>
-            <form action="#" method="POST">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-                <button type="submit">Login</button>
+            <form action="dashboard.html" method="GET" style="display: flex; justify-content: flex-start; align-items: center; gap: 15px;">
+                <div>
+                    <label for="username">Username:</label><br>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div>
+                    <label for="password">Password:</label><br>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" id="loginButton">Login</button>
             </form>
         </section>
     </div>
@@ -185,6 +211,12 @@
     </footer>
 
     <script>
+        document.getElementById('loginButton').addEventListener('click', (e) => {
+    e.preventDefault(); // Prevent default form submission
+    // Perform validation here
+    window.location.href = 'dashboard.html'; // Redirect to dashboard.html
+});
+
         const slider = document.querySelector('.community-card');
         const prevButton = document.getElementById('prev');
         const nextButton = document.getElementById('next');
