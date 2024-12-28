@@ -204,14 +204,17 @@
         <div class="content">
             <div>AI Lab</div>
             <div>Virtual Laboratory</div>
-           <a href="seemore.html"><button>See more</button></a> 
+            <a href="seemore.html"><button>See more</button></a>
         </div>
         <div class="arrow">
             <button id="prev">&lt;</button>
             <button id="next">&gt;</button>
         </div>
     </div>
+
     <script>
+        // Përdorimi i JavaScript për ngjarje (event)
+        // Ngjarjet 'click' për butonat 'prev' dhe 'next' për të kontrolluar karuselin
         const circle = document.querySelector('.circle');
         const slider = document.querySelector('.slider');
         const list = document.querySelector('.list');
@@ -248,6 +251,8 @@
 
         runCarousel();
 
+        // Përdorimi i JavaScript për manipulim me tekst
+        // Manipulimi i tekstit të elementit .circle dhe ndarja e tij në shkronja për rotacion
         const textCircle = circle.innerText.split('');
         circle.innerText = '';
         textCircle.forEach((value, key) => {
