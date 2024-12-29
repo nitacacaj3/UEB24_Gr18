@@ -2,7 +2,11 @@
 
 body {
     font-family: Poppins, sans-serif;
-    background-color: #000;
+    background-color: #1c1c1c; /* Vlera e background-color */
+    background-image: url('https://img.freepik.com/premium-photo/wallpaper-simple-solid-color-background-flat-image-dark-tones_780838-7386.jpg'); /* Shtimi i një imazhi në sfond */
+    background-repeat: no-repeat; /* Mos përsëritje e imazhit */
+    background-attachment: fixed; /* Mbajtja e imazhit të sfondit në pozita fikse */
+    background-position: center center; /* Pozicionimi i imazhit në qendër të ekranit */
     color: #eee;
     margin: 0;
     font-size: 12px;
@@ -40,12 +44,14 @@ h1 {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 20px;
+    color: #fff;
 }
 
 label {
     font-size: 16px;
     margin-bottom: 10px;
     display: block;
+    color: #ddd;
 }
 
 input, select, textarea {
