@@ -262,6 +262,20 @@
             newSpan.style.setProperty('--rotate', rotateThisSpan + 'deg');
             circle.appendChild(newSpan);
         });
+
+        // Filter, reduce, and map example in JavaScript
+        const itemsArray = Array.from(items);  
+
+       
+        const filteredItems = itemsArray.filter(item => item.querySelector('img').src.includes('modified'));
+
+        
+        const imageSources = filteredItems.map(item => item.querySelector('img').src);
+
+   
+        const allImageSources = imageSources.reduce((acc, source) => acc + ', ' + source, '');
+
+        console.log(allImageSources);
     </script>
 </body>
 </html>
