@@ -353,8 +353,35 @@
                 .bindPopup('<b>' + lab.name + '</b>')
                 .openPopup();
         });
-    </script>
 
+    $(document).ready(function() {
+        $('a[href="#top"]').on('click', function(e) {
+            e.preventDefault();
+            $('html, body').animate({ scrollTop: 0 }, 'slow');
+        });
+
+        $('.carousel-item').on('click', function() {
+            $(this).fadeOut(500).fadeIn(500);
+        });
+
+        $('.scroll-button').on('click', function() {
+            $('.carousel').fadeOut(1000).fadeIn(1000);
+        });
+
+        $('#top').on('click', function() {
+            $('.carousel-item').slideUp(500, function() {
+                alert('Carousel item hidden!');
+                $(this).slideDown(500);
+            });
+        });
+
+        $('#map').on('mouseenter', function() {
+            $(this).css('border', '3px solid #ff6f61');
+        }).on('mouseleave', function() {
+            $(this).css('border', '');
+        });
+    });
+</script>
 <footer>
     <div class="footer-container">
         <p>&copy; 2024 Virtual Laboratory. All rights reserved.</p>
