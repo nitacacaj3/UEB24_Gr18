@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Genetics & AI Questionnaire</title>
- 
+    <link rel="stylesheet" href="form.css">
 </head>
 <body>
     <header>
@@ -97,6 +97,21 @@
     </div>
 
     <script>
+        // Defining an object constructor function
+        function User(name, email, password, age, knowledge, aiKnowledge, aiUsed, aiTechnologies, ethicalImplications, comments) {
+            this.name = name;
+            this.email = email;
+            this.password = password;
+            this.age = age;
+            this.knowledge = knowledge;
+            this.aiKnowledge = aiKnowledge;
+            this.aiUsed = aiUsed;
+            this.aiTechnologies = aiTechnologies;
+            this.ethicalImplications = ethicalImplications;
+            this.comments = comments;
+        }
+
+        // Creating instances of the User object
         document.getElementById("questionnaire-form").addEventListener("submit", function(event) {
             event.preventDefault();
 
@@ -111,18 +126,14 @@
             let ethicalImplications = document.getElementById("ethical-implications").value;
             let comments = document.getElementById("comments").value;
 
-            console.log({
-                name,
-                email,
-                password,
-                age,
-                knowledge,
-                aiKnowledge,
-                aiUsed,
-                aiTechnologies,
-                ethicalImplications,
-                comments
-            });
+            // Creating three instances of User with different data
+            let user1 = new User(name, email, password, age, knowledge, aiKnowledge, aiUsed, aiTechnologies, ethicalImplications, comments);
+            let user2 = new User("John Doe", "john@example.com", "password123", 25, "Basic", "Intermediate", "yes", ["Deep Learning", "Neural Networks"], "I think it's a sensitive issue.", "No additional comments.");
+            let user3 = new User("Jane Smith", "jane@example.com", "securePass", 30, "Advanced", "Basic", "no", ["Machine Learning"], "Ethical concerns must be addressed carefully.", "Great initiative.");
+
+            console.log(user1);
+            console.log(user2);
+            console.log(user3);
 
             alert("Thank you for submitting your answers!");
             document.getElementById("questionnaire-form").reset();
