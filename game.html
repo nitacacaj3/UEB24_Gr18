@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genetic Drag and Drop</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+         body {
+            font-family: Poppins, sans-serif;
+            background-color: #17232A;
+            color: #eee;
+            margin: 0;
+            font-size: 12px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #eee;
+        }
+
+        header {
+            width: 1140px;
+            max-width: 80%;
+            margin: auto;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 100;
+        }
+
+        header a {
+            margin-right: 40px;
+        }
+
+        .head {
+            text-align: center;
+            padding: 40px 20px;
+            background: #00b4d8;
+            border-bottom: 2px solid #0077b6;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .head h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            color: white;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .genetic-drag-container {
+            width: 500px;
+            height: 300px;
+            margin: 50px auto;
+            background-color: #222;
+            border: 2px solid #00b4d8;
+            position: relative;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .genetic-gene {
+            width: 80px;
+            height: 80px;
+            background-color: #ff007f;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border-radius: 12px;
+            cursor: pointer;
+            position: absolute;
+            transition: transform 0.3s ease;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .chromosome {
+            width: 450px;
+            height: 30px;
+            margin-top: 120px;
+            background-color: #333;
+            border: 1px solid #00b4d8;
+            position: relative;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .gene-slot {
+            width: 50px;
+            height: 50px;
+            border: 2px dashed #00b4d8;
+            background-color: #444;
+            border-radius: 8px;
+            position: relative;
+            transition: background-color 0.3s ease;
+        }
+
+        .gene-slot:hover {
+            background-color: #555;
+        }
+
+        .gene-slot.filled {
+            background-color: #0077b6;
+            border-color: #fff;
+        }
+
+        .instruction {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            color: #00b4d8;
+            font-weight: 500;
+        }
+
+        .message {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-top: 30px;
+            color: #a6a6a6;
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        button {
+            width: 100%;
+            background-color: #0077b6;
+            color: white;
+            padding: 12px 0;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #00b4d8;
+        }
+
+        .media-container {
+            margin-top: 50px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .media-container iframe {
+            width: 80%;
+            height: 400px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .media-container audio {
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#top">Home</a>
+            <a href="">About us</a>
+            <a href="ethicssocietyhub.html">The Space for Social Experiments</a>
+            <a href="kurset.html">GenAI Academy</a>
+            <a href="forumishkencor.html">Scientific Forum</a>
+            <a href="">FAQs</a>
+        </nav>
+    </header>
+
+    <div class="head">
+        <h1>Genetic Drag and Drop</h1>
+        <p>Mix and Match Genes to Create a New Genetic Sequence</p>
+    </div>
+
+    <div class="genetic-drag-container">
+        <div class="instruction">Drag genes into the chromosome slots to create a unique sequence.</div>
+
+        <div id="gene1" class="genetic-gene" draggable="true" ondragstart="drag(event)">Gene A</div>
+        <div id="gene2" class="genetic-gene" draggable="true" ondragstart="drag(event)">Gene B</div>
+        <div id="gene3" class="genetic-gene" draggable="true" ondragstart="drag(event)">Gene C</div>
+        <div id="gene4" class="genetic-gene" draggable="true" ondragstart="drag(event)">Gene D</div>
+
+        <div class="chromosome">
+            <div id="slot1" class="gene-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="slot2" class="gene-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="slot3" class="gene-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="slot4" class="gene-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+
+        <div id="message" class="message"></div>
+        <button id="checkBtn">Check Sequence</button>
+    </div>
+
+    <div class="media-container">
+       
+        <h1>Watch the educational video on AI and Genetics</h1>
+        <iframe src="https://www.youtube.com/embed/EQxtHL4Y1rw?si=qPje9FW4YaezOJyP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <br>
+        <br>
+        <p>Listen to the audio files about genetics, featuring songs for children to learn about genetics in an engaging and fun way.</p>
+        <audio controls>
+            <source src="lab/DNA Song by Peter Weatherall.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <audio controls>
+            <source src="lab/In the Genes SONG  What are Genes_.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <script>
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            var draggedElement = document.getElementById(data);
+            var targetSlot = ev.target;
+
+            if (!targetSlot.classList.contains("filled")) {
+                targetSlot.appendChild(draggedElement);
+                targetSlot.classList.add("filled");
+                draggedElement.style.transform = "scale(0.8)";
+            }
+        }
+
+        $('#checkBtn').click(function() {
+            var correctSequence = ['Gene A', 'Gene B', 'Gene C', 'Gene D'];
+            var userSequence = [];
+
+            $('.gene-slot').each(function() {
+                if ($(this).children().length > 0) {
+                    userSequence.push($(this).children().text().trim());
+                }
+            });
+
+            if (userSequence.length === 4 && JSON.stringify(userSequence) === JSON.stringify(correctSequence)) {
+                $('#message').text('🎉 Congratulations! Correct sequence! 🎉').css('color', 'green').css('transform', 'scale(1.1)');
+            } else {
+                $('#message').text('❌ Oops! Try again. ❌').css('color', 'red').css('transform', 'scale(1.1)');
+            }
+        });
+    </script>
+</body>
+</html>
