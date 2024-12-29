@@ -14,8 +14,8 @@
                 align-items:center;
                 position: relative;
                 z-index:100;
-                background: #17232A;
-                box-shadow: 0 2px 4px(0,0,0,0.2);
+                background-color: #17232A;
+                
 
 
             }
@@ -42,9 +42,32 @@
                 background:#17232A;
                 align-items: center;
                 justify-content: center;
+                transition:all 1s ease;
+                position:absolute;
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+            }
+            .container.move-left{
+                justify-content:flex-start;
+                padding-left:90px;
+                transform: translateY(-50%);
+                top:20%;
+            }
+            .welcome-text{
+                display:none;
+                margin-left: 40px;
+                padding:30px;
+                background: rgb(1, 49, 65);
+                color:white;
+                border:2px solid rgb(34, 65, 75);
+                border-radius: 10px;
+                box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
 
 
-
+            }
+            .container.move-left .welcome-text{
+                display:block;
             }
             .logo{
                 width:200px;
@@ -87,7 +110,7 @@
                <a href="FAQ.html">FAQs</a>
             </nav>
            </header>
-         <div class="container">
+         <div class="container" id="container">
             <div class="logo">
                 <div class="logoAI">
                     <span>AI-G</span>
@@ -95,7 +118,21 @@
                 </div>
 
             </div>
+            <div class="welcome-text">
+                Welcome to our academy, a hub for groundbreaking in genetics and artificial intelligence.
+                Here we strive to uncover the mysteries behind diseases and genetic anomalies, leveraging
+                the power of AI to push the boundaries of science.
+                Our mission is to innovate and inspire,bridging technology and biology to create a 
+                healthier future.
+                Join us in exploring the limitless potential of AI-driven genetic research!
+            </div>
          </div>
-         
+         <script>
+            window.onload=function(){
+                setTimeout(function(){
+                    document.getElementById('container').classList.add('move-left');
+                },2000);
+            };
+         </script>
     </body>
 </html>
