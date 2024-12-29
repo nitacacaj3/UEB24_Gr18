@@ -7,6 +7,8 @@
       Hapësira e Eksperimenteve Sociale dhe Etike(Ethics and Society Hub)
     </title>
     <style>
+     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Forum&display=swap');
+
     *{
     margin:0;
     padding: 0;
@@ -31,8 +33,12 @@ body{
     background-repeat: no-repeat;
 }
 a{
+  color: #efefef;
     text-decoration: none ;
 }
+#main .container a:hover {
+    color: lightgray; 
+  }
 .container{
     max-width: 1200px;
     padding: 40px;
@@ -224,27 +230,55 @@ transform:scale(1.05);
     justify-content: center;
     height: 500px;
     text-align: center;
+    padding-top: 50px;
 }
 #questions h1 {
+    margin-top: 50px;
+    padding-top: 50px;
+    position: relative;
+    top: 50px;
     font-size: 50px;
     color: white;
 
 }
 #questions p{
   color: white;
+  margin-top: 10px;
+    padding-top: 10px;
+    position: relative;
+    top: 10px;
 }
 
-footer .container{
-    display: flex;
-    padding: 20px 16px;
-    justify-content: space-between;
-    align-items: center;
+form {
+  position: relative;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+ top: 20px;
 }
-.footer-links {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    list-style: none;
+
+form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+form input,
+form textarea {
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: var(--secondary);
+  box-shadow: 0px 0px 5px rgba(255, 217, 54, 0.5);
 }
 @media screen and ( max-width:520px){
     .menu-btn{
@@ -302,7 +336,7 @@ footer .container{
           <p>Ethics and Society Hub is a collaborative platform 
              dedicated to exploring the intersection between ethical principles and societal challenges.
           </p>
-          <button class="btn btn-primary">Get Started</button>
+          <button class="btn btn-primary"><span>🚀</span>Get Started</button><!-- perdorimi i span -->
         </div>
       </div>
     <section id="services">
@@ -325,9 +359,10 @@ footer .container{
             <img src="/truni.jpg" alt="">
             <h3>AI</h3>
             <p>
-              The use of artificial intelligence in medical diagnostics offers remarkable opportunities for early disease detection and improved healthcare.
-               However, this technology raises ethical concerns regarding diagnostic accuracy, 
-              algorithmic biases, and decision-making transparency.
+              The use of AI in medical diagnostics offers remarkable opportunities
+              for early disease detection and improved healthcare.
+              However, this technology raises ethical concerns regarding diagnostic accuracy, 
+             algorithmic biases, and decision-making transparency. 
             </p>
           </div>
           <div class="service">
@@ -355,17 +390,17 @@ footer .container{
       <div class="container">
       <div class="about-content">
         <h1>
-          What is the importance of integrating artificial intelligence (AI) into advancements in genetics?
+          <i>What is the importance of integrating <abbr title="Artificial Intelligence">AI</abbr> into advancements in genetics?</i><!-- perdorimi i shkurteses <abbr> -->
         </h1>
         <p>
-          "Genetics can help us better understand the biological basis of diseases, while AI can process and analyze genetic data to identify
-           patterns and predict disease behavior,
-           offering opportunities for more personalized and effective treatments."
+          "Genetics can help us better understand the biological basis of diseases, while 
+          <mark>AI can process and analyze genetic data</mark> to identify patterns and predict disease behavior,
+          offering opportunities for more personalized and effective treatments."<!-- perdorimi i highlights -->
         </p>
-        <button class="btn btn-primary">Let's Talk Now</button>
+        <button class="btn btn-primary">Let's Talk Now &#128512;</button><!--perdorimi i entiteve-->
       </div>
     <div class="about-image">
-      <img src="/pjesa3.jpg" alt="">
+   <img src="/pjesa3.jpg" alt="">
     </div>
   </div>
     </section>
@@ -375,19 +410,122 @@ footer .container{
         <p>Whether you're curios about this,
           we're here to answer any questions.
         </p>
-        <button class="btn btn-primary">Let's Talk Now</button>
+        <form action="/submit" method="post" style="max-width: 400px; margin: auto; text-align: left;"> <!-- perdorimi i HTML forms -->
+          <label for="name" style="font-size: 14px; color: white;">Name:</label><br>
+          <input type="text" id="name" name="name" placeholder="Your Name" 
+                 style="width: 100%; padding: 10px;margin-bottom: 10px; border-radius: 5px; border: none;"><br>
+          
+          <label for="email" style="font-size: 14px; color: white;">Email:</label><br>
+          <input type="email" id="email" name="email" placeholder="Your Email" 
+                 style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px; border: none;"><br>
+          
+          <label for="message" style="font-size: 14px; color: white;">Message:</label><br>
+          <textarea id="message" name="message" placeholder="Your Message" 
+                    style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px; border: none; height: 20px;"></textarea><br>
+          
+          <label for="category" style="font-size: 14px; color: white;">Category:</label>
+            <select id="category" name="category">
+              <option value="general">General</option>
+              <option value="technical">Technical</option>
+              <option value="billing">Billing</option>
+            </select>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+          </form>
+        <p>&copy; <span id="year"></span> Ethics and Society Hub</p>
       </div>
     </section>
-
     <script>
-      const navBtn= document.querySelector('.menu-btn');
-      const navList = document.querySelector('.nav-list');
-
+      document.getElementById('year').textContent = new Date().getFullYear();
       navBtn.addEventListener("click", function(){
         navList.classList.toggle("active");
       });
-     
+      document.querySelector('form').addEventListener('submit', function (e) {
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+    let message = document.getElementById('message').value;
+    let category = document.getElementById('category').value;
+    let errors = [];
+    let responseMessage = '';
 
+    if (name === '') {
+      errors.push('Name is required.');
+    }
+    if (email === '') {
+      errors.push('Email is required.');
+    } else if (!email.includes('@')) {
+      errors.push('Email must be valid.');
+    }
+    if (message === '') {
+      errors.push('Message cannot be empty.');
+    }
+
+    if (errors.length > 0) {
+      e.preventDefault();
+      alert(errors.join('\n'));
+    } else {
+      switch (category) {
+        case 'general':
+          responseMessage = 'Your general inquiry has been received.';
+          break;
+        case 'technical':
+          responseMessage = 'Technical request is under review.';
+          break;
+        case 'billing':
+          responseMessage = 'Billing issue will be handled.';
+          break;
+        default:
+          responseMessage = 'Thank you!';
+      }
+      alert(responseMessage);
+    }
+});
+
+      // 3. Krijimi i menusë me for loop
+      const navItems = ['Home', 'About us', 'Services', 'Contact'];
+      const navList = document.querySelector('.nav-list');
+
+      for (let i = 0; i < navItems.length; i++) {
+        let li = document.createElement('li');
+        let a = document.createElement('a');
+        a.href = `#${navItems[i].toLowerCase()}`;
+        a.textContent = navItems[i];
+        li.appendChild(a);
+        navList.appendChild(li);
+      }
+
+      // 4. Fshehja/shfaqja e seksionit pyetjeve me while
+      document
+        .getElementById('toggleQuestions')
+        .addEventListener('click', function () {
+          let questions = document.querySelector('#questions');
+          let opacity = 1;
+
+          let fadeInterval = setInterval(function() {
+         if (opacity <= 0) {
+         clearInterval(fadeInterval);
+         questions.style.display = 'none';
+      } else {
+         questions.style.opacity = opacity;
+      opacity -= 0.1;
+  }
+}, 100);
+
+          questions.style.display =
+            questions.style.display === 'none' ? 'block' : 'none';
+        });
+
+      // 5. Mesazh mirëseardhjeje me do-while
+      let count = 0;
+      do {
+        alert('Welcome to Ethics and Society Hub!');
+        count++;
+      } while (count < 1);
+
+      window.addEventListener('load', function () {
+      setTimeout(function () {
+     alert('Welcome to our platform! We are glad to have you here.');
+     }, 3000); // Mesazhi shfaqet pas 3 sekondash
+});
     </script>
   </body>
 </html>
