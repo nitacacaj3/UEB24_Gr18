@@ -59,7 +59,7 @@
                 </select>
             </div>
 
-            <!-- Radio Buttons -->
+            <!-- AI Tools Experience -->
             <div class="form-group">
                 <label>Have you ever used AI tools for genetic analysis?</label>
                 <input type="radio" id="yes" name="ai-used" value="yes">
@@ -94,24 +94,17 @@
             <!-- Form Submission -->
             <button type="submit">Submit</button>
         </form>
+
+        <h2>Numerical Calculations and Genetic Analysis:</h2>
+        <p>Here are some interesting statistical calculations and AI-related information about genetics.</p>
+        <button id="generate-calculations">Generate Calculations</button>
+        <div id="calculation-results">
+            <!-- Results will be displayed here -->
+        </div>
     </div>
 
     <script>
-        // Defining an object constructor function
-        function User(name, email, password, age, knowledge, aiKnowledge, aiUsed, aiTechnologies, ethicalImplications, comments) {
-            this.name = name;
-            this.email = email;
-            this.password = password;
-            this.age = age;
-            this.knowledge = knowledge;
-            this.aiKnowledge = aiKnowledge;
-            this.aiUsed = aiUsed;
-            this.aiTechnologies = aiTechnologies;
-            this.ethicalImplications = ethicalImplications;
-            this.comments = comments;
-        }
-
-        // Creating instances of the User object
+        // JavaScript to handle form submission and perform numerical calculations
         document.getElementById("questionnaire-form").addEventListener("submit", function(event) {
             event.preventDefault();
 
@@ -126,17 +119,51 @@
             let ethicalImplications = document.getElementById("ethical-implications").value;
             let comments = document.getElementById("comments").value;
 
-            // Creating three instances of User with different data
-            let user1 = new User(name, email, password, age, knowledge, aiKnowledge, aiUsed, aiTechnologies, ethicalImplications, comments);
-            let user2 = new User("John Doe", "john@example.com", "password123", 25, "Basic", "Intermediate", "yes", ["Deep Learning", "Neural Networks"], "I think it's a sensitive issue.", "No additional comments.");
-            let user3 = new User("Jane Smith", "jane@example.com", "securePass", 30, "Advanced", "Basic", "no", ["Machine Learning"], "Ethical concerns must be addressed carefully.", "Great initiative.");
-
-            console.log(user1);
-            console.log(user2);
-            console.log(user3);
+            console.log({
+                name,
+                email,
+                password,
+                age,
+                knowledge,
+                aiKnowledge,
+                aiUsed,
+                aiTechnologies,
+                ethicalImplications,
+                comments
+            });
 
             alert("Thank you for submitting your answers!");
             document.getElementById("questionnaire-form").reset();
+        });
+
+        // Function to generate interesting statistical calculations related to genetics and AI
+        document.getElementById("generate-calculations").addEventListener("click", function() {
+            // Hypothetical statistics related to genetics and AI usage
+            const globalPopulation = 7800000000; // Global population
+            const aiInGeneticsUsage = 0.05; // 5% of AI usage in genetics globally
+            const totalGeneticsAIUsers = globalPopulation * aiInGeneticsUsage; // Total people using AI in genetics
+            const maxAIModelComplexity = Number.MAX_VALUE; // Maximum value for AI model complexity
+
+            const aiAdvancements = 12; // Hypothetical number of significant AI advancements in genetics in the last decade
+            const yearsSinceFirstGeneticAI = 10; // Years since the first significant AI use in genetics
+
+            const exponentialGrowth = aiAdvancements.toExponential(2);
+            const usersString = totalGeneticsAIUsers.toString();
+            const modelComplexityString = maxAIModelComplexity.toString();
+
+            let results = `
+                <h3>Interesting AI & Genetics Statistics:</h3>
+                <p><strong>Total World Population:</strong> ${globalPopulation}</p>
+                <p><strong>Estimated Number of People Using AI in Genetics:</strong> ${totalGeneticsAIUsers.toFixed(0)}</p>
+                <p><strong>Maximum AI Model Complexity (MAX_VALUE):</strong> ${modelComplexityString}</p>
+                <p><strong>Exponential Growth of AI Advancements in Genetics (over 10 years):</strong> ${exponentialGrowth}</p>
+                <p><strong>AI Advancements in Genetics (Last Decade):</strong> ${aiAdvancements}</p>
+                <p><strong>Years Since First Major AI Application in Genetics:</strong> ${yearsSinceFirstGeneticAI}</p>
+                <p><strong>AI Model Complexity Example (MAX_VALUE as string):</strong> ${modelComplexityString}</p>
+                <p><strong>Check if 'NaN' is a valid number:</strong> ${isNaN(NaN)}</p>
+            `;
+
+            document.getElementById("calculation-results").innerHTML = results;
         });
     </script>
 </body>
