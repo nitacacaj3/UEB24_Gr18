@@ -7,13 +7,11 @@
       Hapësira e Eksperimenteve Sociale dhe Etike(Ethics and Society Hub)
     </title>
     <style>
-      *{
+    *{
     margin:0;
     padding: 0;
     box-sizing: border-box;
 }
-
-
 
 :root{
     --primary: #536942;
@@ -25,11 +23,12 @@ body{
     color:var(--primary);
 }
 #main{
-    background-image: url('/jj.jpg');
-    min-height: 70vh;
-    background-position: bottom-center ;
+    background-image: url('/freepik__candid-image-photography-natural-textures-highly-r__50103.jpeg');
+    min-height: 100vh;
+    width: 100%;
+    background-position: center ;
     background-size: cover;
-
+    background-repeat: no-repeat;
 }
 a{
     text-decoration: none ;
@@ -49,6 +48,7 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: var(--primary); 
 }
 .nav-list{
     display: flex;
@@ -57,7 +57,7 @@ nav{
     align-items: center;
 }
 .nav-list a{
-    color: var(--white);
+  color: var(--primary); 
 }
 .btn{
     padding: 12px 20px;
@@ -75,25 +75,35 @@ nav{
     border:none;
     background: var(--secondary);
     color: var(--primary);
+    transform: scale(0.9);
 }
 .main-content{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top:80px ;
-    color: var(--white);
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+  text-align: center;
+  height: 50vh;
+  color: var(--white);
 }
-.main-content.intro-heading{
-    font-size: 50px;
+.main-content.intro-heading {
+    font-size: 50px; 
+    font-weight: bold;
 }
-.main-content .main-heading{
-    font-size:110px ;
-    margin-top: -20px;
+
+.main-content .main-heading {
+    font-size: 90px; 
+    font-weight: bold;
 }
+
+
 .main-content p{
-    max-width: 250px;
-    margin-bottom: 10px;
+  text-align: center;
+  font-size: 14px;
+    max-width: 200px;
+    margin-bottom: 14px;
 }
 .menu-btn{
     position: absolute;
@@ -103,9 +113,11 @@ nav{
     width: 30px;
 }
 .section-title h1{
-    font-size:50px;
+    font-size: 45px;
+    margin-bottom: 10px;
     text-align: center;
 }
+
 .section-title .line{
     width: 150px;
     height: 4px;
@@ -133,6 +145,8 @@ transform:scale(1.05);
 }
 #testimonial{
     background: #f1f2fa;
+    background-position: cover;
+    margin: 0;
 }
 #testimonial .container{
     display: flex;
@@ -157,55 +171,76 @@ transform:scale(1.05);
 
 
 }
-
-#about-us .container{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 120px;
-
-}
-#about-us .container .about-content{
-    max-width: 500px;
-    display: flex;
-    flex-direction: column ;
-    gap: 16px;
-    align-items: start;
-}
-
-#about-us .container .about-content h1{
-    font-family: "Forum", sans-serif;
+#about-us .about-content h1 {
     font-size: 30px;
+    margin-bottom: 20px; 
 }
+
+#about-us .about-content p {
+    line-height: 1.6; 
+    margin-bottom: 10px; 
+}
+
+
+#about-us .about-content {
+    float: left;
+    width: 50%;
+    text-align: left;
+    padding-right: 40px;
+}
+
+#about-us .about-image {
+    float: right;
+    width: 50%;
+    text-align: center;
+}
+
+#about-us .about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+#about-us::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 #questions{
-    min-height: 500px;
-    background-image: url('/AI-Skills-1024x536.jpg.optimal.jpg');
-    background-position: bottom  center;
+    min-height: 100vh;
+    background-image: url(/freepik__candid-image-photography-natural-textures-highly-r__50103.jpeg);
+    background-position:center;
     background-size: cover;
+    margin: 0;
 }
 #questions .container{
-    max-width: 500px;
+    width: 100%;
+    max-width: none;
     display: flex;
     flex-direction: column;
-    gap: 16px;
     align-items: center;
+    gap: 16px;
     justify-content: center;
     height: 500px;
     text-align: center;
 }
 #questions h1 {
     font-size: 50px;
+    color: white;
+
 }
-footer {
-    margin-top: -60px;
+#questions p{
+  color: white;
 }
+
 footer .container{
     display: flex;
     padding: 20px 16px;
     justify-content: space-between;
     align-items: center;
 }
-.footer links {
+.footer-links {
     display: flex;
     align-items: center;
     gap: 16px;
@@ -250,21 +285,22 @@ footer .container{
   <body>
     <div id="main">
       <div class="container">
-        <nav>
-          <ul class="nav-list">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><button class="btn btn-secondary">202-505-3333</button></li>
-          </ul>
-        </nav>
-      </div>
+        <a href="#top">Home</a>
+        <a href="">About us</a>
+    
+        
+        <a href="ethicssocietyhub.html">The Space for Social Experiments </a>
+        <a href="lab.html">Virtual Laboratory</a>
+        <a href="kurset.html">GenAI Academy </a>
+        <a href="forumishkencor.html">Scientific Forum </a>
+        <a href="">FAQs </a>
+    
+      </div>     
         <div class="main-content">
           <h1 class="intro-heading">Ethics and</h1>
           <h1 class="main-heading">Society Hub</h1>
-          <p>Ethics and Society Hub është një platformë bashkëpunuese e dedikuar
-           për të eksploruar ndërthurjen midis parimeve etike dhe sfidave shoqërore.
+          <p>Ethics and Society Hub is a collaborative platform 
+             dedicated to exploring the intersection between ethical principles and societal challenges.
           </p>
           <button class="btn btn-primary">Get Started</button>
         </div>
@@ -272,44 +308,33 @@ footer .container{
     <section id="services">
       <div class="container">
         <div class="section-title">
-          <h1>our services</h1>
+          <h1>The Platform's Focus</h1>
           <div class="line"></div>
         </div>
         <div class="services">
           <div class="service">
-            <img src="/bioteknologji.webp" alt="">
-            <h3>Bioteknologji</h3>
+            <img src="/Art Prints & Printed Wall Decor _ Society6.jpg" alt="">
+            <h3>Biotechnology</h3>
             <p>
-              Manipulimi gjenetik përfaqëson një hap të madh në trajtimin e sëmundjeve,
-               përmirësimin e prodhimit bujqësor dhe zgjerimin e mundësive për jetëgjatësinë,
-                por ngre shqetësime etike dhe mundësinë e krijimit të pabarazive gjenetike.
-                 Në anën tjetër, privatësia e të dhënave biologjike është gjithashtu një temë kritike,
-                  pasi informacioni i mbledhur nga analizat e ADN-së mund të keqpërdoret, 
-                  duke çuar në diskriminim gjenetik dhe cenim të privatësisë. Për këtë arsye, 
-                  është e domosdoshme që të krijohen rregullore ndërkombëtare që garantojnë 
-                  përdorimin e përgjegjshëm të këtyre teknologjive dhe mbrojtjen e të drejtave individuale.
+              Genetic manipulation represents a significant step in treating diseases, improving agricultural production,
+              and expanding opportunities for longevity.
+               However, it raises ethical concerns and the potential for creating genetic inequalities.
             </p>
           </div>
           <div class="service">
-            <img src="/ai.webp" alt="">
+            <img src="/truni.jpg" alt="">
             <h3>AI</h3>
             <p>
-              Përdorimi i inteligjencës artificiale në diagnostikimin mjekësor ofron mundësi 
-              të jashtëzakonshme për zbulimin e hershëm të sëmundjeve dhe përmirësimin e kujdesit shëndetësor.
-               Megjithatë, kjo teknologji ngre shqetësime etike mbi saktësinë e diagnostikimit,
-                paragjykimet algoritmike dhe transparencën e vendimeve.
-                 Për më tepër, mbrojtja e të dhënave personale të pacientëve është jetike, 
-                 pasi përdorimi i AI kërkon qasje në informacione shumë të ndjeshme. 
-                 Krijimi i politikave rigoroze për privatësinë dhe përdorimin e përgjegjshëm të të dhënave
-                 është thelbësor për të siguruar që përfitimet e AI të mos vijnë në kurriz të të drejtave individuale.
+              The use of artificial intelligence in medical diagnostics offers remarkable opportunities for early disease detection and improved healthcare.
+               However, this technology raises ethical concerns regarding diagnostic accuracy, 
+              algorithmic biases, and decision-making transparency.
             </p>
           </div>
           <div class="service">
-            <img src="/fotoja.webp" alt="">
-            <h3>Lidhja ndermjet te dyjave</h3>
-            <p>Lidhja ndërmjet bioteknologjisë dhe inteligjencës artificiale (AI)
-               është shumë e ngushtë dhe ka potencialin për të revolucionarizuar 
-               fushat e shkencës dhe shëndetësisë.
+            <img src="/fotoja_resized_406x430.webp" alt="">
+            <h3>The connection between </h3>
+            <p>The connection between biotechnology and artificial intelligence (AI) is very close
+               and holds the potential to revolutionize the fields of science and healthcare.
             </p>
           </div>
     </section>
@@ -327,22 +352,22 @@ footer .container{
       </div>
     </section>
     <section id="about-us">
+      <div class="container">
       <div class="about-content">
-        <h4>ABOUT US</h4>
         <h1>
-          Pse ka kaq shumë rendesi lidhja 
-          ndermjet gjenetikes dhe AI?
+          What is the importance of integrating artificial intelligence (AI) into advancements in genetics?
         </h1>
         <p>
-          Sepse, gjenetika mund të ndihmojë për të kuptuar më mirë bazën biologjike të sëmundjeve,
-           ndërsa AI mund të përpunojë dhe analizojë të dhëna gjenetike për të identifikuar modele
-           dhe për të parashikuar sjelljen e sëmundjeve, duke ofruar mundësi për trajtime më të personalizuara dhe efektive.
+          "Genetics can help us better understand the biological basis of diseases, while AI can process and analyze genetic data to identify
+           patterns and predict disease behavior,
+           offering opportunities for more personalized and effective treatments."
         </p>
         <button class="btn btn-primary">Let's Talk Now</button>
       </div>
     <div class="about-image">
       <img src="/pjesa3.jpg" alt="">
     </div>
+  </div>
     </section>
     <section id="questions">
       <div class="container">
@@ -353,19 +378,7 @@ footer .container{
         <button class="btn btn-primary">Let's Talk Now</button>
       </div>
     </section>
-    <footer>
-      <div class="container">
-        <ul class="footer-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Contact</a></li>
 
-        </ul>
-        <img src="" alt="" class="footer">
-        <p>ahshdhhhfh</p>
-      </div>
-    </footer>
     <script>
       const navBtn= document.querySelector('.menu-btn');
       const navList = document.querySelector('.nav-list');
