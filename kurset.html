@@ -13,6 +13,8 @@
                 display:flex;
                 align-items:center;
                 background-color: #17232A;
+                top:0;
+                z-index:10;
                 
 
 
@@ -31,7 +33,7 @@
                 margin:0;
                 padding:0;
                 font-family: Arial,  sans-serif;
-                overflow: hidden;
+                padding-top: 60px;
 
             }
             .container{
@@ -45,6 +47,7 @@
                 top:50%;
                 left:50%;
                 transform:translate(-50%,-50%);
+                display:flex;
             }
             .container.move-left{
                 justify-content:flex-start;
@@ -100,17 +103,14 @@
                 display:none;
             }
             .photo-container{
-                position:absolute;
-                top:50%;
-                left:50%;
-                transform:translate(-50%,-50%);
-                display:none;
-                flex-wrap:wrap;
+              
+                display:flex;
+                
                 justify-content:center;
                 align-items:center;
-                gap:20px;
-                width:400px;
-                height:400px;
+                opacity:0;
+                transition:opacity 2 ease;
+                margin-top: 20px;
                
             }
             .photo-container img{
