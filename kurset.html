@@ -103,15 +103,15 @@
                 position:absolute;
                 top:50%;
                 left:50%;
-                transform:(-50%,-50%);
-                display:flex;
+                transform:translate(-50%,-50%);
+                display:none;
                 flex-wrap:wrap;
                 justify-content:center;
                 align-items:center;
                 gap:20px;
                 width:400px;
                 height:400px;
-                visibility: hidden;
+               
             }
             .photo-container img{
                 width:100px;
@@ -168,7 +168,7 @@
          window.onload=function(){
             const container=document.getElementById("container");
             const logo=document.getElementById("logo");
-            const welcomeText=document.getElementById("welcome-text")            ;
+            const welcomeText=document.querySelector(".welcome-text")            ;
             const photoContainer=document.getElementById("photo-container");
             setTimeout(function(){
                 container.classList.add("move-left");
@@ -176,7 +176,7 @@
                     welcomeText.style.opacity="1";
                     setTimeout(function(){
                         container.classList.add("hidden");
-                        photoContainer.style.visibility="visible";
+                        photoContainer.style.display="flex";
                         const photos=photoContainer.querySelectorAll("img");
                         photos.forEach(photo=>photo.classList.add("rotate"));
                         setTimeout(function(){
