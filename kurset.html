@@ -118,6 +118,7 @@
                 height:100px;
                 border-radius:50%;
                 transition: transform 5s linear;
+                visibility:visible;
 
             }
             .photo-container img.rotate{
@@ -178,7 +179,7 @@
                         container.classList.add("hidden");
                         photoContainer.style.display="flex";
                         const photos=photoContainer.querySelectorAll("img");
-                        photos.forEach(photo=>photo.classList.add("rotate"));
+                        photos.forEach(photo=>{photo.classList.add("rotate");});
                         setTimeout(function(){
                             photoContainer.style.visibility="hidden";
 
