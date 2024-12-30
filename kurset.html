@@ -168,7 +168,6 @@
          <script>
          window.onload=function(){
             const container=document.getElementById("container");
-            const logo=document.getElementById("logo");
             const welcomeText=document.querySelector(".welcome-text")            ;
             const photoContainer=document.getElementById("photo-container");
             setTimeout(function(){
@@ -179,9 +178,14 @@
                         container.classList.add("hidden");
                         photoContainer.style.display="flex";
                         const photos=photoContainer.querySelectorAll("img");
-                        photos.forEach(photo=>{photo.classList.add("rotate");});
+                       photos.forEach((photo,index)=>{
                         setTimeout(function(){
-                            photoContainer.style.visibility="hidden";
+                            photo.classList.add("rotate");
+                        },index*1000);
+                    });
+                    setTimeout(function(){
+                        photoContainer.style.visibility="hidden";
+                    
 
                         },5000);
                     },5000);
