@@ -165,11 +165,29 @@
             <img src="fototkurset/fotoja7.jpg" alt="Photo7">
          </div>
          <script>
-            window.onload=function(){
+         window.onload=function(){
+            const container=document.getElementById("container");
+            const logo=document.getElementById("logo");
+            const welcomeText=document.getElementById("welcome-text")            ;
+            const photoContainer=document.getElementById("photo-container");
+            setTimeout(function(){
+                container.classList.add("move-left");
                 setTimeout(function(){
-                    document.getElementById('container').classList.add('move-left');
-                },2000);
-            };
+                    welcomeText.style.opacity="1";
+                    setTimeout(function(){
+                        container.classList.add("hidden");
+                        photoContainer.style.visibility="visible";
+                        const photos=photoContainer.querySelectorAll("img");
+                        photos.forEach(photo=>photo.classList.add("rotate"));
+                        setTimeout(function(){
+                            photoContainer.style.visibility="hidden";
+
+                        },5000);
+                    },5000);
+
+                },1000);
+            },2000);
+         };
          </script>
     </body>
 </html>
