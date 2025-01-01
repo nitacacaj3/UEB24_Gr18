@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      Hapësira e Eksperimenteve Sociale dhe Etike(Ethics and Society Hub)
+      The Space for Social Experiments(Ethics and Society Hub)
     </title>
     <style>
      @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Forum&display=swap');
@@ -24,6 +24,20 @@ body{
     font-family: "DM Sans", sans-serif;
     color:var(--primary);
 }
+.menu {
+      list-style: none;
+      padding: 0;
+    }
+    .menu li {
+      margin: 10px 0;
+    }
+ .menu-btn {
+  cursor: pointer;
+}
+
+.nav-list.active {
+  right: 0;
+}
 #main{
     background-image: url('/freepik__candid-image-photography-natural-textures-highly-r__50103.jpeg');
     min-height: 100vh;
@@ -31,6 +45,7 @@ body{
     background-position: center ;
     background-size: cover;
     background-repeat: no-repeat;
+    background-origin: border-box; /*perdorimi i background size origin property */
 }
 a{
   color: #efefef;
@@ -147,8 +162,13 @@ nav{
 }
 .service img:hover{
 transform:scale(1.05);
-
 }
+.highlight {
+    color: orange ; 
+    font-weight: bold; /* span me specifikat e tij */
+    
+  }
+
 #testimonial{
     background: #f1f2fa;
     background-position: cover;
@@ -368,7 +388,8 @@ footer .container{
           <div class="service">
             <img src="/fotoja_resized_406x430.webp" alt="">
             <h3>The connection between </h3>
-            <p>The connection between biotechnology and artificial intelligence (AI) is very close
+            <p>
+              <span class="highlight">The connection between</span> biotechnology and artificial intelligence (AI) is very close
                and holds the potential to revolutionize the fields of science and healthcare.
             </p>
           </div>
@@ -433,8 +454,19 @@ footer .container{
           </form>
         <p>&copy; <span id="year"></span> Ethics and Society Hub</p>
       </div>
+      <div class="menu-btn">
+        <!-- Simboli i butonit të menu-së -->
+      </div>
     </section>
     <script>
+
+ const menuItems = ['Home', 'About Us', 'Services', 'Contact'];
+document.getElementById('menu').innerHTML = menuItems.map(item => `<li>${item}</li>`).join('');
+
+//perdorimi i kohes
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('year').textContent = new Date().getFullYear();
+});
       document.getElementById('year').textContent = new Date().getFullYear();
       navBtn.addEventListener("click", function(){
         navList.classList.toggle("active");
@@ -446,6 +478,107 @@ footer .container{
     let category = document.getElementById('category').value;
     let errors = [];
     let responseMessage = '';
+
+
+
+const navBtn = document.querySelector('.menu-btn');
+const navList = document.querySelector('.nav-list');
+
+navBtn.addEventListener("click", function() {
+  navList.classList.toggle("active");
+});
+
+document.querySelector('form').addEventListener('submit', function (e) {
+  let errors = []; 
+  let name = document.getElementById('name').value;
+  let email = document.getElementById('email').value;
+  let message = document.getElementById('message').value;
+  let category = document.getElementById('category').value;
+
+  if (category === '') {
+    errors.push('Please select a category.');
+  }
+
+  if (name === '') {
+    errors.push('Name is required.');
+  }
+  if (email === '') {
+    errors.push('Email is required.');
+  } else if (!email.includes('@')) {
+    errors.push('Email must be valid.');
+  }
+  if (message === '') {
+    errors.push('Message cannot be empty.');
+  }
+
+  if (errors.length > 0) {
+    e.preventDefault();
+    alert(errors.join('\n'));
+  } else {
+    let responseMessage = '';
+    switch (category) {
+      case 'general':
+        responseMessage = 'Your general inquiry has been received.';
+        break;
+      case 'technical':
+        responseMessage = 'Technical request is under review.';
+        break;
+      case 'billing':
+        responseMessage = 'Billing issue will be handled.';
+        break;
+      default:
+        responseMessage = 'Thank you!';
+    }
+    alert(responseMessage);
+  }
+}); //perdorimi me switch if else
+
+
+const navItems = ['Home', 'About us', 'Services', 'Contact'];
+
+for (let i = 0; i < navItems.length; i++) {
+  let li = document.createElement('li');
+  let a = document.createElement('a');
+  a.href = `#${navItems[i].toLowerCase()}`;
+  a.textContent = navItems[i];
+  li.appendChild(a);
+  navList.appendChild(li);
+}
+
+document.getElementById('toggleQuestions').addEventListener('click', function () {
+  let questions = document.querySelector('#questions');
+  let opacity = 1;
+
+  let fadeInterval = setInterval(function() {
+    if (opacity <= 0) {
+      clearInterval(fadeInterval);
+      questions.style.display = 'none';
+    } else {
+      questions.style.opacity = opacity;
+      opacity -= 0.1;
+    }
+  }, 100);
+
+  questions.style.display = questions.style.display === 'none' ? 'block' : 'none';
+});
+
+
+setTimeout(function () {
+  let aboutUsSection = document.querySelector('#about-us');
+  let notification = document.createElement('div');
+  notification.textContent = 'Did you know? Ethics is critical for balancing advancements in AI and genetics!';
+  notification.style.background = 'rgba(255, 217, 54, 0.8)';
+  notification.style.padding = '10px';
+  notification.style.borderRadius = '5px';
+  notification.style.marginTop = '20px';
+  notification.style.textAlign = 'center';
+  aboutUsSection.appendChild(notification);
+}, 5000); // perdorimi i timeout
+
+setTimeout(function () {
+  notification.style.display = 'none';
+}, 8000); // Zhduket pas 8 sekondash gjithsej
+
 
     if (name === '') {
       errors.push('Name is required.');
@@ -526,6 +659,7 @@ footer .container{
      alert('Welcome to our platform! We are glad to have you here.');
      }, 3000); // Mesazhi shfaqet pas 3 sekondash
 });
+
     </script>
-  </body>
+   </body>
 </html>
