@@ -26,21 +26,20 @@
 
         </nav>
     </header>
-    <div class="header">
-        <h1 class="header-title">FAQ</h1>
-        <p class="header-desc">Frequently Asked Questions</p>
-
-        <div class="search">
-            <input type="text" placeholder="Search. . .">
-            <button>Search</button>
+    <div class="headerWrapper">
+        <div class="header">
+            <h1 class="header-title">FAQ</h1>
+            <p class="header-desc">Frequently Asked Questions</p>
+    
+            <div class="search">
+                <input type="text" placeholder="Search. . .">
+                <button>Search</button>
+            </div>
         </div>
     </div>
 
     <div class="faq">
-        <div class="faq-left">
-            <h1 class="faq-header">Have <br> questions?</h1>
-            <img class="faq-img" src="img-faq.png">
-        </div>
+        
         <div class="faq-box">
             <div class="faq-wrapper">
                 <input type="checkbox" class="faq-trigger" id="faq-trigger-1">
@@ -108,5 +107,16 @@
             </div>
         </div>
     </div>
+    
+    <script>
+        document.querySelector('.search button').addEventListener('click', function () {
+            document.querySelector('.search input').value = '';
+        });
+    </script>
+
+    <div class="hyperlinks">
+        
+    </div>
 </body>
+
 </html>
