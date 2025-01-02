@@ -1,11 +1,11 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Virtual Laboratory</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+   
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
 
@@ -220,7 +220,6 @@
     <div class="carousel" id="top">
         <h1>Virtual Laboratory</h1>
         
-       
         <div class="chart-container">
             <canvas id="aiAchievementsChart"></canvas>
         </div>
@@ -232,7 +231,8 @@
                 One of the most fascinating discoveries about the brain is its ability to rewire itself, a phenomenon known as neuroplasticity. With the help of AI, researchers have uncovered how specific regions of the brain can adapt after injury, compensating for lost functions or developing new abilities. For instance, AI has been used to analyze brain activity in stroke patients, revealing patterns that guide rehabilitation efforts and improve recovery outcomes.
                 <br><br>
                 Here are some key insights from this research:
-                <ul style="list-style-type: square;"> <!--kerkesat teknike te listat-->
+                <ul style="list-style-type: square;">
+                  <!--kerkesat teknike te listat-->
                     <!--Krijimi i listave të parenditura -->
                     <li>AI models are able to detect brain activity patterns during rehabilitation.</li>
                     <li>Neuroplasticity allows the brain to reassign functions after injury.</li>
@@ -257,8 +257,7 @@
                     <li>Basal cells have regenerative capabilities to repair lung damage.</li>
                     <li>AI accelerates the understanding of lung regeneration.</li>
                     <li>New treatments for lung diseases like COPD are being explored.</li>
-                    <!--Krijimi nested lists -->
-                    <ol>
+                    <ol><!--Krijimi nested lists -->
                         <li>Stem cell therapy for lung tissue regeneration</li>
                         <li>Targeted drug delivery using AI analysis</li>
                     </ol>
@@ -308,13 +307,62 @@
         </div>
     </div>
 
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Virtual Laboratory. All rights reserved.</p>
+            <a href="#top" class="back-to-top">Back to Top</a>
+        </div>
+    </footer>
 
-<footer>
-    <div class="footer-container">
-        <p>&copy; 2024 Virtual Laboratory. All rights reserved.</p>
-        <a href="#top" class="back-to-top">Back to Top</a>
-    </div>
-</footer>
+    <script>
+        $(document).ready(function () {
+            // Përdorimi i jQuery selektorëve
+            $('a').on('click', function (e) {
+                e.preventDefault();
+                var target = $(this).attr('href');
+                $('html, body').animate({
+                    scrollTop: $(target).offset().top
+                }, 1000);
+            });
 
+            // Përdorimi i jQuery ngjarjeve (Events)
+            $('.explore-button').on('click', function () {
+                alert('Redirecting to more details!');
+            });
+
+            // Përdorimi i jQuery efekteve (Hide, Show)
+            $('.scroll-button').on('click', function () {
+                $('#top').fadeIn();
+            });
+
+            // Përdorimi i jQuery efekteve (Fade, Slide, animate)
+            $('.carousel-item img').hover(function () {
+                $(this).animate({ width: '110%' }, 300);
+            }, function () {
+                $(this).animate({ width: '100%' }, 300);
+            });
+
+            // Përdorimi i jQuery efekteve (Callback)
+            $('#top').hide().fadeIn(1000, function () {
+                console.log('Carousel item is now visible!');
+            });
+
+            // Përdorimi i jQuery me HTML (Get, Set, Add, Remove)
+            $('.description1').each(function () {
+                var originalText = $(this).text();
+                $(this).text(originalText + ' - Updated by jQuery');
+            });
+
+            // Change button text dynamically
+            $('.explore-button').on('click', function () {
+                $(this).text('Exploring...');
+            });
+        });
+    </script>
 </body>
 </html>
+
+
+
+
+
