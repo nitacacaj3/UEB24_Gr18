@@ -6,9 +6,9 @@
     <title>Genetic Drag and Drop</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
-         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
 
-         body {
+        body {
             font-family: Poppins, sans-serif;
             background-color: #17232A;
             color: #eee;
@@ -219,6 +219,70 @@
     </div>
 
     <script>
+        // konstruktor per objekte
+        function Gene(name, id) {
+            this.name = name;
+            this.id = id;
+            this.element = document.getElementById(id);
+            this.setDraggable = function() {
+                this.element.setAttribute('draggable', 'true');
+                this.element.ondragstart = function(ev) { drag(ev); };
+            }
+        }
+
+        function Slot(id) {
+            this.id = id;
+            this.element = document.getElementById(id);
+            this.isFilled = false;
+            this.addGene = function(gene) {
+                if (!this.isFilled) {
+                    this.element.appendChild(gene.element);
+                    this.isFilled = true;
+                    gene.element.style.transform = "scale(0.8)";
+                }
+            }
+            this.resetSlot = function() {
+                this.isFilled = false;
+                this.element.innerHTML = '';
+            }
+        }
+
+        function GeneticSequence(slots, genes) {
+            this.slots = slots;
+            this.genes = genes;
+            this.checkSequence = function() {
+                var userSequence = [];
+                this.slots.forEach(function(slot) {
+                    if (slot.isFilled) {
+                        userSequence.push(slot.element.firstChild.textContent);
+                    }
+                });
+
+                var correctSequence = this.genes.map(function(gene) { return gene.name; });
+                return JSON.stringify(userSequence) === JSON.stringify(correctSequence);
+            }
+        }
+
+        //Inicializimi i gjeneve dhe slots
+        var geneA = new Gene('Gene A', 'gene1');
+        var geneB = new Gene('Gene B', 'gene2');
+        var geneC = new Gene('Gene C', 'gene3');
+        var geneD = new Gene('Gene D', 'gene4');
+
+        var slot1 = new Slot('slot1');
+        var slot2 = new Slot('slot2');
+        var slot3 = new Slot('slot3');
+        var slot4 = new Slot('slot4');
+
+        // me i set-u gjenet n draggable
+        geneA.setDraggable();
+        geneB.setDraggable();
+        geneC.setDraggable();
+        geneD.setDraggable();
+
+        var sequence = new GeneticSequence([slot1, slot2, slot3, slot4], [geneA, geneB, geneC, geneD]);
+
+   
         function drag(ev) {
             ev.dataTransfer.setData("text", ev.target.id);
         }
@@ -240,17 +304,9 @@
             }
         }
 
+       
         $('#checkBtn').click(function() {
-            var correctSequence = ['Gene A', 'Gene B', 'Gene C', 'Gene D'];
-            var userSequence = [];
-
-            $('.gene-slot').each(function() {
-                if ($(this).children().length > 0) {
-                    userSequence.push($(this).children().text().trim());
-                }
-            });
-
-            if (userSequence.length === 4 && JSON.stringify(userSequence) === JSON.stringify(correctSequence)) {
+            if (sequence.checkSequence()) {
                 $('#message').text('🎉 Congratulations! Correct sequence! 🎉').css('color', 'green').css('transform', 'scale(1.1)');
             } else {
                 $('#message').text('❌ Oops! Try again. ❌').css('color', 'red').css('transform', 'scale(1.1)');
@@ -259,3 +315,4 @@
     </script>
 </body>
 </html>
+
