@@ -4,11 +4,14 @@ let carouselDom = document.querySelector('.carousel');
 let listItemDom = document.querySelector('.carousel .list');
 let thumbnailDom = document.querySelector('.carousel .thumbnail');
 
+//Përdorimi i JavaScript për tekst (output), ngjarje (event):
+// Ngjarja e klikimit për butonin "Next"
 nextDom.onclick = function () {
-    showSlider('next');
+    showSlider('next'); // Kjo do të thërrasë funksionin për të kaluar në elementin tjetër
 };
+// Ngjarja e klikimit për butonin "Prev"
 prevDom.onclick = function () {
-    showSlider('prev');
+    showSlider('prev'); // Kjo do të thërrasë funksionin për të kaluar në elementin e mëparshëm
 };
 
 let timeRunning = 3000; 
