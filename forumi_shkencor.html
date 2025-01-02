@@ -3,118 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scientific Forum</title>
+    <title>Forumi Shkencor</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <a href="dashboard.html" class="button">Login</a>
 
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Poppins, sans-serif; /* Ploteson kerkesat per perdorimin e nje font-i modern */
+            background-color: #040614; /* Ngjyra e sfondit te errte, si e kerkuar */
+            color: #eee;
             margin: 0;
-            padding: 0;
-            background: url('https://i.pinimg.com/736x/90/79/8f/90798f1c0b3f2d836954a8f5922c62b0.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: white;
+            font-size: 12px; /* Permbush kerkesat per aksesueshmeri me madhesi te vogel teksti */
         }
-        header {
-            background: rgba(61, 114, 240, 0.7);
-            padding: 10px 20px;
-            text-align: center;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #333;
-        }
-        nav a {
-            color: white;
-            padding: 14px 20px;
+        a {
             text-decoration: none;
-            text-align: center;
+            color: #eee; /* Links jane te dukshme ne sfond te erret */
         }
-        nav a:hover {
-            background-color: #575757;
+
+        header {
+            width: 1140px;
+            max-width: 80%;
+            margin: auto;
+            height: 50px;
+            display: flex; /* Perdoret flexbox per qendrim te sakte */
+            align-items: center;
+            position: relative;
+            z-index: 100;
         }
+        header a {
+            margin-right: 40px; /* Hapesire ndermjet navigimeve per dizajn me te paster */
+        }
+
         .container {
-            padding: 20px;
+            padding: 20px; /* Hapesira e brendshme per organizim te mire */
         }
         .section {
-            margin-bottom: 30px;
+            margin-bottom: 30px; /* Hapesire mes seksioneve per lexueshmeri me te mire */
         }
-        footer {
-            background:rgba(61, 114, 240, 0.7);
-            text-align: center;
-            padding: 5px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
+
         .community-slider {
             position: relative;
             width: 100%;
-            overflow: hidden;
+            overflow: hidden; /* Siguron qe slajderi mos te dale nga kufijte */
             text-align: center;
         }
+
         .community-card {
             display: flex;
-            transition: transform 0.5s ease-in-out;
-            width: calc(100% * 4);
+            transition: transform 0.5s ease-in-out; /* Ploteson kerkesat per animacion te bute */
+            width: calc(100% * 4); /* Llogarit gjeresine totale per 4 karta */
         }
+
         .community-card div {
-            background: #1c1f26;
+            background: url('https://media3.giphy.com/media/k2VKaO9QITTLVxtWa1/200.webp?cid=790b76110qteugsvdp6prewblbp2le2vmrg5arikq25dx8zz&ep=v1_gifs_search&rid=200.webp&ct=g') no-repeat center center;
+            background-size: cover;
             padding: 15px;
-            border-radius: 50%;
-            flex: 0 0 25%;
+            border-radius: 0%; /* Karta te rregullta pa qoshe te rrumbullakosura */
+            flex: 0 0 25%; /* Secila karte merr 25% te gjeresise */
             text-align: center;
             box-sizing: border-box;
             margin: 0 auto;
         }
+
         .community-card div img {
-         width: 150px; 
-         height: 150px;
-          object-fit: cover;
-          border-radius: 50%; 
-          margin-bottom: 10px;
-          background: transparent; /* This removes any default background from the image */
-          border: none; /* Removes any default border around the image */
-}
+            width: 150px; /* Madhesia e figurave te pershtatshme per slajderin */
+            height: 150px;
+            object-fit: cover; /* Siguron pamje uniforme te figurave */
+            border-radius: 50%; /* Figurat jane te rrumbullakosura */
+            margin-bottom: 10px;
+            background: transparent;
+            border: none;
+        }
 
         .community-card div:hover {
-            transform: scale(1.05);
+            transform: scale(1.05); /* Efekt hover mbi karta, ploteson kerkesat */
         }
-        .community-card h4 {
-            margin-bottom: 10px;
-        }
+
         .slider-buttons {
             position: absolute;
             top: 50%;
             width: 100%;
             display: flex;
             justify-content: space-between;
-            transform: translateY(-50%);
+            transform: translateY(-50%); /* Qendrim i butonave ne mes */
         }
+
         .slider-buttons button {
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.5); /* Butona te trasparente per sfond te erret */
             color: white;
             border: none;
             padding: 10px;
             cursor: pointer;
             border-radius: 5px;
         }
-        .slider-buttons button:hover {
-            background-color: rgba(0, 0, 0, 0.7);
+
+        button {
+            background-color: #3f51b5; /* Ngjyra moderne per butonat */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
+
+        button:hover {
+            background-color: #283593;
+            transform: scale(1.05); /* Efekt hover mbi butona */
+        }
+
+        button:active {
+            background-color: #1a237e;
+            transform: scale(0.95); /* Efekt kur butoni klikohet */
+        }
+
         @media (max-width: 768px) {
             .community-card {
-                width: calc(100% * 2);
+                width: calc(100% * 2); /* Per pajisje me ekran te mesem, 2 karta per radhe */
             }
             .community-card div {
                 flex: 0 0 50%;
             }
+            button {
+                font-size: 12px;
+                padding: 8px 16px;
+            }
         }
+
         @media (max-width: 480px) {
             .community-card {
-                width: calc(100% * 1);
+                width: calc(100% * 1); /* Per pajisje me ekran te vogel, 1 karte per radhe */
             }
             .community-card div {
                 flex: 0 0 100%;
@@ -124,98 +143,104 @@
 </head>
 <body>
     <header>
-        <h1>Scientific Forum</h1>
-        <p>Connect with Professional staff and scientific minds.</p>
+        <nav>
+            <a href="#top">Home</a>
+            <a href="#">About us</a>
+            <a href="ethicssocietyhub.html">The Space for Social Experiments</a>
+            <a href="lab.html">Virtual Laboratory</a>
+            <a href="kurset.html">GenAI Academy</a>
+            <a href="forumishkencor.html">Scientific Forum</a>
+            <a href="#">FAQs</a>
+        </nav>
     </header>
-
-    <nav>
-        <a href="#community">Professional Community</a>
-        <a href="#library">Library</a>
-        <a href="#ideas">Ideas & Comments</a>
-        <a href="#login">Login</a>
-    </nav>
 
     <div class="container">
         <section id="community" class="section">
-            <h2>Professional Community</h2>
+            <h2>Professional Community</h2> <!-- Seksioni paraqet anetaret profesionale -->
             <div class="community-slider">
                 <div class="community-card">
                     <div>
                         <img src="https://img.freepik.com/premium-photo/portrait-confident-male-doctor-standing-with-arms-crossed-hospital-corridor-ai-generated_632984-111.jpg" alt="Dr.Alban Selimi">
                         <h4>Dr.Alban Selimi</h4>
-                        <p>Certified doctor specialized in Biomedicine.</p>
+                        <p>Certified <b>Doctor</b> specialized in Biomedicine.</p>
                     </div>
                     <div>
                         <img src="https://i.pinimg.com/736x/4e/5f/07/4e5f0715030a8da373d8fe6ed1f9c0a6.jpg" alt="Ing.Blerta Kelmendi">
                         <h4>Ing.Blerta Kelmendi</h4>
-                        <p>Software engineer working in Biomedical Engineering.</p>
+                       <p> <b>Software Engineer</b> for Biomedical Applications.</p>
                     </div>
                     <div>
                         <img src="https://i.pinimg.com/736x/39/8d/7c/398d7cffff0d7bc7d1e026f5a2d97990.jpg" alt="Msc.Gentian Hoxha">
                         <h4>Msc.Gentian Hoxha</h4>
-                        <p>Experienced researcher in Biomedical experiments.</p>
+                       <p>Experienced <b>researcher</b> in Biomedical experiments</p>
+
                     </div>
                     <div>
                         <img src="https://img.freepik.com/premium-photo/portrait-senior-teacher-front-blackboard-distinguished-professor-front-classic-blackboard-ai-generated_538213-54593.jpg" alt="Prof.Hysamedin Ahmeti">
                         <h4>Prof.Hysamedin Ahmeti</h4>
-                        <p>PhD in Physics, certified to provide accurate answers.</p>
+                        <p>PhD in <b>Physics</b> ,Certified to provide accurate answers</p>
+
                     </div>
                 </div>
                 <div class="slider-buttons">
-                    <button id="prev">&#10094;</button>
-                    <button id="next">&#10095;</button>
+                    <button id="prev">&#10094;</button> <!-- Buton per navigimin mbrapa -->
+                    <button id="next">&#10095;</button> <!-- Buton per navigimin perpara -->
                 </div>
             </div>
         </section>
 
         <section id="library" class="section">
-            <h2>Library</h2>
+            <h2>Library</h2> <!-- Seksion qe ploteson kerkesat per qasje ne materialet shkencore -->
             <p>Browse a curated library of scientific literature, textbooks, and articles. Expand your knowledge and explore new topics.</p>
             <ul>
                 <li><a href="https://mitpress.mit.edu/9780262581158/artificial-intelligence-and-molecular-biology/">Genetics Book</a></li>
                 <li><a href="https://archive.org/details/geneticengineeri0000burg">AI and Genetics Engineering</a></li>
                 <li><a href="https://www.researchgate.net/publication/379641716_Bioethics_in_Biomedical_Engineering">Bioethics in Biomedical Engineering</a></li>
+                <a href="https://www.als.org/sites/default/files/2022-04/Genetics-Infographic-Alliance.pdf" target="_blank">Intruduction to Genetics-Infographic-Alliance PDF</a>
+
             </ul>
             <p>Easier Access in the Scientific Library:</p>
             <ul>
                 <li><a href="https://openlibrary.org/">Get full access to all the Scientific Books</a></li>
             </ul>
+            
         </section>
 
         <section id="ideas" class="section">
-            <h2>Ideas & Comments</h2>
+            <h2>Ideas & Comments</h2> <!-- Seksioni per mbledhje te ideve dhe komenteve nga komuniteti -->
             <p>Share your ideas or ask questions. The community is here to help!</p>
             <textarea placeholder="Share your idea..."></textarea>
             <button>Submit</button>
         </section>
 
-        <section id="login" class="section">
-            <h2>Login</h2>
-            <p>You must log in to post comments or share ideas.</p>
-            <form action="dashboard.html" method="GET" style="display: flex; justify-content: flex-start; align-items: center; gap: 15px;">
-                <div>
-                    <label for="username">Username:</label><br>
-                    <input type="text" id="username" name="username" required>
-                </div>
-                <div>
-                    <label for="password">Password:</label><br>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <button type="submit" id="loginButton">Login</button>
-            </form>
-        </section>
-    </div>
+       <section id="login" class="section">
+    <h2>Login</h2>
+    <p>You must log in to post comments or share ideas.</p>
+    <form action="dashboard.html" method="GET" style="display: flex; justify-content: flex-start; align-items: center; gap: 15px;">
+       <form action="submit_form.php" method="POST" autocomplete="on"> <!-- Forma per login dhe validim -->
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+        <button type="submit" id="loginButton">Login</button>
+    </form>
+    </form>
+</section>
+<a href="https://www.facebook.com/groups/207531925428/" target="_blank">Join the Genetics Group on Facebook</a> <!-- Link per komunitetin online -->
+<a href="mailto:genetics.org.uk"> Contact us</a>
+
+
 
     <footer>
-        <p>&copy; 2024 Scientific Forum. All rights reserved.</p>
+        <p align="center">&copy;2025 Scientific Forum. All rights reserved.</p>
     </footer>
 
     <script>
         document.getElementById('loginButton').addEventListener('click', (e) => {
-    e.preventDefault(); // Prevent default form submission
-    // Perform validation here
-    window.location.href = 'dashboard.html'; // Redirect to dashboard.html
-});
+            e.preventDefault(); // Prevent default form submission
+            window.location.href = 'dashboard.html'; // Redirect to dashboard.html
+        });
 
         const slider = document.querySelector('.community-card');
         const prevButton = document.getElementById('prev');

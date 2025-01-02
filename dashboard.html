@@ -199,10 +199,35 @@
                 font-size: 0.9rem;
             }
         }
+        .cookie-consent {
+         position: fixed;
+         bottom: 0;
+         left: 0;
+          right: 0;
+          background-color: #333;
+          color: white;
+         padding: 15px;
+         text-align: center;
+         font-size: 0.9rem;
+         z-index: 9999;
+        }
+
+         .cookie-consent button {
+        background-color: #3498db;
+        color: white;
+        padding: 10px 20px;
+       border: none;
+       cursor: pointer;
+       border-radius: 5px;
+}
+
+.cookie-consent button:hover {
+    background-color: #2980b9;
+}
     </style>
 </head>
 <body>
-    <header>
+ <header>
         <h1>Professional Community Forum</h1>
         <p>Ask questions, share ideas, and connect with professionals.</p>
     </header>
@@ -283,6 +308,11 @@
             </div>
         </div>
     </div>
+    <div class="cookie-consent" id="cookieConsent">
+    <p>We use cookies to ensure you get the best experience on our website.</p>
+    <button id="acceptCookie">Accept</button>
+</div>
+    
 
     <script>
         const commentsDisplay = document.getElementById('commentsDisplay');
@@ -328,12 +358,19 @@
             }
         }
 
-        // Slider functionality
+      
         const sliderContainer = document.querySelector('.slider-container');
         const slides = document.querySelectorAll('.slide');
         const prevButton = document.getElementById('prev');
         const nextButton = document.getElementById('next');
         let currentSlide = 0;
+        const cookieConsent = document.getElementById('cookieConsent');
+        const acceptCookieButton = document.getElementById('acceptCookie');
+
+          acceptCookieButton.addEventListener('click', () => {
+         cookieConsent.style.display = 'none';
+           
+});
 
         const updateSlider = () => {
             sliderContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
