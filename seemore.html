@@ -9,199 +9,257 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
 
-        body {
-            font-family: Poppins, sans-serif;
-            background-color: #2b2d2f;
-            color: #eee;
-            margin: 0;
-            font-size: 12px;
-            scroll-behavior: smooth;
-        }
-        h1 {
-            font-family: Poppins;
-            font-size: 70px;
-            text-align: center;
-            margin-bottom: 30px;
-        }
+body {
+    font-family: Poppins, sans-serif;
+    background-color: #2b2d2f;
+    color: #eee;
+    margin: 0;
+    font-size: 12px;
+    scroll-behavior: smooth;
+}
 
-        a {
-            text-decoration: none;
-            color: #eee;
-        }
+h1 {
+    font-family: Poppins;
+    font-size: 70px;
+    text-align: center;
+    margin-bottom: 30px;
+}
 
-        header {
-            width: 1140px;
-            max-width: 80%;
-            margin: auto;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            position: relative;
-            z-index: 100;
-        }
+a {
+    text-decoration: none;
+    color: #eee;
+}
 
-        header a {
-            margin-right: 40px;
-            transition: color 0.3s ease;
-        }
+header {
+    width: 1140px;
+    max-width: 80%;
+    margin: auto;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+}
 
-        header a:hover {
-            color: #ff6f61;
-        }
+header a {
+    margin-right: 40px;
+    transition: color 0.3s ease;
+}
 
-        .carousel {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            padding: 20px 0;
-        }
+header a:hover {
+    color: #ff6f61;
+}
 
-        .carousel-item {
-            width: 70%;
-            max-width: 600px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            background-color: #1a1a1a;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            opacity: 0;
-            animation: fadeIn 1s forwards;
-        }
+.carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+}
 
-        .carousel-item:hover {
-            transform: scale(1.05) rotate(-3deg);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
-        }
+.carousel-item {
+    width: 70%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
 
-        .carousel-item img {
-            width: 90%;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
+.carousel-item:hover {
+    transform: scale(1.05) rotate(-3deg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
 
-        .carousel-item img:hover {
-            transform: rotate(5deg);
-        }
+.carousel-item img {
+    width: 90%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
 
-        .carousel-item .description {
-            font-size: 14px;
-            text-align: center;
-            color: #ccc;
-        }
+.carousel-item img:hover {
+    transform: rotate(5deg);
+}
 
-        .description1 {
-            font-size: 40px;
-            font-family: Poppins;
-            text-align: center;
-            color: white;
-          /* Përdorimi i CSS3 ‘text shadow’ dhe ‘text wrapping’ */
-            text-shadow: none;
-            white-space: normal;
-        }
+.carousel-item .description {
+    font-size: 14px;
+    text-align: center;
+    color: #ccc;
+}
 
-        .scroll-button {
-            background-color: #ff6f61;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-top: 20px;
-            transition: background-color 0.3s ease;
-        }
+.description1 {
+    font-size: 40px;
+    font-family: Poppins;
+    text-align: center;
+    color: white;
+    text-shadow: none;
+    white-space: normal;
+}
 
-        .scroll-button:hover {
-            background-color: #ff4b39;
-        }
+.scroll-button {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
 
-        .explore-button {
-            background-color: #25434a;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-top: 10px;
-            transition: background-color 0.3s ease;
-        }
+.scroll-button:hover {
+    background-color: #ff4b39;
+}
 
-        .explore-button:hover {
-            background-color: #517a87;
-        }
+.explore-button {
+    background-color: #25434a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
 
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
+.explore-button:hover {
+    background-color: #517a87;
+}
 
-        .chart-container {
-            width: 80%;
-            max-width: 800px;
-            margin: 50px auto;
-        }
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
 
-        #map {
-            width: 100%;
-            height: 500px;
-            margin-top: 30px;
-        }
-        footer {
-            background-color: #1a1a1a;
-            color: #eee;
-            padding: 20px 0;
-            text-align: center;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
+.chart-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+}
 
-        .footer-container {
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+#map {
+    width: 100%;
+    height: 500px;
+    margin-top: 30px;
+}
 
-        .footer-container p {
-            margin: 0;
-            font-size: 14px;
-        }
+footer {
+    background-color: #1a1a1a;
+    color: #eee;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
 
-        .footer-container .back-to-top {
-            display: inline-block;
-            margin-top: 10px;
-            text-decoration: none;
-            color: #577783;
-            font-size: 16px;
-            transition: color 0.3s ease;
-        }
+.footer-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
-        .footer-container .back-to-top:hover {
-            color: #299d95;
-        }
+.footer-container p {
+    margin: 0;
+    font-size: 14px;
+}
 
-        /* List styles */
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
+.footer-container .back-to-top {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #577783;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
 
-        ol {
-            list-style-type: decimal;
-            margin-left: 20px;
-        }
+.footer-container .back-to-top:hover {
+    color: #299d95;
+}
 
-        ul ul {
-            list-style-type: circle;
-        }
+/* List styles */
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
 
-        ul ol {
-            list-style-type: square;
-        }
+ol {
+    list-style-type: decimal;
+    margin-left: 20px;
+}
+
+ul ul {
+    list-style-type: circle;
+}
+
+ul ol {
+    list-style-type: square;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 50px;
+    }
+
+    .carousel-item {
+        width: 90%;
+        max-width: 90%;
+    }
+
+    header {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .carousel-item .description1 {
+        font-size: 30px;
+    }
+
+    .scroll-button, .explore-button {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header a {
+        margin-right: 20px;
+        margin-bottom: 10px;
+    }
+
+    .carousel-item {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .carousel-item .description1 {
+        font-size: 25px;
+    }
+
+    .scroll-button, .explore-button {
+        width: 100%;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+}
 
     </style>
 </head>
