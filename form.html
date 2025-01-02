@@ -176,20 +176,31 @@
             document.getElementById("questionnaire-form").reset();
         });
 
-        // Generate Calculations
-        document.getElementById("generate-calculations").addEventListener("click", function() {
-            const globalPopulation = 7800000000; // Global population
-            const aiInGeneticsUsage = 0.05; // 5% of AI usage in genetics globally
-            const totalGeneticsAIUsers = globalPopulation * aiInGeneticsUsage;
+      // Generate Calculations
+document.getElementById("generate-calculations").addEventListener("click", function() {
+    const globalPopulation = 7800000000; // Global population
+    const aiInGeneticsUsage = 0.05; // 5% of AI usage in genetics globally
+    const totalGeneticsAIUsers = globalPopulation * aiInGeneticsUsage;
 
-            let results = `
-                <h3>Interesting AI & Genetics Statistics:</h3>
-                <p><strong>Total World Population:</strong> ${globalPopulation}</p>
-                <p><strong>Estimated Number of People Using AI in Genetics:</strong> ${totalGeneticsAIUsers.toFixed(0)}</p>
-            `;
+   
+    const maxValue = Number.MAX_VALUE; // MAX_VALUE
+    const invalidNumber = "string" / 2; // NaN example
+    const num = 12345;
 
-            document.getElementById("calculation-results").innerHTML = results;
-        });
+    const results = `
+        <h3>Interesting AI & Genetics Statistics:</h3>
+        <p><strong>Total World Population:</strong> ${globalPopulation}</p>
+        <p><strong>Estimated Number of People Using AI in Genetics:</strong> ${totalGeneticsAIUsers.toFixed(0)}</p>
+        
+        <h3>Numerical Methods:</h3>
+        <p><strong>Max Value in JavaScript (MAX_VALUE):</strong> ${maxValue}</p>
+        <p><strong>Result of Invalid Operation (NaN):</strong> ${invalidNumber}</p>
+        <p><strong>Exponential Notation (12345):</strong> ${num.toExponential(2)}</p>
+        <p><strong>Number as String (123):</strong> ${num.toString()}</p>
+    `;
+
+    document.getElementById("calculation-results").innerHTML = results;
+});
 
         // Analyze Data with Filter, Map, and Reduce
         document.getElementById("analyze-data").addEventListener("click", function() {
