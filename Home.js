@@ -11,9 +11,9 @@ prevDom.onclick = function () {
     showSlider('prev');
 };
 
-let timeRunning = 3000; // Koha për animacion
+let timeRunning = 3000; 
 let runTimeOut;
-let timeAutoNext = 7000; // Koha për ndryshimin automatik
+let timeAutoNext = 7000; 
 let runAutoRun = setTimeout(() => {
     nextDom.click();
 }, timeAutoNext);
@@ -23,24 +23,24 @@ function showSlider(type) {
     let itemThumbnail = document.querySelectorAll('.carousel .thumbnail .item');
 
     if (type === 'next') {
-        listItemDom.appendChild(itemSlider[0]); // Lëviz artikullin e parë në fund
+        listItemDom.appendChild(itemSlider[0]); 
         thumbnailDom.appendChild(itemThumbnail[0]);
         carouselDom.classList.add('next');
     } else {
         let positionLastItem = itemSlider.length - 1;
-        listItemDom.prepend(itemSlider[positionLastItem]); // Lëviz artikullin e fundit në fillim
+        listItemDom.prepend(itemSlider[positionLastItem]); 
         thumbnailDom.prepend(itemThumbnail[positionLastItem]);
         carouselDom.classList.add('prev');
     }
 
-    // Hiq klasat pas animacionit
+  
     clearTimeout(runTimeOut);
     runTimeOut = setTimeout(() => {
         carouselDom.classList.remove('next');
         carouselDom.classList.remove('prev');
     }, timeRunning);
 
-    // Riaktivizo automatikun
+
     clearTimeout(runAutoRun);
     runAutoRun = setTimeout(() => {
         nextDom.click();
