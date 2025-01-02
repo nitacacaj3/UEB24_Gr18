@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Genetics & AI Questionnaire</title>
-    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
@@ -58,6 +58,27 @@
                     <option value="advanced">Advanced knowledge</option>
                 </select>
             </div>
+            <!--datalist-->
+<div class="form-group">
+    <label for="preferred-topic">Select your preferred topic:</label>
+    <input type="text" id="preferred-topic" name="preferred-topic" list="topics">
+    <datalist id="topics">
+        <option value="Genetics">
+        <option value="Artificial Intelligence">
+        <option value="Ethics">
+        <option value="Data Science">
+        <option value="Neuroscience">
+    </datalist>
+</div>
+<!--keygen-->
+<div class="form-group">
+    <label for="secure-key">Generated Secure Key:</label>
+    <input type="text" id="secure-key" name="secure-key" readonly>
+    <button type="button" id="generate-key">Generate Key</button>
+</div>
+
+
+
 
             <!-- AI Tools Experience -->
             <div class="form-group">
@@ -104,9 +125,26 @@
         <div id="calculation-results">
             <!-- Results will be displayed here -->
         </div>
+        <!--output-->
+        <div class="form-group">
+    <label for="ai-analysis">AI Analysis Result:</label>
+    <output id="ai-analysis">Pending...</output>
+    <button type="button" id="generate-result">Generate Result</button>
+</div>
+
     </div>
 
     <script>
+      //keygen JavaScript
+      document.getElementById("generate-key").onclick = function () {
+    document.getElementById("secure-key").value = Math.random().toString(36).substring(2, 15);
+};
+//output JavaScript
+document.getElementById("generate-result").onclick = function () {
+    document.getElementById("ai-analysis").value = "Analysis Completed: Confidence 92%";
+};
+
+
         // JavaScript to handle form submission and perform numerical calculations
         document.getElementById("questionnaire-form").addEventListener("submit", function(event) {
             event.preventDefault();
