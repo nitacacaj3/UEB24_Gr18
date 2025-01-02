@@ -1,3 +1,4 @@
+//Përdorimi i JavaScript për manipulim me tekst dhe shfrytëzimi i getElementById:
 let nextDom = document.getElementById('next');
 let prevDom = document.getElementById('prev');
 let carouselDom = document.querySelector('.carousel');
