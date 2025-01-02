@@ -24,7 +24,7 @@
             <!-- Personal Information -->
             <div class="form-group">
                 <label for="name">Your Name:</label>
-                <input type="text" id="name" name="name" required><!--Përdorimi i “text’’ fushave -->
+                <input type="text" id="name" name="name" required>
             </div>
             <div class="form-group">
                 <label for="email">Your Email:</label>
@@ -58,27 +58,26 @@
                     <option value="advanced">Advanced knowledge</option>
                 </select>
             </div>
-            <!--datalist-->
-<div class="form-group">
-    <label for="preferred-topic">Select your preferred topic:</label>
-    <input type="text" id="preferred-topic" name="preferred-topic" list="topics">
-    <datalist id="topics">
-        <option value="Genetics">
-        <option value="Artificial Intelligence">
-        <option value="Ethics">
-        <option value="Data Science">
-        <option value="Neuroscience">
-    </datalist>
-</div>
-<!--keygen-->
-<div class="form-group">
-    <label for="secure-key">Generated Secure Key:</label>
-    <input type="text" id="secure-key" name="secure-key" readonly>
-    <button type="button" id="generate-key">Generate Key</button>
-</div>
 
+            <!-- Datalist -->
+            <div class="form-group">
+                <label for="preferred-topic">Select your preferred topic:</label>
+                <input type="text" id="preferred-topic" name="preferred-topic" list="topics">
+                <datalist id="topics">
+                    <option value="Genetics">
+                    <option value="Artificial Intelligence">
+                    <option value="Ethics">
+                    <option value="Data Science">
+                    <option value="Neuroscience">
+                </datalist>
+            </div>
 
-
+            <!-- Keygen -->
+            <div class="form-group">
+                <label for="secure-key">Generated Secure Key:</label>
+                <input type="text" id="secure-key" name="secure-key" readonly>
+                <button type="button" id="generate-key">Generate Key</button>
+            </div>
 
             <!-- AI Tools Experience -->
             <div class="form-group">
@@ -86,7 +85,6 @@
                 <input type="radio" id="yes" name="ai-used" value="yes">
                 <label for="yes">Yes</label>
                 <input type="radio" id="no" name="ai-used" value="no">
-                 <!--Përdorimi i “radio buttons’’ dhe “checkboxes’’ -->
                 <label for="no">No</label>
             </div>
 
@@ -96,7 +94,6 @@
                 <input type="checkbox" id="deep-learning" name="ai-technologies" value="Deep Learning">
                 <label for="deep-learning">Deep Learning</label>
                 <input type="checkbox" id="machine-learning" name="ai-technologies" value="Machine Learning">
-                <!--Përdorimi i “radio buttons’’ dhe “checkboxes’’ -->
                 <label for="machine-learning">Machine Learning</label>
                 <input type="checkbox" id="genetic-algorithms" name="ai-technologies" value="Genetic Algorithms">
                 <label for="genetic-algorithms">Genetic Algorithms</label>
@@ -116,36 +113,38 @@
 
             <!-- Form Submission -->
             <button type="submit">Submit</button>
-            <!--Përdorimi i “submit’’ butonave -->
         </form>
 
         <h2>Numerical Calculations and Genetic Analysis:</h2>
         <p>Here are some interesting statistical calculations and AI-related information about genetics.</p>
         <button id="generate-calculations">Generate Calculations</button>
-        <div id="calculation-results">
-            <!-- Results will be displayed here -->
-        </div>
-        <!--output-->
-        <div class="form-group">
-    <label for="ai-analysis">AI Analysis Result:</label>
-    <output id="ai-analysis">Pending...</output>
-    <button type="button" id="generate-result">Generate Result</button>
-</div>
+        <div id="calculation-results"></div>
 
+        <!-- AI Analysis Section -->
+        <h2>AI Analysis with Filter, Map, and Reduce:</h2>
+        <button id="analyze-data">Analyze Selected Technologies</button>
+        <div id="analysis-results"></div>
+
+        <!-- Output -->
+        <div class="form-group">
+            <label for="ai-analysis">AI Analysis Result:</label>
+            <output id="ai-analysis">Pending...</output>
+            <button type="button" id="generate-result">Generate Result</button>
+        </div>
     </div>
 
     <script>
-      //keygen JavaScript
-      document.getElementById("generate-key").onclick = function () {
-    document.getElementById("secure-key").value = Math.random().toString(36).substring(2, 15);
-};
-//output JavaScript
-document.getElementById("generate-result").onclick = function () {
-    document.getElementById("ai-analysis").value = "Analysis Completed: Confidence 92%";
-};
+        // Keygen JavaScript
+        document.getElementById("generate-key").onclick = function () {
+            document.getElementById("secure-key").value = Math.random().toString(36).substring(2, 15);
+        };
 
+        // Output JavaScript
+        document.getElementById("generate-result").onclick = function () {
+            document.getElementById("ai-analysis").value = "Analysis Completed: Confidence 92%";
+        };
 
-        // JavaScript to handle form submission and perform numerical calculations
+        // Form Submission
         document.getElementById("questionnaire-form").addEventListener("submit", function(event) {
             event.preventDefault();
 
@@ -177,34 +176,44 @@ document.getElementById("generate-result").onclick = function () {
             document.getElementById("questionnaire-form").reset();
         });
 
-        // Function to generate interesting statistical calculations related to genetics and AI
+        // Generate Calculations
         document.getElementById("generate-calculations").addEventListener("click", function() {
-            // Hypothetical statistics related to genetics and AI usage
             const globalPopulation = 7800000000; // Global population
             const aiInGeneticsUsage = 0.05; // 5% of AI usage in genetics globally
-            const totalGeneticsAIUsers = globalPopulation * aiInGeneticsUsage; // Total people using AI in genetics
-            const maxAIModelComplexity = Number.MAX_VALUE; // Maximum value for AI model complexity
-
-            const aiAdvancements = 12; // Hypothetical number of significant AI advancements in genetics in the last decade
-            const yearsSinceFirstGeneticAI = 10; // Years since the first significant AI use in genetics
-
-            const exponentialGrowth = aiAdvancements.toExponential(2);
-            const usersString = totalGeneticsAIUsers.toString();
-            const modelComplexityString = maxAIModelComplexity.toString();
+            const totalGeneticsAIUsers = globalPopulation * aiInGeneticsUsage;
 
             let results = `
                 <h3>Interesting AI & Genetics Statistics:</h3>
                 <p><strong>Total World Population:</strong> ${globalPopulation}</p>
                 <p><strong>Estimated Number of People Using AI in Genetics:</strong> ${totalGeneticsAIUsers.toFixed(0)}</p>
-                <p><strong>Maximum AI Model Complexity (MAX_VALUE):</strong> ${modelComplexityString}</p>
-                <p><strong>Exponential Growth of AI Advancements in Genetics (over 10 years):</strong> ${exponentialGrowth}</p>
-                <p><strong>AI Advancements in Genetics (Last Decade):</strong> ${aiAdvancements}</p>
-                <p><strong>Years Since First Major AI Application in Genetics:</strong> ${yearsSinceFirstGeneticAI}</p>
-                <p><strong>AI Model Complexity Example (MAX_VALUE as string):</strong> ${modelComplexityString}</p>
-                <p><strong>Check if 'NaN' is a valid number:</strong> ${isNaN(NaN)}</p>
             `;
 
             document.getElementById("calculation-results").innerHTML = results;
+        });
+
+        // Analyze Data with Filter, Map, and Reduce
+        document.getElementById("analyze-data").addEventListener("click", function() {
+            const aiTechnologies = Array.from(document.querySelectorAll('input[name="ai-technologies"]:checked'))
+                .map(input => input.value);
+
+            // Filter: Technologies containing "Machine"
+            const filteredTechnologies = aiTechnologies.filter(tech => tech.includes("Machine"));
+
+            // Map: Add "(AI Tool)" to each technology
+            const mappedTechnologies = aiTechnologies.map(tech => `${tech} (AI Tool)`);
+
+            // Reduce: Count total technologies
+            const totalTechnologies = aiTechnologies.reduce((count) => count + 1, 0);
+
+            let analysisResults = `
+                <h3>Analysis Results:</h3>
+                <p><strong>Selected Technologies:</strong> ${aiTechnologies.join(", ")}</p>
+                <p><strong>Filtered Technologies:</strong> ${filteredTechnologies.join(", ")}</p>
+                <p><strong>Mapped Technologies:</strong> ${mappedTechnologies.join(", ")}</p>
+                <p><strong>Total Technologies:</strong> ${totalTechnologies}</p>
+            `;
+
+            document.getElementById("analysis-results").innerHTML = analysisResults;
         });
     </script>
 </body>
