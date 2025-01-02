@@ -35,10 +35,16 @@ header{
     z-index: 100;
 }
 header a{
-    margin-right: 40px;
+    margin-right: 40px; 
 }
 
+.thumbnail .item img{
+    width:100%;
+    height:100%; /*Përdorimi i tag-ut “src’’ dhe të gjitha atributeve të tij */
+    object-fit:cover;
+    border-radius: 20px;
 
+}
     </style>
     
 </head>
@@ -62,7 +68,8 @@ header a{
         
         
                 <div class="item">
-                    <img src="https://cff2.earth.com/uploads/2023/06/11162528/Robot-2.jpg"> <!-- 5. HTML Images -->
+                    <img src="https://cff2.earth.com/uploads/2023/06/11162528/Robot-2.jpg" alt="earth">
+                     <!-- 5. HTML Images; Përdorimi i tag-ut “src’’ dhe të gjitha atributeve të tij -->
                     <div class="content">
                         <div class="author">WOMEN</div><!-- 2. Vendosja (alignment) e tekstit dhe formatimi -->
                         <div class="title">AI AND GENETICS</div>
