@@ -5,39 +5,47 @@
     --darkredColor: #810d1e;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    outline: none;
-    font-family: 'Poppins', sans-serif;
 }
 
-body{
+html,
+body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+body {
     font-family: Poppins;
-    background-color: #b2cbd4;
-    color:#eee;
-    margin:0;
+    background-color: var(--softColor);
+    color: #eee;
+    margin: 0;
     font-size: 12px;
 
 }
-a{text-decoration: none;
-    word-wrap: break-word;
-color:#eee;}
 
-header{
-    width:1140px;
+a {
+    text-decoration: none;
+    color: #eee;
+}
+
+header {
+    width: 1140px;
     max-width: 80%;
-    margin:auto;
-    height:50px;
+    margin: auto;
+    height: 50px;
     display: flex;
     align-items: center;
     position: relative;
     z-index: 100;
 }
-header a{
+
+header a {
     margin-right: 40px;
 }
+
 .header{
     background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(https://imageio.forbes.com/specials-images/imageserve/1150397417/DNA-molecule/0x0.jpg?format=jpg&crop=3656,2438,x670,y0,safe&width=1440);
     background-position: top center;
@@ -196,4 +204,3 @@ header a{
         margin-top: 10px;
     }
 }
-
