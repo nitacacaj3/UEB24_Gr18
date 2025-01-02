@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> <!-- 1. HTML konceptet themelore -->
 <head>
 
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"><!-- 1. HTML konceptet themelore -->
+    <!-- 4. Përdorimi i atributeve brenda HTML elementeve -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="Home.css">
+    <title>Home</title><!-- 1. HTML konceptet themelore -->
+    <!-- 3. Përdorim i titullit të faqes -->
+    <link rel="stylesheet" href="Home.css"><!-- 4. HTML CSS -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 body{
-    font-family: Poppins;
-    background-color: #000;
-    color:#eee;
-    margin:0;
-    font-size: 12px;
+    font-family: Poppins; /* 12. CSS Fonts */
+    background-color: #000; /* 12. CSS Background */
+    color:#eee; /* 4. HTML CSS */
+    margin:0;   /* 14. CSS Box Model */
+    font-size: 12px; /* 12. CSS Fonts */
 
 }
 
@@ -21,29 +23,27 @@ body{
     
 </head>
 <body>
-          <header>
+          <header> <!-- 7. HTML Blloqet-->
             <nav>
-                <a href="#top">Home</a>
-                <a href="">About us</a>
-            
-                
+                <a href="#top">Home</a> <!-- 3. Linqet dhe “hyperlinks’’ -->
+                <a href="">About us</a> 
                 <a href="ethicssocietyhub.html">The Space for Social Experiments </a>
                 <a href="lab.html">Virtual Laboratory</a>
                 <a href="kurset.html">GenAI Academy </a>
                 <a href="forumishkencor.html">Scientific Forum </a>
                 <a href="FAQ.html">FAQs</a>
-            
 
             </nav>
-          </header>      
-          <div class="carousel">
+          </header>     
+          
+          <div class="carousel"><!-- 7. HTML Blloqet-->
             <div class="list">
         
         
                 <div class="item">
-                    <img src="https://cff2.earth.com/uploads/2023/06/11162528/Robot-2.jpg">
+                    <img src="https://cff2.earth.com/uploads/2023/06/11162528/Robot-2.jpg"> <!-- 5. HTML Images -->
                     <div class="content">
-                        <div class="author">WOMEN</div>
+                        <div class="author">WOMEN</div><!-- 2. Vendosja (alignment) e tekstit dhe formatimi -->
                         <div class="title">AI AND GENETICS</div>
                         <div class="topic">Leveraging Science to Brighten the Future </div>
                         <div class="des">
@@ -55,6 +55,7 @@ body{
                         </div>
                     </div>
                 </div>
+               
         
         
                 <div class="item">
@@ -159,7 +160,7 @@ body{
             </div>
            
             <div class="arrows">
-                <button id="prev"><</button>
+                <button id="prev"><</button> <!-- 10. HTML JavaScript dhe Entities -->
                 <button id="next">></button>
             </div>
             <div class="time"></div>
