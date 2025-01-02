@@ -8,16 +8,36 @@
     <title>Home</title><!-- 1. HTML konceptet themelore -->
     <!-- 3. Përdorim i titullit të faqes -->
     <link rel="stylesheet" href="Home.css"><!-- 4. HTML CSS -->
-    <style>
+    <style>/*Internal css*/
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 body{
     font-family: Poppins; /* 12. CSS Fonts */
-    background-color: #000; /* 12. CSS Background */
+    background-color: #000; /* 12. CSS Background ; Përdorimi i CSS për vendosje të “backgorund’’ */
     color:#eee; /* 4. HTML CSS */
     margin:0;   /* 14. CSS Box Model */
-    font-size: 12px; /* 12. CSS Fonts */
+    font-size: 12px; /* 12. CSS Fonts  Përdorimi i CSS për vendosje të “font-it’’, ngjyrave dhe madhësisë */
+
 
 }
+a{
+    text-decoration: none;
+    word-wrap: break-word;
+color:#eee;}
+
+header{
+    width:1140px;
+    max-width: 80%;
+    margin:auto;
+    height:50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+}
+header a{
+    margin-right: 40px;
+}
+
 
     </style>
     
@@ -52,7 +72,7 @@ body{
                             Welcome to a <b>unique</b> platform where genetics meets <i>artificial intelligence</i>! Discover how cutting-edge AI technologies are transforming genetic research—decoding <ul>DNA</ul> faster than ever, identifying links between genes and diseases, and paving the way for breakthroughs in precision medicine. Whether you're curious about CRISPR, gene editing, or AI-driven drug discovery, this is your gateway to the future of life sciences and innovation.
                         </div>
                         <div class="buttons">
-                            <button>  <a href="lab.html" style="color:#000">SEE MORE </a></button>
+                            <button>  <a href="lab.html" style="color:#000">SEE MORE </a></button> <!--inline css-->
                          
                         </div>
                     </div>
@@ -65,10 +85,10 @@ body{
                     <div class="content">
                         <div class="author">WOMEN</div>
                         <div class="title">AI AND GENETICS</div>
-                        <!-- 5. Përdorimi i Headings dhe paragrafëve në vend të duhur -->
+                        <!--Përdorimi i tagjeve bold, italic, underline -->
                         <div class="topic">The Space for Social Experiments </div>
                         <div class="des">
-                            The Space for Social Experiments is an environment where researchers, organizations, and individuals design and test new initiatives aimed at understanding human behavior, addressing social challenges, or improving social interactions. This space serves as a laboratory for innovation and progress in society.
+                            The Space for Social Experiments is an environment where researchers, organizations, and individuals design and test new <i>initiatives</i> aimed at understanding human behavior, addressing <ul>social challenges</ul>, or improving social interactions. This space serves as a laboratory for <b>innovation </b>and progress in society.
                         </div>
                         <div class="buttons">
                             <button>SEE MORE</button>
@@ -83,8 +103,9 @@ body{
                         <div class="author">WOMEN</div>
                         <div class="title">AI AND GENETICS</div>
                         <div class="topic">GenAI Academy </div>
+                         <!--Përdorimi i tagjeve bold, italic, underline -->
                         <div class="des">
-                            GenAI Academy is a cutting-edge platform dedicated to exploring the intersection of Genetics and Artificial Intelligence. Through innovative courses and hands-on learning, it empowers students to unlock the potential of these transformative fields and shape the future of science and technology.
+                            GenAI Academy is a <i>cutting-edge</i> platform dedicated to exploring the intersection of <i>Genetics</i> and <i>Artificial Intelligence</i>. Through innovative courses and hands-on learning, it empowers students to unlock the potential of these <ul>transformative fields</ul> and shape the future of <b>science and technology</b>.
                         </div>
                         <div class="buttons">
                             <button>SEE MORE</button>
@@ -99,8 +120,9 @@ body{
                         <div class="author">WOMEN</div>
                         <div class="title">AI AND GENETICS</div>
                         <div class="topic">Scientific Forum</div>
+                         <!--Përdorimi i tagjeve bold, italic, underline -->
                         <div class="des">
-                            A dynamic platform for exchanging ideas, sharing research, and fostering collaboration among scientists, researchers, and innovators across various disciplines. It serves as a hub for advancing knowledge and addressing global challenges through science.
+                            A dynamic <ul>platform</ul> for exchanging ideas, sharing research, and fostering collaboration among scientists, researchers, and innovators across various disciplines. It serves as a hub for <b>advancing knowledge</b> and addressing <i>global challenges</i> through science.
                         </div>
                         <div class="buttons">
                             <button>SEE MORE</button>
