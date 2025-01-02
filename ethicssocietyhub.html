@@ -460,18 +460,15 @@ footer .container{
     </section>
     <script>
 
- const menuItems = ['Home', 'About Us', 'Services', 'Contact'];
-document.getElementById('menu').innerHTML = menuItems.map(item => `<li>${item}</li>`).join('');
-
-//perdorimi i kohes
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('year').textContent = new Date().getFullYear();
 });
-      document.getElementById('year').textContent = new Date().getFullYear();
-      navBtn.addEventListener("click", function(){
-        navList.classList.toggle("active");
-      });
-      document.querySelector('form').addEventListener('submit', function (e) {
+
+ const menuItems = ['Home', 'About Us', 'Services', 'Contact'];
+document.getElementById('menu').innerHTML = menuItems.map(item => `<li>${item}</li>`).join('');
+
+
+     document.querySelector('form').addEventListener('submit', function (e) {
     let name = document.getElementById('name').value;
     let email = document.getElementById('email').value;
     let message = document.getElementById('message').value;
