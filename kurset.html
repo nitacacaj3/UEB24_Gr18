@@ -16,36 +16,39 @@
     justify-content: center;
     margin-top: 20px; /* Mund ta rregulloni sipas nevojës */
 }
-        header {
-            width: 100%;
-            max-width: 80%;
-            margin: auto;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            background-color: #17232A;
-            position: fixed;
-            top: 0;
-            left: 250px;
-            z-index: 10;
-        }
-        header nav {
-            display: flex;
-            align-items: center;
-        }
-        header a {
-            color: white;
-            text-decoration: none;
-            margin-right: 40px;
-        }
-        body {
-            background: #17232A;
-            margin: 0;
-            padding: 0;
-            font-family: Poppins;
-            padding-top: 60px;
-            overflow: hidden;
-        }
+a{
+    text-decoration: none;
+    word-wrap: break-word;
+color:#eee;}
+header a:hover {
+  color: #ff6f61;
+ 
+}
+
+
+header{
+    width:1140px;
+    max-width: 80%;
+    margin:auto;
+    height:50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+}
+header a{
+    margin-right: 40px; 
+}
+body{
+    font-family: Poppins; /* 12. CSS Fonts */
+    background-color: #000; /* 12. CSS Background ; Përdorimi i CSS për vendosje të “backgorund’’ */
+    color:#eee; /* 4. HTML CSS */
+    margin:0;   /* 14. CSS Box Model */
+    font-size: 12px; /* 12. CSS Fonts  Përdorimi i CSS për vendosje të “font-it’’, ngjyrave dhe madhësisë */
+overflow: hidden;
+
+}
+    
         .container {
             width: 100%;
             height: calc(100vh - 50px);
