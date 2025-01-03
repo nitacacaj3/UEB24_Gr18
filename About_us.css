@@ -41,6 +41,9 @@ header {
 header a {
     margin-right: 40px;
 }
+header a:hover {
+    color: #ff6f61;
+}
 
 .video-background {
     position: fixed;

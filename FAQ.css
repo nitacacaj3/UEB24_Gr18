@@ -45,6 +45,9 @@ header {
     position: relative;
     z-index: 100;
 }
+header a:hover {
+    color: #ff6f61;
+}
 
 header a {
     margin-right: 40px;
