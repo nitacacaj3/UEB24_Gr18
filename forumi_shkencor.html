@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forumi Shkencor</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
     <style>
         body {
-            font-family: Poppins, sans-serif; /* Ploteson kerkesat per perdorimin e nje font-i modern */
-            background-color: #040614; /* Ngjyra e sfondit te errte, si e kerkuar */
+            font-family: Poppins, sans-serif;
+            background-color: #040614;
             color: #eee;
             margin: 0;
-            font-size: 12px; /* Permbush kerkesat per aksesueshmeri me madhesi te vogel teksti */
+            font-size: 12px;
         }
+
         a {
             text-decoration: none;
             color: #eee; /* Links jane te dukshme ne sfond te erret */
@@ -26,58 +26,58 @@
             max-width: 80%;
             margin: auto;
             height: 50px;
-            display: flex; /* Perdoret flexbox per qendrim te sakte */
+            display: flex;
             align-items: center;
             position: relative;
             z-index: 100;
         }
+
         header a {
-            margin-right: 40px; /* Hapesire ndermjet navigimeve per dizajn me te paster */
+            margin-right: 40px;
+            color: #eee;
+            text-decoration: none;
         }
 
         .container {
-            padding: 20px; /* Hapesira e brendshme per organizim te mire */
+            padding: 20px;
         }
+
         .section {
-            margin-bottom: 30px; /* Hapesire mes seksioneve per lexueshmeri me te mire */
+            margin-bottom: 30px;
         }
 
         .community-slider {
             position: relative;
             width: 100%;
-            overflow: hidden; /* Siguron qe slajderi mos te dale nga kufijte */
+            overflow: hidden;
             text-align: center;
         }
 
         .community-card {
             display: flex;
-            transition: transform 0.5s ease-in-out; /* Ploteson kerkesat per animacion te bute */
-            width: calc(100% * 4); /* Llogarit gjeresine totale per 4 karta */
+            transition: transform 0.5s ease-in-out;
+            width: calc(100% * 4);
         }
 
         .community-card div {
-            background: url('https://media3.giphy.com/media/k2VKaO9QITTLVxtWa1/200.webp?cid=790b76110qteugsvdp6prewblbp2le2vmrg5arikq25dx8zz&ep=v1_gifs_search&rid=200.webp&ct=g') no-repeat center center;
+            background: url('https://media.istockphoto.com/id/1699005064/photo/wave-particle-ocean-technology-background.jpg?s=612x612&w=0&k=20&c=4entKdgJmjREF9Lmn_-FL5TijsAXLs4S58tw3iivb9M=') no-repeat center center;
             background-size: cover;
             padding: 15px;
-            border-radius: 0%; /* Karta te rregullta pa qoshe te rrumbullakosura */
-            flex: 0 0 25%; /* Secila karte merr 25% te gjeresise */
+            border-radius: 0%;
+            flex: 0 0 25%;
             text-align: center;
             box-sizing: border-box;
             margin: 0 auto;
         }
 
         .community-card div img {
-            width: 150px; /* Madhesia e figurave te pershtatshme per slajderin */
+            width: 150px;
             height: 150px;
-            object-fit: cover; /* Siguron pamje uniforme te figurave */
-            border-radius: 50%; /* Figurat jane te rrumbullakosura */
+            object-fit: cover;
+            border-radius: 50%;
             margin-bottom: 10px;
             background: transparent;
             border: none;
-        }
-
-        .community-card div:hover {
-            transform: scale(1.05); /* Efekt hover mbi karta, ploteson kerkesat */
         }
 
         .slider-buttons {
@@ -86,11 +86,11 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
-            transform: translateY(-50%); /* Qendrim i butonave ne mes */
+            transform: translateY(-50%);
         }
 
         .slider-buttons button {
-            background-color: rgba(0, 0, 0, 0.5); /* Butona te trasparente per sfond te erret */
+            background-color: rgba(0, 0, 0, 0.5);
             color: white;
             border: none;
             padding: 10px;
@@ -99,7 +99,7 @@
         }
 
         button {
-            background-color: #3f51b5; /* Ngjyra moderne per butonat */
+            background-color: #3f51b5;
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -112,17 +112,91 @@
 
         button:hover {
             background-color: #283593;
-            transform: scale(1.05); /* Efekt hover mbi butona */
+            transform: scale(1.05);
         }
 
         button:active {
             background-color: #1a237e;
-            transform: scale(0.95); /* Efekt kur butoni klikohet */
+            transform: scale(0.95);
+        }
+
+        .library {
+            width:100%;
+            max-width: 100%;
+            margin: 0 auto;
+            background-color: #1e293b;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .library h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #64ffda;
+            text-align: center;
+        }
+
+        .library ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .library li {
+            margin: 10px 0;
+        }
+
+        .library li a {
+            color: #64ffda;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .library li a:hover {
+            color: #1aaf93;
+        }
+        .library p a {
+       color: #64ffda; /* Same color as Genetics Book */
+        text-decoration: none;
+        transition: color 0.3s ease;
+        }
+
+.library p a:hover {
+    color: #1aaf93;
+}
+
+
+        .ideas {
+            width:100%;
+            max-width: 100%x;
+            margin: auto;
+            background-color: #1e293b;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .ideas h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #64ffda;
+            text-align: center;
+        }
+
+        .ideas textarea {
+            width: 100%;
+            height: 100px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 14px;
+            font-family: Poppins, sans-serif;
         }
 
         @media (max-width: 768px) {
             .community-card {
-                width: calc(100% * 2); /* Per pajisje me ekran te mesem, 2 karta per radhe */
+                width: calc(100% * 2);
             }
             .community-card div {
                 flex: 0 0 50%;
@@ -135,7 +209,7 @@
 
         @media (max-width: 480px) {
             .community-card {
-                width: calc(100% * 1); /* Per pajisje me ekran te vogel, 1 karte per radhe */
+                width: calc(100% * 1);
             }
             .community-card div {
                 flex: 0 0 100%;
@@ -159,7 +233,7 @@
 
     <div class="container">
         <section id="community" class="section">
-            <h2>Professional Community</h2> <!-- Seksioni paraqet anetaret profesionale -->
+            <h2>Professional Community</h2>
             <div class="community-slider">
                 <div class="community-card">
                     <div>
@@ -170,79 +244,72 @@
                     <div>
                         <img src="https://i.pinimg.com/736x/4e/5f/07/4e5f0715030a8da373d8fe6ed1f9c0a6.jpg" alt="Ing.Blerta Kelmendi">
                         <h4>Ing.Blerta Kelmendi</h4>
-                       <p> <b>Software Engineer</b> for Biomedical Applications.</p>
+                        <p><b>Software Engineer</b> for Biomedical Applications.</p>
                     </div>
                     <div>
                         <img src="https://i.pinimg.com/736x/39/8d/7c/398d7cffff0d7bc7d1e026f5a2d97990.jpg" alt="Msc.Gentian Hoxha">
                         <h4>Msc.Gentian Hoxha</h4>
-                       <p>Experienced <b>researcher</b> in Biomedical experiments</p>
-
+                        <p>Experienced <b>researcher</b> in Biomedical experiments</p>
                     </div>
                     <div>
                         <img src="https://img.freepik.com/premium-photo/portrait-senior-teacher-front-blackboard-distinguished-professor-front-classic-blackboard-ai-generated_538213-54593.jpg" alt="Prof.Hysamedin Ahmeti">
                         <h4>Prof.Hysamedin Ahmeti</h4>
-                        <p>PhD in <b>Physics</b> ,Certified to provide accurate answers</p>
-
+                        <p>PhD in <b>Physics</b>, Certified to provide accurate answers</p>
                     </div>
                 </div>
                 <div class="slider-buttons">
-                    <button id="prev">&#10094;</button> <!-- Buton per navigimin mbrapa -->
-                    <button id="next">&#10095;</button> <!-- Buton per navigimin perpara -->
+                    <button id="prev">&#10094;</button>
+                    <button id="next">&#10095;</button>
                 </div>
             </div>
         </section>
 
-        <section id="library" class="section">
-            <h2>Library</h2> <!-- Seksion qe ploteson kerkesat per qasje ne materialet shkencore -->
-            <p>Browse a curated library of scientific literature, textbooks, and articles. Expand your knowledge and explore new topics.</p>
+        <section id="library" class="section library">
+            <h2>Library</h2>
             <ul>
                 <li><a href="https://mitpress.mit.edu/9780262581158/artificial-intelligence-and-molecular-biology/">Genetics Book</a></li>
                 <li><a href="https://archive.org/details/geneticengineeri0000burg">AI and Genetics Engineering</a></li>
                 <li><a href="https://www.researchgate.net/publication/379641716_Bioethics_in_Biomedical_Engineering">Bioethics in Biomedical Engineering</a></li>
-                <a href="https://www.als.org/sites/default/files/2022-04/Genetics-Infographic-Alliance.pdf" target="_blank">Intruduction to Genetics-Infographic-Alliance PDF</a>
-
+                <li><a href="https://www.als.org/sites/default/files/2022-04/Genetics-Infographic-Alliance.pdf" target="_blank">Introduction to Genetics-Infographic-Alliance PDF</a></li>
             </ul>
-            <p>Easier Access in the Scientific Library:</p>
-            <ul>
-                <li><a href="https://openlibrary.org/">Get full access to all the Scientific Books</a></li>
-            </ul>
-            
+            <p><a href="https://openlibrary.org/">Get full access to all the Scientific Books</a></p>
         </section>
 
-        <section id="ideas" class="section">
-            <h2>Ideas & Comments</h2> <!-- Seksioni per mbledhje te ideve dhe komenteve nga komuniteti -->
+        <section id="ideas" class="section ideas">
+            <h2>Ideas & Comments</h2>
             <p>Share your ideas or ask questions. The community is here to help!</p>
             <textarea placeholder="Share your idea..."></textarea>
             <button>Submit</button>
         </section>
 
-       <section id="login" class="section">
-    <h2>Login</h2>
-    <p>You must log in to post comments or share ideas.</p>
-    <form action="dashboard.html" method="GET" style="display: flex; justify-content: flex-start; align-items: center; gap: 15px;">
-       <form action="submit_form.php" method="POST" autocomplete="on"> <!-- Forma per login dhe validim -->
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required>
+        <section id="login" class="section">
+            <h2>Login</h2>
+            <p>You must log in to post comments or share ideas.</p>
+            <form action="dashboard.html" method="GET" style="display: flex; justify-content: flex-start; align-items: center; gap: 15px;">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-        <button type="submit" id="loginButton">Login</button>
-    </form>
-    </form>
-</section>
-<a href="https://www.facebook.com/groups/207531925428/" target="_blank">Join the Genetics Group on Facebook</a> <!-- Link per komunitetin online -->
-<a href="mailto:genetics.org.uk"> Contact us</a>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <button type="submit" id="loginButton">Login</button>
+            </form>
+        </section>
 
-
-
-    <footer>
-        <p align="center">&copy;2025 Scientific Forum. All rights reserved.</p>
-    </footer>
+        <footer>
+            <p align="center">&copy;2025 Scientific Forum. All rights reserved.</p>
+        </footer>
+    </div>
 
     <script>
         document.getElementById('loginButton').addEventListener('click', (e) => {
-            e.preventDefault(); // Prevent default form submission
-            window.location.href = 'dashboard.html'; // Redirect to dashboard.html
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            if (username.length >= 3 && /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(email)) {
+                window.location.href = 'dashboard.html';
+            } else {
+                alert("Please fill in all fields correctly.");
+            }
         });
 
         const slider = document.querySelector('.community-card');
@@ -254,60 +321,7 @@
             const cardWidth = document.querySelector('.community-card div').clientWidth;
             slider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
         };
-    document.getElementById('loginButton').addEventListener('click', (e) => {
-        e.preventDefault(); // Prevent default form submission
 
-        // Get the values of the input fields
-        const username = document.getElementById('username').value;
-        const email = document.getElementById('email').value;
-
-        // Call validation functions
-        const isUsernameValid = validateUsername(username);
-        const isEmailValid = validateEmail(email);
-
-        if (isUsernameValid && isEmailValid) {
-            window.location.href = 'dashboard.html'; // Redirect to dashboard.html if valid
-        } else {
-            // Show a warning message if validation fails
-            alert("Please fill in all fields correctly.");
-        }
-    });
-
-    // Function to validate username (should be non-empty and at least 3 characters)
-    function validateUsername(username) {
-        if (username === "") {
-            displayWarning("Username cannot be empty.");
-            return false;
-        }
-        if (username.length < 3) {
-            displayWarning("Username should be at least 3 characters.");
-            return false;
-        }
-        return true;
-    }
-
-    // Function to validate email format
-    function validateEmail(email) {
-        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-        if (email === "") {
-            displayWarning("Email cannot be empty.");
-            return false;
-        }
-        if (!emailPattern.test(email)) {
-            displayWarning("Please enter a valid email address.");
-            return false;
-        }
-        return true;
-    }
-
-    // Function to display warnings
-    function displayWarning(message) {
-        const warning = document.createElement('div');
-        warning.style.color = 'red';
-        warning.style.marginTop = '10px';
-        warning.innerText = message;
-        document.body.appendChild(warning); // Show warning message
-    }
         prevButton.addEventListener('click', () => {
             if (currentIndex > 0) {
                 currentIndex--;
