@@ -1,395 +1,390 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>AI Genetics</title>
-        <style>
-         .award-text{
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Genetics</title>
+    <style>
+        /* Stilet mbeten të njëjta */
+        .award-text {
             font-weight: bold;
-            color:white;
-         }
-        .small-circle-container{
-            display:flex;
-            justify-content: center;
-            margin-top: 20px;
+            color: white;
         }
-        header{
-            width:100%;
+        .small-circle-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Mund ta rregulloni sipas nevojës */
+}
+        header {
+            width: 100%;
             max-width: 80%;
-            margin:auto;
-            height:50px;
-            display:flex;
+            margin: auto;
+            height: 50px;
+            display: flex;
             align-items: center;
             background-color: #17232A;
             position: fixed;
-            top:0;
-            left:250px;
+            top: 0;
+            left: 250px;
             z-index: 10;
         }
-        header nav{
-            display:flex;
+        header nav {
+            display: flex;
             align-items: center;
         }
         header a {
-            color:white;
+            color: white;
             text-decoration: none;
             margin-right: 40px;
-
         }
-        body{
+        body {
             background: #17232A;
             margin: 0;
             padding: 0;
-            font-family: Arial,  sans-serif;
-            padding-top:60px;
-            overflow:hidden;
-
+            font-family: Arial, sans-serif;
+            padding-top: 60px;
+            overflow: hidden;
         }
-        .container{
-            width:100%;
-            height:calc(100vh-50px);
-            display:flex;
+        .container {
+            width: 100%;
+            height: calc(100vh - 50px);
+            display: flex;
             align-items: center;
             justify-content: center;
             position: absolute;
-            top:50%;
-            left:50%;
-            transform:translate(-50%, -50%);
-
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
-        #small-circle-container{
-            display:none;
-        }
-        .logo-container{
-            display:flex;
+       #small-circle-container {
+    display: none; /* Fshihet fillimisht */
+}
+        .logo-container {
+            display: flex;
             justify-content: center;
             align-items: center;
             position: relative;
-            margin-bottom: 200px;
+            margin-bottom: 200px; /* Kjo shton hapësirën midis logos dhe tekstit */
         }
-        .logo{
-            width: 200px;
-            height:200px;
-            background: radial-gradient(circle at 33% 100%, rgb(86, 115, 124) 4%, rgb(121, 202, 229) 30%, rgb(16, 161, 210) 62%, rgb(6, 70, 92) 85%, rgb(82, 81, 81));
-            border-radius: 54px;
-            display:flex;
-            align-items: center;
-            justify-content: center;
-            margin-left: 30px;
-            margin-right: 30px;
+        .logo {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle at 33% 100%, rgb(86, 115, 124) 4%, rgb(121, 202, 229) 30%, rgb(16, 161, 210) 62%, rgb(6, 70, 92) 85%, rgb(82, 81, 81));
+    border-radius: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 30px;  /* Shtoni hapësirë në anën e majtë të logos */
+    margin-right: 30px; /* Shtoni hapësirë në anën e djathtë të logos */
+}
+        .svg-border {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
-        .svg-border{
-            position:absolute;
-            top:0;
-            left:0;
-            width:100%;
-            height:100%;
-        }
-        .photo-container{
-            display:flex;
+        .photo-container {
+            display: flex;
             justify-content: center;
             align-items: flex-start;
             flex-wrap: wrap;
-            opacity:0;
+            opacity: 0;
             transition: opacity 2s ease;
             margin-top: 20px;
-            position:relative;
+            position: relative;
         }
-        .welcome-text{
-            padding:30px;
-            color:white;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-            opacity:0;
-            transition:opacity 1s ease;
-            outline:2px solid rgb(34,65,75);
-            background: radial-gradient(circle, rgba(0, 0, 50, 1) 0%, rgba(0, 0, 10, 1) 100%);
-            background-size: cover;
-            background-position: center;
-            margin-left: 20px;
-            margin-right: 60px;
-        }
-        .photo-container.visible{
-            opacity:1;
+        .welcome-text {
+    padding: 30px;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 1s ease;
+    outline: 2px solid rgb(34, 65, 75);
+    background: radial-gradient(circle, rgba(0, 0, 50, 1) 0%, rgba(0, 0, 10, 1) 100%);
+    background-size: cover;
+    background-position: center;
+    margin-left: 20px;
+margin-right:60px; /* Shtoni hapësirë në anën e majtë të tekstbox-it për t'u larguar nga logo */
+}
+        .photo-container.visible {
+            opacity: 1;
         }
         .photo-item {
-            display:inline-block;
-            margin:10px;
-            width:150px;
+            display: inline-block;
+            margin: 10px;
+            width: 150px;
             text-align: center;
-            color:white;
+            color: white;
         }
-        .photo-item img{
-            width:120px;
-            height:120px;
+        .photo-item img {
+            width: 120px;
+            height: 120px;
             object-fit: cover;
-            border-radius:50%;
+            border-radius: 50%;
             border: 3px solid white;
-            margin-bottom:10px;
+            margin-bottom: 10px;
         }
-        .photo-text{
+        .photo-text {
             font-size: 14px;
         }
-        .robot-container{
-            display:flex;
+        .robot-container {
+            display: flex;
             justify-content: center;
             margin-top: 20px;
-            opacity:0;
+            opacity: 0;
             transition: opacity 2s ease;
-            position:absolute;
-            top:100px;
-            left:50%;
-            transform:translateX(-50%);
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
         }
-        .robot-image{
+        .robot-image {
             width: 250px;
-            height:250px;
+            height: 250px;
             object-fit: cover;
             border-radius: 20px;
         }
-        .textbox{
-            width:250px;
-            height:180px;
+        .textbox {
+            width: 250px;
+            height: 180px;
             background: linear-gradient(45deg, rgba(23, 35, 42, 0.9), rgba(6, 70, 92, 0.9)), radial-gradient(circle at top left, rgba(86, 115, 124, 0.7), rgba(16, 161, 210, 0.7));
-            color:white;
-            padding:20px;
+            color: white;
+            padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
             font-size: 16px;
-            transition:opacity 1s ease;
-            margin-left:20px;
+            transition: opacity 1s ease;
+            margin-left: 20px;
         }
-        .achievement-container{
-            display:flex;
-            justify-content: space-between;
-            margin-top: 50px;
-            position: absolute;
-            top:80px;
-            left:50%;
-            transform: translateY(-50%);
-            opacity:0;
-            transition: opacity 2s ease;
-            width:100%;
-            max-width: 700px;
-            
-        }
-        .video-container{
-            display:none;
-            position: absolute;
-            top:50%;
-            left:50%;
-            transform: translate(-50%, -50%);
-           width: 80%;
-             height: 60%;
-    z-index: 5;
-        }
-        iframe{
-            width:100%;
-            height:100%;
+        .achievement-container {
+        display: flex;
+        justify-content: space-between; /* Siguron hapësirë midis rrethave */
+        margin-top: 50px;
+        position: absolute;
+        top: 80px; /* Rritja e kësaj vlere do të vendosë rrathet më lart */
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity 2s ease;
+        width: 100%; /* Siguron që rrathet të mbulojnë hapësirën për të krijuar hapësirë më të madhe */
+        max-width:700px; /* Mund ta rregulloni për të përshtatur hapësirën në ekranin tuaj */
+    }
+    .video-container {
+    display: none; /* Video do të jetë e fshehur fillimisht */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 60%;
+    z-index: 5; /* Siguron që video të shfaqet mbi elementët e tjerë */
+}
 
-        }
-        .circle{
-            width:250px;
-            height:250px;
+iframe {
+    width: 100%;
+    height: 100%;
+}
+        .circle {
+            width: 250px;
+            height: 250px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             background-size: cover;
             background-position: center;
-            border:5px solid black;
+            border: 5px solid black;
             box-shadow: 0px 0px 20px white;
-            position:relative;
-            color:white;
-
-
+            position: relative;
+            color: white;
         }
-        #best-ai-lab{
+        #best-ai-lab {
             background-image: url('https://i.pinimg.com/474x/88/29/de/8829de8b2445dcffeebbccd761e1aab0.jpg');
-        
         }
-        #best-scientists{
+        #best-scientists {
             background-image: url('https://i.pinimg.com/736x/6b/c0/f2/6bc0f25628319d3fadc3cda5f07d3ade.jpg');
         }
-        .circle-text{
+        .circle-text {
             font-weight: bold;
             font-size: 18px;
             text-align: center;
             position: absolute;
         }
-        </style>
-    </head>
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#top">Home</a>
+            <a href="#about">About us</a>
+            <a href="ethicssocietyhub.html">The Space for Social Experiment</a>
+            <a href="lab.html">Virtual Laboratory</a>
+            <a href="kurset.html">GenAI Academy</a>
+            <a href="forumishkencor.html">Scientific Forum</a>
+            <a href="FAQ.html">FAQs</a>
+        </nav>
+    </header>
     
-    <body>
-        <header>
-            <nav>
-                <a href="Home.html">Home</a> 
-                <a href="About_us.html">About us</a> 
-                <a href="ethicssocietyhub.html">The Space for Social Experiments </a>
-                <a href="lab.html">Virtual Laboratory</a>
-                <a href="#top">GenAI Academy </a>
-                <a href="forumi_shkencor.html">Scientific Forum </a>
-                <a href="FAQ.html">FAQs</a>
-
-            </nav>
-           </header>
-         <div class="container" id="container">
-            <div class="logo-container">
-                <svg class="svg-border" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-                    <circle cx="100" cy="100" r="70" fill="none" stroke="black" stroke-width="5"/>
-                </svg>
-                <div class="logo">
-                    <span>AI-G</span>
- </div>
-
+    <div class="container" id="container">
+        <div class="logo-container">
+            <!-- SVG border -->
+            <svg class="svg-border" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+                <circle cx="100" cy="100" r="70" fill="none" stroke="black" stroke-width="5"/>
+            </svg>
+            <!-- Logo -->
+            <div class="logo">
+                <span>AI-G</span>
             </div>
-            <div class="welcome-text">
-                Welcome to our academy, a hub for groundbreaking research in genetics and artificial intelligence.
+        </div>
+        <div class="welcome-text">
+            Welcome to our academy, a hub for groundbreaking research in genetics and artificial intelligence.
             <p>Dr. Zabeli says: Akademia jonë në AI Genetics ofron mund&euml;si të paimagjinueshme për zhvillimin e aftësive tuaja. Përmes studimeve dhe kërkimeve të thelluara,
             do të mund të kontribuoni në fushat më të avancuara të gjenetikës dhe inteligjencës artificiale.
-            &Euml;shte me rendesi te dini se pjesëmarrësit do të kenë mundësinë të merren me projekte inovative
-             dhe të fitojnë "&Ccedil;ertifikata" që do të &ccedil;ojnë karrierën e tyre në një nivel më të lartë.</p>
-            </div>
-         </div>
-         <div class="photo-container" id="photo-container">
-           <div class="photo-item">
+            &Euml;shte me rendesi te dini se pjesëmarrësit do të kenë mundësinë të merren me projekte inovative dhe të fitojnë "&Ccedil;ertifikata" që do të &ccedil;ojnë karrierën e tyre në një nivel më të lartë.</p>
+        </div>
+    </div>
+    
+    
+    <div class="photo-container" id="photo-container">
+        <div class="photo-item">
             <img src="https://i.pinimg.com/736x/1e/e0/ab/1ee0ab694f6a83a33562aa15bc9282ad.jpg" alt="Photo1">
             <div class="photo-text">Our team is dedicated to discovering the mysteries of human genetics.</div>
         </div>
-            <div class="photo-item">
-                <img src="https://i.pinimg.com/736x/df/54/b4/df54b45e1382575e2d32711b9ef37088.jpg" alt="Photo2">
-                <div class="photo-text">Genetic anomalies are being detected with higher accuracy using AI.</div>
-            </div>
-            <div class="photo-item">
-                <img src="https://i.pinimg.com/736x/a5/e9/fd/a5e9fdc456d2b8ec96822886b4ee452f.jpg" alt="Photo3">
-                <div class="photo-text">AI-driven research is revolutionizing the way we approach genetic disorders.</div>
-            </div>
-                <div class="photo-item">
-                    <img src="https://i.pinimg.com/736x/1d/af/95/1daf952fab21779ca73a09eefbcd4b7a.jpg" alt="Photo4">
-                    <div class="photo-text">Our work brings hope to millions of people with genetic diseases.</div>
-                </div>
-                <div class="photo-item">
-                    <img src="https://i.pinimg.com/736x/94/d0/35/94d035904a4b9c6089a69bb3779f1176.jpg" alt="Photo5">
-                    <div class="photo-text">We are personalizing genetic therapies for individuals using AI.</div>
-                </div>
-                <div class="photo-item">
-                    <img src="https://i.pinimg.com/736x/ac/6d/f1/ac6df1179d7f53e0bbb98a76e46d0c05.jpg" alt="Photo6">
-                    <div class="photo-text">AI has the potential to predict and prevent genetic diseases.</div>
-                  </div>
-            </div>
-           
-         <div class="robot-container" id="robot-container">
-            <img src="https://i.pinimg.com/736x/9b/8b/51/9b8b512c8d831c27989f758bc1a7795f.jpg" class="robot-container" alt="Robot Image">
-            <div class="textbox" id="textbox">
-                Achievement 1: In 2020, we made a breakthrough in AI-driven gene sequencing.
-            </div>
+        <div class="photo-item">
+            <img src="https://i.pinimg.com/736x/df/54/b4/df54b45e1382575e2d32711b9ef37088.jpg" alt="Photo2">
+            <div class="photo-text">Genetic anomalies are being detected with higher accuracy using AI.</div>
+        </div>
+        <div class="photo-item">
+            <img src="https://i.pinimg.com/736x/a5/e9/fd/a5e9fdc456d2b8ec96822886b4ee452f.jpg" alt="Photo3">
+            <div class="photo-text">AI-driven research is revolutionizing the way we approach genetic disorders.</div>
+        </div>
+        <div class="photo-item">
+            <img src="https://i.pinimg.com/736x/1d/af/95/1daf952fab21779ca73a09eefbcd4b7a.jpg" alt="Photo4">
+            <div class="photo-text">Our work brings hope to millions of people with genetic diseases.</div>
+        </div>
+        <div class="photo-item">
+            <img src="https://i.pinimg.com/736x/94/d0/35/94d035904a4b9c6089a69bb3779f1176.jpg" alt="Photo5">
+            <div class="photo-text">We are personalizing genetic therapies for individuals using AI.</div>
+        </div>
+        <div class="photo-item">
+            <img src="https://i.pinimg.com/736x/ac/6d/f1/ac6df1179d7f53e0bbb98a76e46d0c05.jpg" alt="Photo6">
+            <div class="photo-text">AI has the potential to predict and prevent genetic diseases.</div>
+        </div>
+    </div>
 
-         </div>
-         <div class="achievement-container" id="achievement-container">
-            <div class="circle" id="best-ai-lab">
-                <div class="circle-text">2019:Best AI LAB</div>
+    <div class="robot-container" id="robot-container">
+        <img src="https://i.pinimg.com/736x/9b/8b/51/9b8b512c8d831c27989f758bc1a7795f.jpg" class="robot-image" alt="Robot Image">
+        <div class="textbox" id="textbox">
+            Achievement 1: In 2020, we made a breakthrough in AI-driven gene sequencing.
+        </div>
+    </div>
 
-            </div>
-            <div class="circle" id="best-scientists">
-                <div class="circle-text">2020:Best SCIENTISTS</div>
-            </div>
+    <!-- New Circle Section -->
+    <div class="achievement-container" id="achievement-container">
+        <div class="circle" id="best-ai-lab">
+            <div class="circle-text">2019:Best AI LAB</div>
+        </div>
+        <div class="circle" id="best-scientists">
+            <div class="circle-text">2020:Best SCIENTISTS</div>
+        </div>
+    </div>
+    <div class="video-container" id="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/EQxtHL4Y1rw" 
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div class="small-circle-container" id="small-circle-container">
+    <canvas id="small-circle-canvas" width="100" height="100"></canvas>
+</div>
 
-         </div>
-         <div class="video-container" id="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/EQxtHL4Y1rw"
-            title="Youtube video player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen></iframe>
-         </div>
-         <div class="small-circle-container" id="small-circle-container">
-            <canvas id="small-circle-container" width="100" height="100"></canvas>
+ <script>
+  window.onload = function() {
+    const container = document.getElementById("container");
+    const welcomeText = document.querySelector(".welcome-text");
+    const photoContainer = document.getElementById("photo-container");
+    const robotContainer = document.getElementById("robot-container");
+    const textbox = document.getElementById("textbox");
+    const achievementContainer = document.getElementById("achievement-container");
+    const canvas = document.getElementById('small-circle-canvas');
+    const ctx = canvas.getContext('2d');
+    
+    // Vizato një rreth në canvas
+    ctx.beginPath();
+    ctx.arc(50, 50, 40, 0, 2 * Math.PI); // Rreth me qendër (50, 50) dhe rreze 40
+    ctx.fillStyle = 'black'; // Ngjyra e brendshme e rrethit
+    ctx.fill();
+    ctx.lineWidth = 5;
+    ctx.strokeStyle = 'white'; // Ngjyra e kufirit të rrethit
+    ctx.stroke();
 
-         </div>
-         <script>
-         window.onload=function(){
-            const container=document.getElementById("container");
-            const welcomeText=document.querySelector(".welcome-text") ;
-            const photoContainer=document.getElementById("photo-container");
-            const robotContainer=document.getElementById("robot-container");
-            const textbox=document.getElementById("textbox");
-            const achievementContainer=document.getElementById("achievement-container");
-            const canvas=document.getElementById('small-circle-canvas');
-            const ctx= canvas.getContext('2d');
-            ctx.beginPath();
-            ctx.arc(50,50,40,0,2*Math.PI);
-            ctx.fillStyle='black';
-            ctx.fill();
-            ctx.lineWidth=5;
-            ctx.strokeStyle='white';
-            ctx.stroke();
+    // Fade in the welcome text
+    setTimeout(() => {
+        welcomeText.style.opacity = "1";
+        setTimeout(() => {
+            container.style.display = "none";
+            photoContainer.classList.add("visible");
+        }, 5000);
+    }, 2000);
 
-
-
-           setTimeout(()=>{
-            welcomeText.style.opacity="1";
-            setTimeout(()=>{
-                container.style.display="none";
-                photoContainer.classList.add("visible");
-
-
-            },5000);
-           },2000);
-
-           setTimeout(()=>{
-            photoContainer.classList.remove("visible");
-            setTimeout(()=>{
-                robotContainer.style.opacity="1";
-                setTimeout(()=>{
-                    const text=[
+    // After photos, show the robot and achievement text
+    setTimeout(() => {
+        photoContainer.classList.remove("visible");
+        setTimeout(() => {
+            robotContainer.style.opacity = "1";
+            setTimeout(() => {
+                const texts = [
                     "Achievement 2: In 2021, our team discovered a method to use AI for diagnosing genetic disorders in infants.",
                     "Achievement 3: In 2022, we implemented an AI model capable of predicting genetic mutations with 95% accuracy."
                 ];
-                let index=0;
-                const interval=setInterval(()=>{
-                    let currentText=text[index];
-                    if(currentText.match(/2021/)){
-                        currentText=currentText.replace('2021', '2025');
 
+                let index = 0;
+                const interval = setInterval(() => {
+                    let currentText = texts[index];
+                    if (currentText.match(/2021/)) {
+                        currentText = currentText.replace('2021', '2025');
                     }
-                    if(currentText.match(/2022/)){
-                        currentText=currentText.replace('2021', '2024');
-                        
+                    if (currentText.match(/2022/)) {
+                        currentText = currentText.replace('2022', '2026');
                     }
-                    textbox.innerHTML=currentText;
+                    textbox.innerHTML = currentText;
                     index++;
-                    if(index==texts.length){
+                    if (index === texts.length) {
                         clearInterval(interval);
-                        setTimeout(()=>{
-                            textbox.style.opacity="0";
-                            photoContainer.style.opacity="0";
-
-                        },1000);
-                        setTimeout(()=>{
-                            robotContainer.style.opacity="0";
-
-                        },1000);
-                        setTimeout(()=>{
-                            achievementContainer.style.opacity="1";
-                            setTimeout(()=>{
-                                achievementContainer.style.opacity="0";
-                                setTimeout(()=>{
-                                    document.getElementById("video-container").style.display="block";
-                                    setTimeout(()=>{
-                                        document.getElementById("small-circle-container").style.display="block";
-                                    },3000);
-                                },3000);
-                            },3000);
-                        },3000);
-
+                        // Hide textbox and photo after achievements
+                        setTimeout(() => {
+                            textbox.style.opacity = "0";
+                            photoContainer.style.opacity = "0";
+                        }, 1000);
+                        // Hide the robot after 1 second
+                        setTimeout(() => {
+                            robotContainer.style.opacity = "0";
+                        }, 1000);
+                        // Show the achievement container after 3 seconds
+                        setTimeout(() => {
+                            achievementContainer.style.opacity = "1";
+                            // Hide the achievement container after 3 more seconds
+                            setTimeout(() => {
+                                achievementContainer.style.opacity = "0";
+                                // Shfaq videon pas largimit të rrethave
+                                setTimeout(() => {
+                                    document.getElementById("video-container").style.display = "block"; 
+                                    // Shfaq videon
+                                    // Shtoni kodin për të shfaqur rrethin pas videos
+                                    setTimeout(() => {
+                                        document.getElementById("small-circle-container").style.display = "block"; // Shfaq rrethin pas videos
+                                    }, 3000); // Shfaq rrethin pas videos
+                                }, 3000); // Shfaq videon 3 sekonda pas largimit të rrethave
+                            }, 3000); // Show the achievements after 3 seconds
+                        }, 3000);
                     }
+                }, 5000);
+            }, 3000);
+        }, 2000);
+    }, 10000);
+};
+</script>
 
 
-                },5000);
-
-                },3000);
-            },2000);
-           },10000);
-        };
-         </script>
-    </body>
+</body>
 </html>
