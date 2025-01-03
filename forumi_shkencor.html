@@ -125,81 +125,102 @@
             background-color: #1a237e;
             transform: scale(0.95);
         }
+    .library-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Hap kartat në të gjithë gjerësinë */
+    gap: 20px;
+}
 
-        .library {
-            width:100%;
-            max-width: 100%;
-            margin: 0 auto;
-            background-color: #1e293b;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+.library-card {
+    flex: 1 1 calc(100% - 40px); /* Kartat shtrihen horizontalisht */
+    max-width: calc(100% - 40px); /* Kufizon shtrirjen maksimale të kartave */
+    height: 100px; /* Kartat bëhen më të holla */
+    background-color: #1e2a38; /* Ngjyra më e rëndë dhe e errët */
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vendos përmbajtjen në qendër */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
 
-        .library h2 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #64ffda;
-            text-align: center;
-        }
+.library-card:hover {
+    transform: scale(1.02);
+    background-color: #253545; /* Ngjyrë pak më e ndritshme kur kalon mbi kartë */
+}
 
-        .library ul {
-            list-style-type: none;
-            padding: 0;
-        }
+.library-card h3 {
+    font-size: 1.5rem; /* Madhësia e titullit është e balancuar për lartësinë më të vogël */
+    color: #ffffff;
+    margin-bottom: 5px;
+}
 
-        .library li {
-            margin: 10px 0;
-        }
+.library-card a {
+    color: #64ffda; /* Njësoj si për linket e tjera */
+    text-decoration: none;
+    font-size: 0.9rem; /* Pak më e vogël për t'u balancuar me lartësinë e kartës */
+    font-weight: bold; /* E bën më të theksuar */
+    transition: color 0.3s ease;
+}
 
-        .library li a {
-            color: #64ffda;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .library li a:hover {
-            color: #1aaf93;
-        }
-        .library p a {
-       color: #64ffda; /* Same color as Genetics Book */
-        text-decoration: none;
-        transition: color 0.3s ease;
-        }
-
-.library p a:hover {
-    color: #1aaf93;
+.library-card a:hover {
+    color: #1aaf93; /* Ngjyra kur e kalon miun mbi të */
 }
 
 
-        .ideas {
-            width:100%;
-            max-width: 100%x;
-            margin: auto;
-            background-color: #1e293b;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+    .ideas h2 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        color: #64ffda;
+    }
 
-        .ideas h2 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #64ffda;
-            text-align: center;
-        }
+    .ideas p {
+        font-size: 1rem;
+        color: #b3c2d1;
+        margin-bottom: 15px;
+    }
 
-        .ideas textarea {
-            width: 100%;
-            height: 100px;
-            margin-top: 10px;
-            border: none;
-            border-radius: 5px;
-            padding: 10px;
-            font-size: 14px;
-            font-family: Poppins, sans-serif;
-        }
+    .ideas textarea {
+        width: 100%;
+        height: 120px;
+        margin-bottom: 15px;
+        border: none;
+        border-radius: 8px;
+        padding: 10px;
+        font-size: 1rem;
+        font-family: Poppins, sans-serif;
+        background-color: #2e3a4e;
+        color: #eee;
+    }
 
+    .ideas textarea:focus {
+        outline: none;
+        border: 2px solid #64ffda;
+    }
+
+    .ideas button {
+        background-color: #3f51b5;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .ideas button:hover {
+        background-color: #283593;
+        transform: scale(1.05);
+    }
+
+    .ideas button:active {
+        background-color: #1a237e;
+        transform: scale(0.95);
+    }
         @media (max-width: 768px) {
             .community-card {
                 width: calc(100% * 2);
@@ -212,6 +233,40 @@
                 padding: 8px 16px;
             }
         }
+        /* Stili bazë për butonat */
+button {
+    background: linear-gradient(135deg, #1aaf93, #64ffda); /* Gradient futuristik */
+    color: #fff; /* Ngjyra e bardhë për tekstin */
+    border: none; /* Hiq kufijtë e butonit */
+    border-radius: 50px; /* Këndet e rrumbullakosura për një efekt modern */
+    padding: 10px 30px; /* Hapësirë e mjaftueshme për një pamje elegante */
+    font-size: 1rem; /* Madhësia e tekstit */
+    font-weight: bold; /* Tekst më i theksuar */
+    cursor: pointer; /* Tregon që është i klikueshëm */
+    box-shadow: 0px 4px 15px rgba(100, 255, 218, 0.5); /* Hijë për theksim futuristik */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animacione për efekt */
+}
+
+/* Efekti hover */
+button:hover {
+    transform: scale(1.05); /* Rrit pak madhësinë kur kalon mbi buton */
+    box-shadow: 0px 6px 20px rgba(100, 255, 218, 0.8); /* Hijë më e theksuar */
+}
+
+/* Efekti kur butoni klikohet */
+button:active {
+    transform: scale(0.95); /* Pak më i vogël kur klikohet */
+    box-shadow: 0px 3px 10px rgba(100, 255, 218, 0.5); /* Hijë më e butë */
+}
+
+/* Butonat responsivë */
+@media (max-width: 768px) {
+    button {
+        width: 100%; /* Butonat mbulojnë 100% të gjerësisë në pajisje të vogla */
+        padding: 15px 20px; /* Rregullim i padding për ekranet më të vogla */
+    }
+}
+
 
         @media (max-width: 480px) {
             .community-card {
@@ -221,6 +276,11 @@
                 flex: 0 0 100%;
             }
         }
+       
+ 
+.
+
+    
     </style>
 </head>
 <body>
@@ -271,16 +331,25 @@
             </div>
         </section>
 
-        <section id="library" class="section library">
-            <h2>Library</h2>
-            <ul>
-                <li><a href="https://mitpress.mit.edu/9780262581158/artificial-intelligence-and-molecular-biology/">Genetics Book</a></li>
-                <li><a href="https://archive.org/details/geneticengineeri0000burg">AI and Genetics Engineering</a></li>
-                <li><a href="https://www.researchgate.net/publication/379641716_Bioethics_in_Biomedical_Engineering">Bioethics in Biomedical Engineering</a></li>
-                <li><a href="https://www.als.org/sites/default/files/2022-04/Genetics-Infographic-Alliance.pdf" target="_blank">Introduction to Genetics-Infographic-Alliance PDF</a></li>
-            </ul>
-            <p><a href="https://openlibrary.org/">Get full access to all the Scientific Books</a></p>
-        </section>
+       <section id="library" class="section library">
+    <h2>Library</h2>
+    <div class="library-content">
+        <div class="library-card">
+            <h3>Genetics Book</h3>
+            <a href="https://mitpress.mit.edu/9780262581158/artificial-intelligence-and-molecular-biology/">Read more</a>
+        </div>
+        <div class="library-card">
+            <h3>AI and Genetics Engineering</h3>
+            <a href="https://archive.org/details/geneticengineeri0000burg">Read more</a>
+        </div>
+        <div class="library-card">
+            <h3>Bioethics in Biomedical Engineering</h3>
+            <a href="https://www.researchgate.net/publication/379641716_Bioethics_in_Biomedical_Engineering">Read more</a>
+        </div>
+    </div>
+    <p><a href="https://openlibrary.org/">Get full access to all the Scientific Books</a></p>
+</section>
+
 
         <section id="ideas" class="section ideas">
             <h2>Ideas & Comments</h2>
