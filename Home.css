@@ -278,6 +278,7 @@ z-index:100;
 }
 .buttons:hover {
     cursor: pointer;
+    color:#f1683a;
 }
 @keyframes timeRunning{
 to{
@@ -294,3 +295,4 @@ to{
 font-size:30px;
 }
 }
+
