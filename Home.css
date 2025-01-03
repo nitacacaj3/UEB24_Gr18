@@ -276,6 +276,9 @@ z-index:100;
     width:100%;
     animation: timeRunning 2s linear 1 forwards;
 }
+.buttons:hover {
+    cursor: pointer;
+}
 @keyframes timeRunning{
 to{
     width:0;
