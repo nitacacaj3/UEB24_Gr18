@@ -322,32 +322,10 @@
             ctx.lineWidth=5;
             ctx.strokeStyle='white';
             ctx.stroke();
-            
 
 
-            setTimeout(function(){
-                container.classList.add("move-left");
-                setTimeout(function(){
-                    welcomeText.style.opacity="1";
-                    setTimeout(function(){
-                        container.classList.add("hidden");
-                        photoContainer.style.display="flex";
-                        const photos=photoContainer.querySelectorAll("img");
-                       photos.forEach((photo,index)=>{
-                        setTimeout(function(){
-                            photo.classList.add("rotate");
-                        },index*1000);
-                    });
-                    setTimeout(function(){
-                        photoContainer.style.visibility="hidden";
-                    
 
-                        },5000);
-                    },5000);
-
-                },1000);
-            },2000);
-         };
+           
          </script>
     </body>
 </html>
