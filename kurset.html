@@ -315,7 +315,16 @@
             const achievementContainer=document.getElementById("achievement-container");
             const canvas=document=document.getElementById('small-circle-canvas');
             const ctx= canvas.getContext('2d');
+            ctx.beginPath();
+            ctx.arc(50,50,40,0,2*Math.PI);
+            ctx.fillStyle='black';
+            ctx.fill();
+            ctx.lineWidth=5;
+            ctx.strokeStyle='white';
+            ctx.stroke();
             
+
+
             setTimeout(function(){
                 container.classList.add("move-left");
                 setTimeout(function(){
