@@ -296,6 +296,6 @@ font-size:30px;
 }
 }
 
-.item .buttons button:hover{
+.item .buttons button a:hover{
     color:#f1683a;
 }
