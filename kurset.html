@@ -106,7 +106,9 @@ overflow: hidden;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
     opacity: 0;
     transition: opacity 1s ease;
+    /*Perdorimi i Css outline vetive*/
     outline: 2px solid rgb(34, 65, 75);
+       /*Perdorimi i gradientit radial*/
     background: radial-gradient(circle, rgba(0, 0, 50, 1) 0%, rgba(0, 0, 10, 1) 100%);
     background-size: cover;
     background-position: center;
@@ -155,6 +157,7 @@ margin-right:60px;
         .textbox {
             width: 250px;
             height: 180px;
+               /*Perdorimi i gradientit linear*/
             background: linear-gradient(45deg, rgba(23, 35, 42, 0.9), rgba(6, 70, 92, 0.9)), radial-gradient(circle at top left, rgba(86, 115, 124, 0.7), rgba(16, 161, 210, 0.7));
             color: white;
             padding: 20px;
@@ -311,7 +314,7 @@ iframe {
 </div>
 
  <script>
-  window.onload = function() {
+  window.onload = function() {//Funksioni si datatype
     const container = document.getElementById("container");
     const welcomeText = document.querySelector(".welcome-text");
     const photoContainer = document.getElementById("photo-container");
@@ -323,15 +326,16 @@ iframe {
     
     
     <!-- Canva si veti e re, e HTML5-->
+    //Ctx objekt, si JS data type
     ctx.beginPath();
-    ctx.arc(50, 50, 40, 0, 2 * Math.PI); 
+    ctx.arc(50, 50, 40, 0, 2 * Math.PI); //Operatori i shumezimit
     ctx.fillStyle = 'black'; 
     ctx.fill();
     ctx.lineWidth = 5;
     ctx.strokeStyle = 'white'; 
     ctx.stroke();
 
-    
+    //Callback funksionet
     setTimeout(() => {
         welcomeText.style.opacity = "1";
         setTimeout(() => {
@@ -347,24 +351,25 @@ iframe {
             robotContainer.style.opacity = "1";
         
             setTimeout(() => {
-               
+               //JS data types-String
                 const texts = [
                     "Achievement 2: In 2021, our team discovered a method to use AI for diagnosing genetic disorders in infants.",
                     "Achievement 3: In 2022, we implemented an AI model capable of predicting genetic mutations with 95% accuracy."
                 ];
 
                 let index = 0;
-                const interval = setInterval(() => {
-                    let currentText = texts[index];
-                    if (currentText.match(/2021/)) {
-                        currentText = currentText.replace('2021', '2025');
+                
+                const interval = setInterval(() => {//Callback funksione
+                    let currentText = texts[index];//Operatori i caktimit
+                    if (currentText.match(/2021/)) {//Metoda match
+                        currentText = currentText.replace('2021', '2025');//Metoda replace
                     }
                     if (currentText.match(/2022/)) {
                         currentText = currentText.replace('2022', '2026');
                     }
                     textbox.innerHTML = currentText;
-                    index++;
-                    if (index === texts.length) {
+                    index++;//Operatori i inkrementimit
+                    if (index === texts.length) {//JS data type, boolean dhe si operator
                         clearInterval(interval);
                         
                         setTimeout(() => {
