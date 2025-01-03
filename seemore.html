@@ -363,12 +363,15 @@ ul ol {
         $(document).ready(function () {
             // Përdorimi i jQuery selektorëve
             $('a').on('click', function (e) {
-                e.preventDefault();
-                var target = $(this).attr('href');
-                $('html, body').animate({
-                    scrollTop: $(target).offset().top
-                }, 1000);
-            });
+    var target = $(this).attr('href');
+    if (target.startsWith('#')) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $(target).offset().top
+        }, 1000);
+    }
+});
+
 
             // Përdorimi i jQuery ngjarjeve (Events)
             $('.explore-button').on('click', function () {
