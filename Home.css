@@ -45,6 +45,9 @@
     color:#f1683a;
 }
 .carousel .list .item .content .buttons{
+    /*është përdorur për t'u siguruar që 
+    të ketë mundësi për të shtuar më shumë butona ose elemente në të ardhmen,
+     pa ndikuar në strukturën e përgjithshme.*/
     display:grid ;
     grid-template-columns: repeat(2,130px);
     grid-template-rows:40px;
