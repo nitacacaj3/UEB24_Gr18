@@ -1,4 +1,4 @@
-//Përdorimi i JavaScript për manipulim me tekst dhe shfrytëzimi i getElementById:
+//Përdorimi i JavaScript për shfrytëzim te getElementById:
 //1. Përdorimi i tagjeve elementare të JavaScript-ave
 let nextDom = document.getElementById('next');
 let prevDom = document.getElementById('prev');
@@ -6,7 +6,7 @@ let carouselDom = document.querySelector('.carousel');
 let listItemDom = document.querySelector('.carousel .list');
 let thumbnailDom = document.querySelector('.carousel .thumbnail');
 
-//Përdorimi i JavaScript për tekst (output), ngjarje (event):
+//Përdorimi i JavaScript për  ngjarje (event):
 // Ngjarja e klikimit për butonin "Next"
 nextDom.onclick = function () {
     showSlider('next'); // Kjo do të thërrasë funksionin për të kaluar në elementin tjetër
