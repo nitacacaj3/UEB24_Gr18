@@ -65,11 +65,7 @@ font-family: Poppins;
 font-weight:500px ;
 
 }
-.carousel .list .item .content button:nth-child(2){
-    background-color: transparent;
-    color:#eee;
-    border:1px solid #eee;
-}
+
 
 
 .thumbnail{
