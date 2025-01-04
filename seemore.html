@@ -99,9 +99,10 @@ header a:hover {
     font-size: 40px;
     font-family: Poppins;
     text-align: center;
-    color: #f1683a;;
+    color: #f1683a;
+    /*Përdorimi i CSS3 ‘text shadow’ dhe ‘text wrapping’ */
     text-shadow: none;
-    white-space: normal;
+    word-wrap: break-word;
 }
 
 .scroll-button {
@@ -361,7 +362,9 @@ ul ol {
     </footer>
 
     <script>
+        //Përdorimi i JavaScript për tekst (output)
          console.log("Welcome to the Virtual Laboratory");
+
         $(document).ready(function () {
             // Përdorimi i jQuery selektorëve
             $('a').on('click', function (e) {
