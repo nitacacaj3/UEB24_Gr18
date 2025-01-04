@@ -1,4 +1,5 @@
 //Përdorimi i JavaScript për manipulim me tekst dhe shfrytëzimi i getElementById:
+//1. Përdorimi i tagjeve elementare të JavaScript-ave
 let nextDom = document.getElementById('next');
 let prevDom = document.getElementById('prev');
 let carouselDom = document.querySelector('.carousel');
