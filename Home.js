@@ -5,7 +5,7 @@ let prevDom = document.getElementById('prev');
 let carouselDom = document.querySelector('.carousel');
 let listItemDom = document.querySelector('.carousel .list');
 let thumbnailDom = document.querySelector('.carousel .thumbnail');
-
+//Krijimi dhe përdorimi i funksioneve në JS me dhe pa parametra 
 //Përdorimi i JavaScript për  ngjarje (event):
 // Ngjarja e klikimit për butonin "Next"
 nextDom.onclick = function () {
