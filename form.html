@@ -181,13 +181,13 @@
       //Përdorimi i të paktën 4 vetive dhe metodave për manipulim me numra në JS si p.sh. MAX_VALUE, NaN, toExponential(), toString(), etj. 
 
 document.getElementById("generate-calculations").addEventListener("click", function() {
-    const globalPopulation = 7800000000; // Global population
-    const aiInGeneticsUsage = 0.05; // 5% of AI usage in genetics globally
+    const globalPopulation = 7800000000; // popullimi goval
+    const aiInGeneticsUsage = 0.05; // 5% e perdorimit te AI ne tere boten
     const totalGeneticsAIUsers = globalPopulation * aiInGeneticsUsage;
 
    
     const maxValue = Number.MAX_VALUE; // MAX_VALUE
-    const invalidNumber = "string" / 2; // NaN example
+    const invalidNumber = "string" / 2; // NaN shembull
     const num = 12345;
 
     const results = `
@@ -205,7 +205,7 @@ document.getElementById("generate-calculations").addEventListener("click", funct
     document.getElementById("calculation-results").innerHTML = results;
 });
 
-        // Analyze Data with Filter, Map, and Reduce
+        // Analiza e te dhenave me  Filter, Map, dhe Reduce
         document.getElementById("analyze-data").addEventListener("click", function() {
             const aiTechnologies = Array.from(document.querySelectorAll('input[name="ai-technologies"]:checked'))
                 .map(input => input.value);
