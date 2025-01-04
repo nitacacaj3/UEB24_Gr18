@@ -6,6 +6,11 @@
     font-weight: 300;
     font-style: normal;
   }
+  /*Shfrytëzimi i CSS vetive në vijim: 
+-	background-color 
+-	background-image 
+-	background-repeat - background-attachment 
+-	background-position */
 body {
     font-family: Poppins, sans-serif;
     background-color: #1c1c1c; /* Vlera e background-color */
