@@ -6,9 +6,10 @@
     <title>Forumi Shkencor</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
+        /* 3. HTML CSS dhe 9. CSS2, CSS Id dhe class selektoret */
         body {
             font-family: Poppins, sans-serif;
-            background-color:  #0c1418;
+            background-color:  #0c1418; /* 10. CSS Background */
             color: #eee;
             margin: 0;
             font-size: 12px;
@@ -16,23 +17,23 @@
 
         a {
             text-decoration: none;
-            color: #eee; /* Links jane te dukshme ne sfond te erret */
+            color: #eee; /*  */
         }
         header a:hover {
     color: #ff6f61;
 }
 .heading1 h2{
     font-size: 60px;
-    text-align: center;
+    text-align: center;/* 2. Vendosja e alignment */
     color: #64ffda;
 }
         header {
             width: 1140px;
             max-width: 80%;
-            margin: auto;
+            margin: auto; /* 12. CSS Box Model - Margin */
             height: 50px;
             display: flex;
-            align-items: center;
+            align-items: center;/* 2. Alignment */
             position: relative;
             z-index: 100;
         }
@@ -46,7 +47,7 @@
         .container {
             padding: 20px;
         }
-
+        /*Kuptimi i qëllimit të krijimit të tagjeve kryesore*/
         .section {
             margin-bottom: 30px;
         }
@@ -65,13 +66,12 @@
         }
 
         .community-card div {
-            background: url('https://wallpaper.dog/large/20534071.jpg') no-repeat center center;
-            background-size: cover;
-            
-            padding: 15px;
-            border-radius: 0%;
+            background: url('https://wallpaper.dog/large/20534071.jpg') no-repeat center center;/* 4. HTML Images */
+            background-size: cover; /* 10. CSS Background */
+            padding: 15px;/* 12. CSS Box Model - Padding */
+            border-radius: 0%;/* 26. Vetitë e "borders": radius */
             flex: 0 0 25%;
-            text-align: center;
+            text-align: center;/* 2. Alignment */
             box-sizing: border-box;
             margin: 0 auto;
         }
@@ -108,17 +108,17 @@
             background-color: #3f51b5;
             color: #fff;
             border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
+            border-radius: 5px; /* 26. Vetitë e "borders": radius */
+            padding: 10px 20px; /* 12. CSS Box Model - Padding */
             font-size: 14px;
-            font-weight: bold;
+            font-weight: bold; /* 15. Bold */
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
         button:hover {
             background-color: #283593;
-            transform: scale(1.05);
+            transform: scale(1.05);/* 27. Efekte interaktive me CSS dhe JavaScript */
         }
 
         button:active {
@@ -131,7 +131,7 @@
     justify-content: space-between; /* Hap kartat në të gjithë gjerësinë */
     gap: 20px;
 }
-
+ /* 12. CSS Box Model dhe Borders */
 .library-card {
     flex: 1 1 calc(100% - 40px); /* Kartat shtrihen horizontalisht */
     max-width: calc(100% - 40px); /* Kufizon shtrirjen maksimale të kartave */
@@ -143,7 +143,7 @@
     flex-direction: column;
     justify-content: center; /* Vendos përmbajtjen në qendër */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease;/* 8. HTML dhe CSS Interactivity */
 }
 
 .library-card:hover {
@@ -156,7 +156,7 @@
     color: #ffffff;
     margin-bottom: 5px;
 }
-
+/* 19. Hyperlink tek nje file */
 .library-card a {
     color: #64ffda; /* Njësoj si për linket e tjera */
     text-decoration: none;
@@ -299,12 +299,12 @@ button:active {
 
     <div class="container">
         <section id="community" class="section">
-            <div class="heading1"><h2>Professional Community</h2></div>
+            <div class="heading1"><h2>Professional Community</h2></div> <!-- 16. Perdorimi i "Heading" tagjeve -->
             
             <div class="community-slider">
                 <div class="community-card">
                     <div>
-                        <img src="https://imgcdn.stablediffusionweb.com/2024/5/9/70211c49-535f-4fc0-8090-30cc3b06cd6e.jpg" alt="Dr.Alban Selimi">
+                        <img src="https://imgcdn.stablediffusionweb.com/2024/5/9/70211c49-535f-4fc0-8090-30cc3b06cd6e.jpg" alt="Dr.Alban Selimi"> <!-- 4. HTML Images -->
                         <h4>Dr.Alban Selimi</h4>
                         <p>Certified <b>Doctor</b> specialized in Biomedicine.</p>
                     </div>
@@ -331,12 +331,12 @@ button:active {
             </div>
         </section>
 
-       <section id="library" class="section library">
+       <section id="library" class="section library"> <!--Perdorimi i ID-->
     <h2>Library</h2>
     <div class="library-content">
         <div class="library-card">
             <h3>Genetics Book</h3>
-            <a href="https://mitpress.mit.edu/9780262581158/artificial-intelligence-and-molecular-biology/">Read more</a>
+            <a href="https://mitpress.mit.edu/9780262581158/artificial-intelligence-and-molecular-biology/">Read more</a> <!-- 20. Hyperlink qe hapet ne tab te ri -->
         </div>
         <div class="library-card">
             <h3>AI and Genetics Engineering</h3>
@@ -347,46 +347,57 @@ button:active {
             <a href="https://www.researchgate.net/publication/379641716_Bioethics_in_Biomedical_Engineering">Read more</a>
         </div>
     </div>
-    <p><a href="https://openlibrary.org/">Get full access to all the Scientific Books</a></p>
+    <p align="center">Search your Scientific Books in the links below:</p>  <!-- 2. Teksti i pozicionuar me align -->
+    <p><a href="https://openlibrary.org/">Get full access to all the Scientific Books</a></p> <!--Hyperlinks” Brenda HTML faqes -->
+    <a href="https://mitpress.mit.edu" target="_blank">Visit MIT Press</a>
+    <p> </p>
+    <a href="mailto:https://www.west-dunbarton.gov.uk/libraries/using-the-library/email-notification-service/">Contact Library email services.</a>
+
+
 </section>
 
 
         <section id="ideas" class="section ideas">
-            <h2>Ideas & Comments</h2>
+            <h2>Ideas & Comments</h2> <!--Përdorimi i “Heading” tagjeve-->
             <p>Share your ideas or ask questions. The community is here to help!</p>
-            <textarea placeholder="Share your idea..."></textarea>
-            <button>Submit</button>
+            <textarea placeholder="Share your idea..."></textarea> <!-- 24. Perdorimi i "text" fushave -->
+            <button>Submit</button>  <!-- 25. Perdorimi i butonit submit -->
         </section>
 
         <section id="login" class="section">
             <h2>Login</h2>
             <p>You must log in to post comments or share ideas.</p>
-            <form action="dashboard.html" method="GET" style="display: flex; justify-content: flex-start; align-items: center; gap: 15px;">
+            <form action="dashboard.html" method="GET" style="display: flex; justify-content: flex-start; align-items: center; gap: 15px;">  <!-- 23. Funksioni i HTML Formave -->
                 <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="username" name="username" required> <!-- 28. Perdorimi i atributit autocomplete (required) -->
+
 
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" autocomplete="email" required><br><br><!--Perdorimi i autocomplete-->        
                 <button type="submit" id="loginButton">Login</button>
             </form>
         </section>
 
         <footer>
-            <p style="text-align: center">&copy;2025 Scientific Forum. All rights reserved.</p>
+            <p style="text-align: center">&copy;2025 Scientific Forum. All rights reserved.</p>  <!-- 2. Teksti i pozicionuar me align -->
         </footer>
     </div>
-
+<!--HTML JavaScript dhe Entitetet-->
     <script>
         document.getElementById('loginButton').addEventListener('click', (e) => {
             e.preventDefault();
             const username = document.getElementById('username').value;
             const email = document.getElementById('email').value;
-            if (username.length >= 3 && /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(email)) {
+            if (username.length >= 3 && /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(email)) { // Validimi i fushave
                 window.location.href = 'dashboard.html';
             } else {
                 alert("Please fill in all fields correctly.");
             }
         });
+        function validateUsername(username) {// Validimi i username
+    return username.length >= 3;
+    }
+
 
         const slider = document.querySelector('.community-card');
         const prevButton = document.getElementById('prev');
@@ -404,6 +415,8 @@ button:active {
                 updateSlider();
             }
         });
+        alert("Please fill in all fields correctly."); //Përdorimi i JS për paraqitjen e "verejtjeve" (warnings)
+
 
         nextButton.addEventListener('click', () => {
             if (currentIndex < slider.children.length - 1) {
