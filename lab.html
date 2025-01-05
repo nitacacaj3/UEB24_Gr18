@@ -1,277 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Virtual Laboratory</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
 
-        body {
-            font-family: Poppins, sans-serif;
-            background-color: #000;
-            color: #eee;
-            margin: 0;
-            font-size: 12px;
-        }
+      body {
+        font-family: Poppins, sans-serif;
+        background-color: #000;
+        color: #eee;
+        margin: 0;
+        font-size: 12px;
+      }
 
-        a {
-            text-decoration: none;
-           
-            color: #eee;
-        }
+      a {
+        text-decoration: none;
 
-        header {
-            width: 1140px;
-            max-width: 80%;
-            margin: auto;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            position: relative;
-            z-index: 100;
-        }
+        color: #eee;
+      }
 
-        header a {
-            margin-right: 40px;
-        }
-        header a:hover {
-    color: #ff6f61;
-}
+      header {
+        width: 1140px;
+        max-width: 80%;
+        margin: auto;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 100;
+      }
 
-        :root {
-            --width-circle: 150vw;
-            --radius: calc(100vw / 6);
-        }
+      header a {
+        margin-right: 40px;
+      }
+      header a:hover {
+        color: #ff6f61;
+      }
 
-        .slider {
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden;
-            position: relative;
-            background-color: #17232A;
-            background-image: radial-gradient(#fff3, transparent 50%);
-            margin-top: -50px;
-        }
+      :root {
+        --width-circle: 150vw;
+        --radius: calc(100vw / 6);
+      }
 
-        .slider .list {
-            position: absolute;
-            width: max-content;
-            height: 100%;
-            display: flex;
-            justify-content: start;
-            align-items: center;
-            transition: transform 0.8s ease;
-        }
+      .slider {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+        background-color: #17232a;
+        background-image: radial-gradient(#fff3, transparent 50%);
+        margin-top: -50px;
+      }
 
-        .slider .list .item {
-            width: calc(var(--radius) * 2);
-            text-align: center; /*Përdorimi i CSS për vendosje të tekstit */
-            transform: rotate(45deg);
-            transition: transform 1s;
-        }
+      .slider .list {
+        position: absolute;
+        width: max-content;
+        height: 100%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        transition: transform 0.8s ease;
+      }
 
-        .slider .list .item.active {
-            transform: rotate(0deg);
-        }
+      .slider .list .item {
+        width: calc(var(--radius) * 2);
+        text-align: center; /*Përdorimi i CSS për vendosje të tekstit */
+        transform: rotate(45deg);
+        transition: transform 1s;
+      }
 
-        .slider .list .item img {
-            width: 90%;
-            filter: drop-shadow(0 0 20px #000);
-        }
+      .slider .list .item.active {
+        transform: rotate(0deg);
+      }
 
-        .slider .content {
-            position: absolute;
-            bottom: 5%;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-            color: #eee;
-            width: max-content;
-        }
+      .slider .list .item img {
+        width: 90%;
+        filter: drop-shadow(0 0 20px #000);
+      }
 
-        .slider .content div:nth-child(2) {
-            font-size: 5rem;
-            text-transform: uppercase;
-            letter-spacing: 10px;
-            font-weight: bold;
-            position: relative;
-        }
+      .slider .content {
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        color: #eee;
+        width: max-content;
+      }
 
-        .slider .content div:nth-child(2)::before {
-            position: absolute;
-            left: 60%;
-            bottom: 50%;
-            width: 80px;
-            height: 80px;
-            content: '';
-            background-image: url(img/lezaves.png);
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
+      .slider .content div:nth-child(2) {
+        font-size: 5rem;
+        text-transform: uppercase;
+        letter-spacing: 10px;
+        font-weight: bold;
+        position: relative;
+      }
 
-        .slider .content div:nth-child(1) {
-            text-align: left;
-            text-transform: uppercase;
-            transform: translateY(20px);
-        }
+      .slider .content div:nth-child(2)::before {
+        position: absolute;
+        left: 60%;
+        bottom: 50%;
+        width: 80px;
+        height: 80px;
+        content: "";
+        background-image: url(img/lezaves.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
 
-        .slider .content button {
-            border: 1px solid #eee5;
-            background: transparent;
-            color: #eee;
-            font-family: Poppins, sans-serif;
-            letter-spacing: 5px;
-            padding: 10px 20px;
-            border-radius: 20px;
-        }
+      .slider .content div:nth-child(1) {
+        text-align: left;
+        text-transform: uppercase;
+        transform: translateY(20px);
+      }
 
-        #prev,
-        #next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: #eee5;
-            border: 1px solid #eee8;
-            color: #eee;
-            font-size: x-large;
-            font-family: monospace;
-            cursor: pointer;
-            z-index: 15;
-        }
+      .slider .content button {
+        border: 1px solid #eee5;
+        background: transparent;
+        color: #eee;
+        font-family: Poppins, sans-serif;
+        letter-spacing: 5px;
+        padding: 10px 20px;
+        border-radius: 20px;
+      }
 
-        #prev {
-            left: 20px;
-        }
+      #prev,
+      #next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #eee5;
+        border: 1px solid #eee8;
+        color: #eee;
+        font-size: x-large;
+        font-family: monospace;
+        cursor: pointer;
+        z-index: 15;
+      }
 
-        #next {
-            right: 20px;
-        }
+      #prev {
+        left: 20px;
+      }
 
-        .circle {
-            pointer-events: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            -webkit-mask: radial-gradient(var(--radius), transparent 100%, #000);
-            mask: radial-gradient(var(--radius), transparent 100%, #000);
-            backdrop-filter: blur(10px);
-            background: radial-gradient(calc(var(--radius) + 1px), #eee5 100%, #eee2);
-        }
+      #next {
+        right: 20px;
+      }
 
-        .circle span {
-            display: block;
-            position: absolute;
-            height: calc(var(--radius) * 2 + 50px);
-            top: 50%;
-            left: 50%;
-            --rotate: 50deg;
-            transform: translate(-50%, -50%) rotate(var(--rotate));
-            text-transform: uppercase;
-            color: #fff;
-            font-size: small;
-            animation: circleRotate 20s linear infinite;
-        }
-    .content button:hover{
-            color: #35a0a8;
-            cursor:pointer;
-        }
+      .circle {
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-mask: radial-gradient(var(--radius), transparent 100%, #000);
+        mask: radial-gradient(var(--radius), transparent 100%, #000);
+        backdrop-filter: blur(10px);
+        background: radial-gradient(
+          calc(var(--radius) + 1px),
+          #eee5 100%,
+          #eee2
+        );
+      }
 
-        @keyframes circleRotate {
-            to {
-                transform: translate(-50%, -50%) rotate(calc(var(--rotate) + 360deg));
-            }
+      .circle span {
+        display: block;
+        position: absolute;
+        height: calc(var(--radius) * 2 + 50px);
+        top: 50%;
+        left: 50%;
+        --rotate: 50deg;
+        transform: translate(-50%, -50%) rotate(var(--rotate));
+        text-transform: uppercase;
+        color: #fff;
+        font-size: small;
+        animation: circleRotate 20s linear infinite;
+      }
+      .content button:hover {
+        color: #35a0a8;
+        cursor: pointer;
+      }
+
+      @keyframes circleRotate {
+        to {
+          transform: translate(-50%, -50%) rotate(calc(var(--rotate) + 360deg));
         }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <nav>
-            <a href="Home.html">Home</a> <!-- 3. Linqet dhe “hyperlinks’’ -->
-            <a href="About_us.html">About us</a> 
-            <a href="ethicssocietyhub.html">The Space for Social Experiments </a>
-            <a href="#top">Virtual Laboratory</a>
-            <a href="kurset.html">GenAI Academy </a>
-            <a href="forumi_shkencor.html">Scientific Forum </a>
-            <a href="FAQ.html">FAQs</a>
-        </nav>
+      <nav>
+        <a href="Home.html">Home</a>
+        <!-- 3. Linqet dhe “hyperlinks’’ -->
+        <a href="About_us.html">About us</a>
+        <a href="ethicssocietyhub.html">The Space for Social Experiments </a>
+        <a href="#top">Virtual Laboratory</a>
+        <a href="kurset.html">GenAI Academy </a>
+        <a href="forumi_shkencor.html">Scientific Forum </a>
+        <a href="FAQ.html">FAQs</a>
+      </nav>
     </header>
     <div class="slider">
-        <div class="list">
-            <div class="item"><img src="" alt=""></div>
-            <div class="item"><img src="labfotot/122-modified.png" alt=""></div>
-            <div class="item"><img src="labfotot/177-modified.png" alt=""></div>
-            <div class="item"><img src="labfotot/188-modified.png" alt=""></div>
-            <div class="item"><img src="labfotot/299-modified.png" alt=""></div>
-        </div>
-        <div class="circle">Genetics and AI work together to uncover complex DNA patterns and advance genetic therapies.</div>
-        <div class="content">
-            <div>AI Lab</div>
-            <div style="color:rgb(216, 126, 36);">Virtual Laboratory</div>
-           <a href="seemore.html"><button>See more</button></a>
-            
-        </div>
-        <div class="arrow">
-            <button id="prev">&lt;</button>
-            <button id="next">&gt;</button>
-        </div>
+      <div class="list">
+        <div class="item"><img src="" alt="" /></div>
+        <div class="item"><img src="labfotot/122-modified.png" alt="" /></div>
+        <div class="item"><img src="labfotot/177-modified.png" alt="" /></div>
+        <div class="item"><img src="labfotot/188-modified.png" alt="" /></div>
+        <div class="item"><img src="labfotot/299-modified.png" alt="" /></div>
+      </div>
+      <div class="circle">
+        Genetics and AI work together to uncover complex DNA patterns and
+        advance genetic therapies.
+      </div>
+      <div class="content">
+        <div>AI Lab</div>
+        <div style="color: rgb(216, 126, 36)">Virtual Laboratory</div>
+        <a href="seemore.html"><button>See more</button></a>
+      </div>
+      <div class="arrow">
+        <button id="prev">&lt;</button>
+        <button id="next">&gt;</button>
+      </div>
+      <p>&copy; <span id="year"></span> Virtual Laboratory</p>
     </div>
 
     <script>
-        // Përdorimi i JavaScript për ngjarje (event)
-        // Ngjarjet 'click' për butonat 'prev' dhe 'next' për të kontrolluar karuselin
-        const circle = document.querySelector('.circle');
-        const slider = document.querySelector('.slider');
-        const list = document.querySelector('.list');
-        const prev = document.getElementById('prev');
-        const next = document.getElementById('next');
-        const items = document.querySelectorAll('.list .item');
-        const count = items.length;
-        let active = 0;
+      //viti
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("year").textContent = new Date().getFullYear();
+      });
 
-        function runCarousel() {
-            prev.style.display = active === 0 ? 'none' : 'block';
-            next.style.display = active === count - 1 ? 'none' : 'block';
+      // Përdorimi i JavaScript për ngjarje (event)
+      // Ngjarjet 'click' për butonat 'prev' dhe 'next' për të kontrolluar karuselin
+      const circle = document.querySelector(".circle");
+      const slider = document.querySelector(".slider");
+      const list = document.querySelector(".list");
+      const prev = document.getElementById("prev");
+      const next = document.getElementById("next");
+      const items = document.querySelectorAll(".list .item");
+      const count = items.length;
+      let active = 0;
 
-            document.querySelector('.list .item.active')?.classList.remove('active');
-            items[active].classList.add('active');
+      function runCarousel() {
+        prev.style.display = active === 0 ? "none" : "block";
+        next.style.display = active === count - 1 ? "none" : "block";
 
-            const leftTransform = -items[active].offsetWidth * active;
-            list.style.transform = `translateX(${leftTransform}px)`;
+        document
+          .querySelector(".list .item.active")
+          ?.classList.remove("active");
+        items[active].classList.add("active");
+
+        const leftTransform = -items[active].offsetWidth * active;
+        list.style.transform = `translateX(${leftTransform}px)`;
+      }
+
+      next.addEventListener("click", () => {
+        if (active < count - 1) {
+          active++;
+          runCarousel();
         }
+      });
 
-        next.addEventListener('click', () => {
-            if (active < count - 1) {
-                active++;
-                runCarousel();
-            }
-        });
+      prev.addEventListener("click", () => {
+        if (active > 0) {
+          active--;
+          runCarousel();
+        }
+      });
 
-        prev.addEventListener('click', () => {
-            if (active > 0) {
-                active--;
-                runCarousel();
-            }
-        });
+      runCarousel();
 
-        runCarousel();
-
-        // Përdorimi i JavaScript për manipulim me tekst
-        // Manipulimi i tekstit të elementit .circle dhe ndarja e tij në shkronja për rotacion
-        const textCircle = circle.innerText.split('');
-        circle.innerText = '';
-        textCircle.forEach((value, key) => {
-            const newSpan = document.createElement('span');
-            newSpan.innerText = value;
-            const rotateThisSpan = (360 / textCircle.length) * key;
-            newSpan.style.setProperty('--rotate', rotateThisSpan + 'deg');
-            circle.appendChild(newSpan);
-        });
+      // Përdorimi i JavaScript për manipulim me tekst
+      // Manipulimi i tekstit të elementit .circle dhe ndarja e tij në shkronja për rotacion
+      const textCircle = circle.innerText.split("");
+      circle.innerText = "";
+      textCircle.forEach((value, key) => {
+        const newSpan = document.createElement("span");
+        newSpan.innerText = value;
+        const rotateThisSpan = (360 / textCircle.length) * key;
+        newSpan.style.setProperty("--rotate", rotateThisSpan + "deg");
+        circle.appendChild(newSpan);
+      });
     </script>
-</body>
+  </body>
 </html>

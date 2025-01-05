@@ -357,6 +357,7 @@ footer .container{
     
     <div id="main">
       <div class="header" style="font-family: Poppins; font-size: 12px;">
+        <!--Perdorimi i nav-->
         <nav>
                   <a href="Home.html">Home</a> <!-- 3. Linqet dhe “hyperlinks’’ -->
                   <a href="About_us.html">About us</a> 
@@ -408,6 +409,7 @@ footer .container{
             <img src="fotothapesira/foto4.webp" alt="">
             <h3>The connection between </h3>
             <p>
+              <!--Perdorimi i span dhe specifikat e tij-->
               <span class="highlight">The connection between</span> biotechnology and artificial intelligence (AI) is very close
                and holds the potential to revolutionize the fields of science and healthcare.
             </p>
@@ -421,7 +423,6 @@ footer .container{
           what you have a right to do and what is right to do."
         </h1>
     <div class="profile">
-      <img src="./potter_stewart.jpg/profile.png" alt="">
       <h4>Potter Sterwart</h4>
     </div>
       </div>
@@ -433,12 +434,13 @@ footer .container{
           <i>What is the importance of integrating <abbr title="Artificial Intelligence">AI</abbr> into advancements in genetics?</i><!-- perdorimi i shkurteses <abbr> -->
         </h1>
         <p>
+          <!-- Perdorimi i highlights -->
           "Genetics can help us better understand the biological basis of diseases, while 
           <mark>AI can process and analyze genetic data</mark> to identify patterns and predict disease behavior,
-          offering opportunities for more personalized and effective treatments."<!-- perdorimi i highlights -->
+          offering opportunities for more personalized and effective treatments."
         </p>
-        <button class="btn btn-primary">Let's Talk Now &#128512;</button><!--perdorimi i entiteve-->
-      </div>
+        <!--Perdorimi i entiteve-->
+        <button class="btn btn-primary">Let's Talk Now &#128512;</button></div>
     <div class="about-image">
    <img src="fotothapesira/foto5.jpg" alt="">
     </div>
@@ -450,6 +452,7 @@ footer .container{
         <p>Whether you're curios about this,
           we're here to answer any questions.
         </p>
+        <!--Perdorimi i HTML Forms-->
         <form action="/submit" method="post" style="max-width: 400px; margin: auto; text-align: left;"> <!-- perdorimi i HTML forms -->
           <label for="name" style="font-size: 14px; color: white;">Name:</label><br>
           <input type="text" id="name" name="name" placeholder="Your Name" 
@@ -471,6 +474,7 @@ footer .container{
             </select>
           <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
           </form>
+          <!--Perdorimi i datave, duke shfrytezuar objektin Date te JS-->
         <p>&copy; <span id="year"></span> Ethics and Society Hub</p>
       </div>
       <div class="menu-btn">
@@ -478,7 +482,7 @@ footer .container{
       </div>
     </section>
     <script>
-
+//Perdorimi i datave, duke shfrytezuar objektin Date te JS
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('year').textContent = new Date().getFullYear();
 });
@@ -511,6 +515,7 @@ document.querySelector('form').addEventListener('submit', function (e) {
   let message = document.getElementById('message').value;
   let category = document.getElementById('category').value;
 
+  //Perdorimi i kuushtezimeve me JS. Varesisht nga rasti, te perdoren te pakten 5 here kushtezimet (IF< IF...Else, SWITCH etj)
   if (category === '') {
     errors.push('Please select a category.');
   }
@@ -547,8 +552,7 @@ document.querySelector('form').addEventListener('submit', function (e) {
     }
     alert(responseMessage);
   }
-}); //perdorimi me switch if else
-
+}); 
 
 const navItems = ['Home', 'About us', 'Services', 'Contact'];
 
@@ -578,7 +582,7 @@ document.getElementById('toggleQuestions').addEventListener('click', function ()
   questions.style.display = questions.style.display === 'none' ? 'block' : 'none';
 });
 
-
+// Perdorimi i timeout
 setTimeout(function () {
   let aboutUsSection = document.querySelector('#about-us');
   let notification = document.createElement('div');
@@ -589,11 +593,11 @@ setTimeout(function () {
   notification.style.marginTop = '20px';
   notification.style.textAlign = 'center';
   aboutUsSection.appendChild(notification);
-}, 5000); // perdorimi i timeout
+}, 5000); 
 
 setTimeout(function () {
   notification.style.display = 'none';
-}, 8000); // Zhduket pas 8 sekondash gjithsej
+}, 8000); 
 
 
     if (name === '') {
@@ -629,7 +633,7 @@ setTimeout(function () {
     }
 });
 
-      // 3. Krijimi i menusë me for loop
+      //Perdorimi i arrays ne JS
       const navItems = ['Home', 'About us', 'Services', 'Contact'];
       const navList = document.querySelector('.nav-list');
 
@@ -642,7 +646,7 @@ setTimeout(function () {
         navList.appendChild(li);
       }
 
-      // 4. Fshehja/shfaqja e seksionit pyetjeve me while
+     
       document
         .getElementById('toggleQuestions')
         .addEventListener('click', function () {
@@ -663,7 +667,7 @@ setTimeout(function () {
             questions.style.display === 'none' ? 'block' : 'none';
         });
 
-      // 5. Mesazh mirëseardhjeje me do-while
+      
       let count = 0;
       do {
         alert('Welcome to Ethics and Society Hub!');
@@ -673,7 +677,7 @@ setTimeout(function () {
       window.addEventListener('load', function () {
       setTimeout(function () {
      alert('Welcome to our platform! We are glad to have you here.');
-     }, 3000); // Mesazhi shfaqet pas 3 sekondash
+     }, 3000); 
 });
 
     </script>
