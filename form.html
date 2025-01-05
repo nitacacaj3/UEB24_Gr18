@@ -146,45 +146,40 @@
         };
 
         // Form Submission
-        document.getElementById("questionnaire-form").addEventListener("submit", function(event) {
-            event.preventDefault();
+   // Form Submission Logic
+document.getElementById("questionnaire-form").addEventListener("submit", function(event) {
+    event.preventDefault();  // Prevent the default form submission
 
-            let name = document.getElementById("name").value;
-            let email = document.getElementById("email").value;
-            let password = document.getElementById("password").value;
-            let age = document.getElementById("age").value;
-            let knowledge = document.getElementById("knowledge").value;
-            let aiKnowledge = document.getElementById("ai-knowledge").value;
-            let aiUsed = document.querySelector('input[name="ai-used"]:checked') ? document.querySelector('input[name="ai-used"]:checked').value : "Not answered";
-            let aiTechnologies = Array.from(document.querySelectorAll('input[name="ai-technologies"]:checked')).map(input => input.value);
-            let ethicalImplications = document.getElementById("ethical-implications").value;
-            let comments = document.getElementById("comments").value;
+    // Collecting form data
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let age = document.getElementById("age").value;
+    let knowledge = document.getElementById("knowledge").value;
+    let aiKnowledge = document.getElementById("ai-knowledge").value;
+    let aiUsed = document.querySelector('input[name="ai-used"]:checked') ? document.querySelector('input[name="ai-used"]:checked').value : "Not answered";
+    let aiTechnologies = Array.from(document.querySelectorAll('input[name="ai-technologies"]:checked')).map(input => input.value);
+    let ethicalImplications = document.getElementById("ethical-implications").value;
+    let comments = document.getElementById("comments").value;
 
-            console.log({
-                name,
-                email,
-                password,
-                age,
-                knowledge,
-                aiKnowledge,
-                aiUsed,
-                aiTechnologies,
-                ethicalImplications,
-                comments
-            });
+    console.log({
+        name, email, age, knowledge, aiKnowledge, aiUsed, aiTechnologies, ethicalImplications, comments
+    });
 
-            const message = document.createElement("p");
+    // Create success message
+    const message = document.createElement("p");
     message.style.color = "green";
     message.textContent = "Thank you for submitting your answers!";
-    document.body.appendChild(message); // You can choose to place this message anywhere in the page
+
+    // Add the message below the form
+    document.querySelector('.container').appendChild(message);
 
     // Reset the form after a delay
     setTimeout(function() {
         document.getElementById("questionnaire-form").reset();
-        message.remove(); // Remove the message after reset
-    }, 2000); // Delay the reset to allow the message to be seen
+        message.remove();  // Remove the message after reset
+    }, 2000);  // Delay to show the message
 });
-       
+
 
       // Generate Calculations
       //Përdorimi i të paktën 4 vetive dhe metodave për manipulim me numra në JS si p.sh. MAX_VALUE, NaN, toExponential(), toString(), etj. 
