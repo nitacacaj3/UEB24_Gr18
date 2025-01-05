@@ -13,11 +13,11 @@
     margin:0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Poppins; 
+    font-family: 'Poppins';
 }
 
  .header{
-  font-family: Poppins;
+  font-family: 'Poppins';
     width:1140px;
     max-width: 80%;
     margin:auto;
@@ -40,6 +40,7 @@
     --secondary: #ffd936;
     --white: #efefef;
 }
+      
 body{
     font-family: "DM Sans", sans-serif;
     color:var(--primary);
@@ -204,13 +205,14 @@ transform:scale(1.05);
     font-size: 30px;
     font-family: "Forum", sans-serif;
     text-align: center;
+    margin: 0;
 }
-#testimonial .profile{
+#testimonial .profile h4{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    text-align: center; 
 
 
 }
@@ -231,7 +233,7 @@ transform:scale(1.05);
     text-align: left;
     padding-right: 40px;
 }
-
+/* Zhvendosja e imazhit ne anen e djatht*/
 #about-us .about-image {
     float: right;
     width: 50%;
@@ -423,7 +425,10 @@ footer .container{
           what you have a right to do and what is right to do."
         </h1>
     <div class="profile">
-      <h4>Potter Sterwart</h4>
+      <!--Perdorimi i article -->
+      <article>
+           <h4>Potter Sterwart</h4>
+      </article>
     </div>
       </div>
     </section>
@@ -479,15 +484,16 @@ footer .container{
       </div>
       <div class="menu-btn">
         <!-- Simboli i butonit të menu-së -->
+        <button id="toggleQuestions">Toggle Questions</button>
       </div>
     </section>
     <script>
+//Perdorimi i datave, duke shfrytezuar objektin Date te JS
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('year').textContent = new Date().getFullYear();
 
 
-const menuItems = ['Home', 'About Us', 'Services', 'Contact'];
-document.getElementById('menu').innerHTML = menuItems.map(item => `<li>${item}</li>`).join('');
+
 
 
 const navBtn = document.querySelector('.menu-btn');
@@ -545,16 +551,7 @@ document.querySelector('form').addEventListener('submit', function(e) {
           }
     });
 
-    const navItems = ['Home', 'About us', 'Services', 'Contact'];
-    navList.innerHTML = ''; 
-    navItems.forEach(item => {
-        let li = document.createElement('li');
-        let a = document.createElement('a');
-        a.href = `#${item.toLowerCase()}`;
-        a.textContent = item;
-        li.appendChild(a);
-        navList.appendChild(li);
-    });
+ 
 
 // Perdorimi i timeout
 setTimeout(function () {
@@ -577,7 +574,6 @@ setTimeout(function () {
         alert('Welcome to our platform! We are glad to have you here.');
     }, 3000);
 });
-
     </script>
    </body>
 </html>
