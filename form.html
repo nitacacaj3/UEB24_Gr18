@@ -145,40 +145,33 @@
             document.getElementById("ai-analysis").value = "Analysis Completed: Confidence 92%";
         };
 
-        // Form Submission
-   // Form Submission Logic
-document.getElementById("questionnaire-form").addEventListener("submit", function(event) {
-    event.preventDefault();  // Prevent the default form submission
+        
+        document.getElementById("questionnaire-form").addEventListener("submit", function(event) {
+            event.preventDefault();  // Prevent the default form submission
 
-    // Collecting form data
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let age = document.getElementById("age").value;
-    let knowledge = document.getElementById("knowledge").value;
-    let aiKnowledge = document.getElementById("ai-knowledge").value;
-    let aiUsed = document.querySelector('input[name="ai-used"]:checked') ? document.querySelector('input[name="ai-used"]:checked').value : "Not answered";
-    let aiTechnologies = Array.from(document.querySelectorAll('input[name="ai-technologies"]:checked')).map(input => input.value);
-    let ethicalImplications = document.getElementById("ethical-implications").value;
-    let comments = document.getElementById("comments").value;
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let age = document.getElementById("age").value;
+            let knowledge = document.getElementById("knowledge").value;
+            let aiKnowledge = document.getElementById("ai-knowledge").value;
+            let aiUsed = document.querySelector('input[name="ai-used"]:checked') ? document.querySelector('input[name="ai-used"]:checked').value : "Not answered";
+            let aiTechnologies = Array.from(document.querySelectorAll('input[name="ai-technologies"]:checked')).map(input => input.value);
+            let ethicalImplications = document.getElementById("ethical-implications").value;
+            let comments = document.getElementById("comments").value;
 
-    console.log({
-        name, email, age, knowledge, aiKnowledge, aiUsed, aiTechnologies, ethicalImplications, comments
-    });
+            console.log({name, email, age, knowledge, aiKnowledge, aiUsed, aiTechnologies, ethicalImplications, comments});
 
-    // Create success message
-    const message = document.createElement("p");
-    message.style.color = "green";
-    message.textContent = "Thank you for submitting your answers!";
+            // Create success message
+            const message = document.createElement("p");
+            message.style.color = "green";
+            message.textContent = "Thank you for submitting your answers!";
+            document.querySelector('.container').appendChild(message);
 
-    // Add the message below the form
-    document.querySelector('.container').appendChild(message);
-
-    // Reset the form after a delay
-    setTimeout(function() {
-        document.getElementById("questionnaire-form").reset();
-        message.remove();  // Remove the message after reset
-    }, 2000);  // Delay to show the message
-});
+            setTimeout(function() {
+                document.getElementById("questionnaire-form").reset();
+                message.remove();  // Remove the message after reset
+            }, 2000);  // Delay to show the message
+        });
 
 
       // Generate Calculations
