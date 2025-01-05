@@ -13,11 +13,11 @@
     margin:0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins';
+    font-family: Poppins; 
 }
 
  .header{
-  font-family: 'Poppins';
+  font-family: Poppins;
     width:1140px;
     max-width: 80%;
     margin:auto;
@@ -40,7 +40,6 @@
     --secondary: #ffd936;
     --white: #efefef;
 }
-      
 body{
     font-family: "DM Sans", sans-serif;
     color:var(--primary);
@@ -232,7 +231,7 @@ transform:scale(1.05);
     text-align: left;
     padding-right: 40px;
 }
-/* Zhvendosja e imazhit ne anen e djatht*/
+
 #about-us .about-image {
     float: right;
     width: 50%;
@@ -367,7 +366,7 @@ footer .container{
                   <a href="kurset.html">GenAI Academy </a>
                   <a href="forumi_shkencor.html">Scientific Forum </a>
                   <a href="FAQ.html">FAQs</a>
-  <ul id="menu" class="nav-list"></ul>
+  
               </nav>
       </div>
         <div class="main-content">
@@ -424,10 +423,7 @@ footer .container{
           what you have a right to do and what is right to do."
         </h1>
     <div class="profile">
-      <!--Perdorimi i article -->
-      <article>
-           <h4>Potter Sterwart</h4>
-      </article>
+      <h4>Potter Sterwart</h4>
     </div>
       </div>
     </section>
@@ -483,11 +479,9 @@ footer .container{
       </div>
       <div class="menu-btn">
         <!-- Simboli i butonit të menu-së -->
-        <button id="toggleQuestions">Toggle Questions</button>
       </div>
     </section>
     <script>
-//Perdorimi i datave, duke shfrytezuar objektin Date te JS
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -583,6 +577,7 @@ setTimeout(function () {
         alert('Welcome to our platform! We are glad to have you here.');
     }, 3000);
 });
+
     </script>
    </body>
 </html>
