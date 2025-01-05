@@ -232,9 +232,16 @@
 
     <script>
       //viti
+      //Marrja me gabimet e mundshme gjatë punës së JS.
+      //  Përdorimi i TRY and CATCH, si dhe definimi i vetë gabimeve përmes THROW 
       document.addEventListener("DOMContentLoaded", function () {
-        document.getElementById("year").textContent = new Date().getFullYear();
-      });
+    try {
+      document.getElementById("year").textContent = new Date().getFullYear();
+    } catch (error) {
+      console.error("Error setting the year:", error);
+      throw new Error("Failed to update the year in the footer.");
+    }
+  });
 
       // Përdorimi i JavaScript për ngjarje (event)
       // Ngjarjet 'click' për butonat 'prev' dhe 'next' për të kontrolluar karuselin
