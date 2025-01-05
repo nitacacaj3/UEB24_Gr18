@@ -360,7 +360,7 @@ button:active {
             <h2>Ideas & Comments</h2> <!--Përdorimi i “Heading” tagjeve-->
             <p>Share your ideas or ask questions. The community is here to help!</p>
             <textarea placeholder="Share your idea..."></textarea> <!-- 24. Perdorimi i "text" fushave -->
-            <button>Submit</button>  <!-- 25. Perdorimi i butonit submit -->
+           <button id="myButton">Submit</button>  <!-- 25. Perdorimi i butonit submit -->
         </section>
 
         <section id="login" class="section">
@@ -376,7 +376,6 @@ button:active {
                 <button type="submit" id="loginButton">Login</button>
             </form>
         </section>
-
         <footer>
             <p style="text-align: center">&copy;2025 Scientific Forum. All rights reserved.</p>  <!-- 2. Teksti i pozicionuar me align -->
         </footer>
@@ -414,7 +413,10 @@ button:active {
                 updateSlider();
             }
         });
-        alert("Please fill in all fields correctly."); //Përdorimi i JS për paraqitjen e "verejtjeve" (warnings)
+       document.getElementById("myButton").onclick = function() {
+    // Kjo është ku shfaqet alerti kur butoni klikohet
+    alert("Please fill the required fields:");
+} //Përdorimi i JS për paraqitjen e "verejtjeve" (warnings)
 
 
         nextButton.addEventListener('click', () => {
