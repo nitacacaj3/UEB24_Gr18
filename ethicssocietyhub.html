@@ -586,9 +586,11 @@ document.getElementById('toggleQuestions').addEventListener('click', function ()
 });
 
 // Perdorimi i timeout
+let notification;
+
 setTimeout(function () {
   let aboutUsSection = document.querySelector('#about-us');
-  let notification = document.createElement('div');
+  notification = document.createElement('div'); 
   notification.textContent = 'Did you know? Ethics is critical for balancing advancements in AI and genetics!';
   notification.style.background = 'rgba(255, 217, 54, 0.8)';
   notification.style.padding = '10px';
@@ -596,11 +598,13 @@ setTimeout(function () {
   notification.style.marginTop = '20px';
   notification.style.textAlign = 'center';
   aboutUsSection.appendChild(notification);
-}, 5000); 
+}, 5000);
 
 setTimeout(function () {
-  notification.style.display = 'none';
-}, 8000); 
+  if (notification) {
+    notification.style.display = 'none';
+  }
+}, 8000);
 
 
     if (name === '') {
