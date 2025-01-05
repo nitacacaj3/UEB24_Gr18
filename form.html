@@ -147,7 +147,7 @@
 
         
         document.getElementById("questionnaire-form").addEventListener("submit", function(event) {
-            event.preventDefault();  // Prevent the default form submission
+            event.preventDefault();  // e preventon default form submission
 
             let name = document.getElementById("name").value;
             let email = document.getElementById("email").value;
@@ -161,7 +161,7 @@
 
             console.log({name, email, age, knowledge, aiKnowledge, aiUsed, aiTechnologies, ethicalImplications, comments});
 
-            // Create success message
+            // krijojm ni mesazh
             const message = document.createElement("p");
             message.style.color = "green";
             message.textContent = "Thank you for submitting your answers!";
@@ -169,8 +169,8 @@
 
             setTimeout(function() {
                 document.getElementById("questionnaire-form").reset();
-                message.remove();  // Remove the message after reset
-            }, 2000);  // Delay to show the message
+                message.remove();  // me largu pas risetimit mesazhin
+            }, 2000);  // vonesa me shfaq mesazhin
         });
 
 
