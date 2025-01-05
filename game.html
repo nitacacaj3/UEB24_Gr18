@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Genetics game</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Përdorimi i JS në pozita të ndryshme brenda HTML dokumentit, 
+        // ku në rastin e parë një JS të shkruhet në seksionin head dhe në rastin tjetër në body. 
+        function GeneticSequence(slots, genes) {
+            this.slots = slots;
+            this.genes = genes;
+            this.checkSequence = function() {
+                var userSequence = [];
+                this.slots.forEach(function(slot) {
+                    if (slot.isFilled) {
+                        userSequence.push(slot.element.firstChild.textContent);
+                    }
+                });
+
+                var correctSequence = this.genes.map(function(gene) { return gene.name; });
+                return JSON.stringify(userSequence) === JSON.stringify(correctSequence);
+            }
+        }
+    </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
 
@@ -333,23 +352,10 @@ button:hover {
             }
         }
 
-        function GeneticSequence(slots, genes) {
-            this.slots = slots;
-            this.genes = genes;
-            this.checkSequence = function() {
-                var userSequence = [];
-                this.slots.forEach(function(slot) {
-                    if (slot.isFilled) {
-                        userSequence.push(slot.element.firstChild.textContent);
-                    }
-                });
-
-                var correctSequence = this.genes.map(function(gene) { return gene.name; });
-                return JSON.stringify(userSequence) === JSON.stringify(correctSequence);
-            }
-        }
+        
 
         //Inicializimi i gjeneve dhe slots
+        //Krijimi dhe përdorimi i objekteve në JS 
         var geneA = new Gene('Gene A', 'gene1');
         var geneB = new Gene('Gene B', 'gene2');
         var geneC = new Gene('Gene C', 'gene3');
