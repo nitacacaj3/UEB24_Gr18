@@ -173,9 +173,18 @@
                 comments
             });
 
-            alert("Thank you for submitting your answers!");
-            document.getElementById("questionnaire-form").reset();
-        });
+            const message = document.createElement("p");
+    message.style.color = "green";
+    message.textContent = "Thank you for submitting your answers!";
+    document.body.appendChild(message); // You can choose to place this message anywhere in the page
+
+    // Reset the form after a delay
+    setTimeout(function() {
+        document.getElementById("questionnaire-form").reset();
+        message.remove(); // Remove the message after reset
+    }, 2000); // Delay the reset to allow the message to be seen
+});
+       
 
       // Generate Calculations
       //Përdorimi i të paktën 4 vetive dhe metodave për manipulim me numra në JS si p.sh. MAX_VALUE, NaN, toExponential(), toString(), etj. 
