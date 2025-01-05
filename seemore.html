@@ -252,17 +252,17 @@ ul ol {
 }
 table {
             width: 80%;
-            margin: 20px auto;
-            border-collapse: collapse;
+            margin: 20px auto;/*Rregullimi i “table cellspaceing’’ dhe “cellpading’’*/
+            border-collapse: collapse;/*Krijimi i “borders’’ dhe rregullimi i formatit të tyre*/
             color:black;
         }
 
         table, th, td {
-            border: 2px solid #00f8ec;
+            border: 2px solid #00f8ec;/*Krijimi i “borders’’ dhe rregullimi i formatit të tyre*/
         }
 
         th, td {
-            padding: 10px;
+            padding: 10px;/*Rregullimi i “table cellspaceing’’ dhe “cellpading’’*/
             text-align: left;
         }
 
@@ -304,33 +304,75 @@ table {
 <img src="https://miro.medium.com/v2/resize:fit:1400/1*pwdKqA3l5Ms9OTbCx9m5OA.gif" style="border: 2px solid white;">
 <img src="https://newsroom.gehealthcare.com/wp-content/uploads/2019/03/Precision-Health_AI_Animation.gif" style="border: 2px solid white;">
 
-<table>
-    <tr>
-        <th>Concept</th>
-        <th>Description</th>
-        <th>Application</th>
-    </tr>
-    <tr>
-        <td>Genetics</td>
-        <td>The study of biological inheritance and DNA.</td>
-        <td>Used in gene therapy, diagnosis, and crop improvement.</td>
-    </tr>
-    <tr>
-        <td>Artificial Intelligence</td>
-        <td>The simulation of human intelligence by machines.</td>
-        <td>Used in robotics, data analysis, and medical services.</td>
-    </tr>
-    <tr>
-        <td>Genetic Algorithms</td>
-        <td>Optimization and problem-solving by mimicking natural evolution.</td>
-        <td>Used in network optimization and drug design.</td>
-    </tr>
-    <tr>
-        <td>Machine Learning</td>
-        <td>Training systems to perform tasks using data.</td>
-        <td>Used in image recognition, translation, and personalized services.</td>
-    </tr>
-</table>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genetics and Artificial Intelligence</title>
+    <style>
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 2px solid #4CAF50;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        td:nth-child(even) {
+            background-color: #e6ffe6;
+        }
+
+        td:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        th {
+            border: 3px dashed #000000;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Genetics and Artificial Intelligence</h1>
+
+    <table>
+        <tr>
+            <th colspan="2">Concept</th>
+            <th>Description</th>
+            <th>Application</th>
+        </tr>
+        <tr>
+            <td colspan="2">Genetics</td>
+            <td>The study of biological inheritance and DNA.</td>
+            <td>Used in gene therapy, diagnosis, and crop improvement.</td>
+        </tr>
+        <tr>
+            <td colspan="2">Artificial Intelligence</td>
+            <td>The simulation of human intelligence by machines.</td>
+            <td>Used in robotics, data analysis, and medical services.</td>
+        </tr>
+        <tr>
+            <td colspan="2">Genetic Algorithms</td>
+            <td>Optimization and problem-solving by mimicking natural evolution.</td>
+            <td>Used in network optimization and drug design.</td>
+        </tr>
+        <tr>
+            <td colspan="2">Machine Learning</td>
+            <td>Training systems to perform tasks using data.</td>
+            <td>Used in image recognition, translation, and personalized services.</td>
+        </tr>
+    </table>
 
 <div class="carousel-item">
             <div class="description1">Neuroplasticity</div>
