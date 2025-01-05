@@ -13,11 +13,11 @@
     margin:0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Poppins; 
+    font-family: 'Poppins', sans-serif;
 }
 
  .header{
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
     width:1140px;
     max-width: 80%;
     margin:auto;
@@ -366,7 +366,7 @@ footer .container{
                   <a href="kurset.html">GenAI Academy </a>
                   <a href="forumi_shkencor.html">Scientific Forum </a>
                   <a href="FAQ.html">FAQs</a>
-  
+  <ul id="menu" class="nav-list"></ul>
               </nav>
       </div>
         <div class="main-content">
@@ -482,6 +482,7 @@ footer .container{
       </div>
       <div class="menu-btn">
         <!-- Simboli i butonit të menu-së -->
+        <button id="toggleQuestions">Toggle Questions</button>
       </div>
     </section>
     <script>
@@ -494,68 +495,58 @@ document.addEventListener('DOMContentLoaded', function() {
 document.getElementById('menu').innerHTML = menuItems.map(item => `<li>${item}</li>`).join('');
 
 
-     document.querySelector('form').addEventListener('submit', function (e) {
-    let name = document.getElementById('name').value;
-    let email = document.getElementById('email').value;
-    let message = document.getElementById('message').value;
-    let category = document.getElementById('category').value;
-    let errors = [];
-    let responseMessage = '';
+const menuBtn = document.querySelector('.menu-btn');
+const menu = document.querySelector('.nav-list');
 
-
-
-const navBtn = document.querySelector('.menu-btn');
-const navList = document.querySelector('.nav-list');
-
-navBtn.addEventListener("click", function() {
-  navList.classList.toggle("active");
+menuBtn.addEventListener('click', () => {
+  menu.classList.toggle('active');
 });
 
+//Perdorimi i kuushtezimeve me JS. Varesisht nga rasti, te perdoren te pakten 5 here kushtezimet (IF< IF...Else, SWITCH etj)
 document.querySelector('form').addEventListener('submit', function (e) {
   let errors = []; 
   let name = document.getElementById('name').value;
   let email = document.getElementById('email').value;
   let message = document.getElementById('message').value;
   let category = document.getElementById('category').value;
-
-  //Perdorimi i kuushtezimeve me JS. Varesisht nga rasti, te perdoren te pakten 5 here kushtezimet (IF< IF...Else, SWITCH etj)
+  
   if (category === '') {
-    errors.push('Please select a category.');
+     errors.push('Please select a category.');
   }
 
   if (name === '') {
-    errors.push('Name is required.');
+     errors.push('Name is required.');
   }
   if (email === '') {
-    errors.push('Email is required.');
+     errors.push('Email is required.');
   } else if (!email.includes('@')) {
-    errors.push('Email must be valid.');
+     errors.push('Email must be valid.');
   }
   if (message === '') {
-    errors.push('Message cannot be empty.');
+     errors.push('Message cannot be empty.');
   }
 
   if (errors.length > 0) {
-    e.preventDefault();
-    alert(errors.join('\n'));
+     e.preventDefault();
+     alert(errors.join('\n'));
   } else {
-    let responseMessage = '';
-    switch (category) {
-      case 'general':
-        responseMessage = 'Your general inquiry has been received.';
-        break;
-      case 'technical':
-        responseMessage = 'Technical request is under review.';
-        break;
-      case 'billing':
-        responseMessage = 'Billing issue will be handled.';
-        break;
-      default:
-        responseMessage = 'Thank you!';
-    }
-    alert(responseMessage);
+     let responseMessage = '';
+     switch (category) {
+       case 'general':
+         responseMessage = 'Your general inquiry has been received.';
+         break;
+       case 'technical':
+         responseMessage = 'Technical request is under review.';
+         break;
+       case 'billing':
+         responseMessage = 'Billing issue will be handled.';
+         break;
+       default:
+         responseMessage = 'Thank you!';
+     }
+     alert(responseMessage);
   }
-}); 
+});
 
 const navItems = ['Home', 'About us', 'Services', 'Contact'];
 
@@ -570,23 +561,16 @@ for (let i = 0; i < navItems.length; i++) {
 
 document.getElementById('toggleQuestions').addEventListener('click', function () {
   let questions = document.querySelector('#questions');
-  let opacity = 1;
-
-  let fadeInterval = setInterval(function() {
-    if (opacity <= 0) {
-      clearInterval(fadeInterval);
-      questions.style.display = 'none';
-    } else {
-      questions.style.opacity = opacity;
-      opacity -= 0.1;
-    }
-  }, 100);
-
-  questions.style.display = questions.style.display === 'none' ? 'block' : 'none';
+  if (questions.style.display === 'none') {
+    questions.style.display = 'block';
+  } else {
+    questions.style.display = 'none';
+  }
 });
 
+
 // Perdorimi i timeout
-let notification;
+let notification = document.createElement('div');
 
 setTimeout(function () {
   let aboutUsSection = document.querySelector('#about-us');
@@ -607,85 +591,10 @@ setTimeout(function () {
 }, 8000);
 
 
-    if (name === '') {
-      errors.push('Name is required.');
-    }
-    if (email === '') {
-      errors.push('Email is required.');
-    } else if (!email.includes('@')) {
-      errors.push('Email must be valid.');
-    }
-    if (message === '') {
-      errors.push('Message cannot be empty.');
-    }
-
-    if (errors.length > 0) {
-      e.preventDefault();
-      alert(errors.join('\n'));
-    } else {
-      switch (category) {
-        case 'general':
-          responseMessage = 'Your general inquiry has been received.';
-          break;
-        case 'technical':
-          responseMessage = 'Technical request is under review.';
-          break;
-        case 'billing':
-          responseMessage = 'Billing issue will be handled.';
-          break;
-        default:
-          responseMessage = 'Thank you!';
-      }
-      alert(responseMessage);
-    }
 });
 
       //Perdorimi i arrays ne JS
-      const navItems = ['Home', 'About us', 'Services', 'Contact'];
-      const navList = document.querySelector('.nav-list');
 
-      for (let i = 0; i < navItems.length; i++) {
-        let li = document.createElement('li');
-        let a = document.createElement('a');
-        a.href = `#${navItems[i].toLowerCase()}`;
-        a.textContent = navItems[i];
-        li.appendChild(a);
-        navList.appendChild(li);
-      }
-
-     
-      document
-        .getElementById('toggleQuestions')
-        .addEventListener('click', function () {
-          let questions = document.querySelector('#questions');
-          let opacity = 1;
-
-          let fadeInterval = setInterval(function() {
-         if (opacity <= 0) {
-         clearInterval(fadeInterval);
-         questions.style.display = 'none';
-      } else {
-         questions.style.opacity = opacity;
-      opacity -= 0.1;
-  }
-}, 100);
-
-          questions.style.display =
-            questions.style.display === 'none' ? 'block' : 'none';
-        });
-
-      
-      let count = 0;
-      do {
-        alert('Welcome to Ethics and Society Hub!');
-        count++;
-      } while (count < 1);
-
-      window.addEventListener('load', function () {
-      setTimeout(function () {
-     alert('Welcome to our platform! We are glad to have you here.');
-     }, 3000); 
-});
 
     </script>
    </body>
