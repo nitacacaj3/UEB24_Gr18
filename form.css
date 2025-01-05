@@ -110,9 +110,6 @@ button:hover {
     margin-bottom: 5px;
 }
 
-.form-group input[type="range"] {
-    width: 100%;
-}
 
 .range-value {
     font-size: 14px;
@@ -120,6 +117,3 @@ button:hover {
     color: #ddd;
 }
 
-.form-group .date-picker {
-    background-color: #444;
-}
