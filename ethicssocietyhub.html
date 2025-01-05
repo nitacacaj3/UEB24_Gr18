@@ -232,7 +232,7 @@ transform:scale(1.05);
     text-align: left;
     padding-right: 40px;
 }
-//zhvendosja e fotos ne anen e djathte te tekstit
+/* Zhvendosja e imazhit ne anen e djatht*/
 #about-us .about-image {
     float: right;
     width: 50%;
@@ -489,114 +489,100 @@ footer .container{
     <script>
 //Perdorimi i datave, duke shfrytezuar objektin Date te JS
 document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('year').textContent = new Date().getFullYear();
-});
+    document.getElementById('year').textContent = new Date().getFullYear();
 
- const menuItems = ['Home', 'About Us', 'Services', 'Contact'];
+
+const menuItems = ['Home', 'About Us', 'Services', 'Contact'];
 document.getElementById('menu').innerHTML = menuItems.map(item => `<li>${item}</li>`).join('');
 
 
-const menuBtn = document.querySelector('.menu-btn');
-const menu = document.querySelector('.nav-list');
-
-menuBtn.addEventListener('click', () => {
-  menu.classList.toggle('active');
-});
+const navBtn = document.querySelector('.menu-btn');
+    const navList = document.querySelector('.nav-list');
+    
+    navBtn.addEventListener("click", function() {
+        navList.classList.toggle("active");
+    });
 
 //Perdorimi i kuushtezimeve me JS. Varesisht nga rasti, te perdoren te pakten 5 here kushtezimet (IF< IF...Else, SWITCH etj)
-document.querySelector('form').addEventListener('submit', function (e) {
-  let errors = []; 
-  let name = document.getElementById('name').value;
-  let email = document.getElementById('email').value;
-  let message = document.getElementById('message').value;
-  let category = document.getElementById('category').value;
-  
-  if (category === '') {
-     errors.push('Please select a category.');
-  }
+document.querySelector('form').addEventListener('submit', function(e) {
+        let name = document.getElementById('name').value;
+        let email = document.getElementById('email').value;
+        let message = document.getElementById('message').value;
+        let category = document.getElementById('category').value;
+        let errors = [];
+        let responseMessage = '';
 
-  if (name === '') {
-     errors.push('Name is required.');
-  }
-  if (email === '') {
-     errors.push('Email is required.');
-  } else if (!email.includes('@')) {
-     errors.push('Email must be valid.');
-  }
-  if (message === '') {
-     errors.push('Message cannot be empty.');
-  }
+        
+        if (category === '') {
+            errors.push('Please select a category.');
+        }
 
-  if (errors.length > 0) {
-     e.preventDefault();
-     alert(errors.join('\n'));
-  } else {
-     let responseMessage = '';
-     switch (category) {
-       case 'general':
-         responseMessage = 'Your general inquiry has been received.';
-         break;
-       case 'technical':
-         responseMessage = 'Technical request is under review.';
-         break;
-       case 'billing':
-         responseMessage = 'Billing issue will be handled.';
-         break;
-       default:
-         responseMessage = 'Thank you!';
-     }
-     alert(responseMessage);
-  }
-});
+        if (name === '') {
+            errors.push('Name is required.');
+        }
+        if (email === '') {
+            errors.push('Email is required.');
+        } else if (!email.includes('@')) {
+            errors.push('Email must be valid.');
+        }
+        if (message === '') {
+            errors.push('Message cannot be empty.');
+        }
 
-const navItems = ['Home', 'About us', 'Services', 'Contact'];
+        if (errors.length > 0) {
+            e.preventDefault(); 
+            alert(errors.join('\n'));
+        } else {
+            
+            switch (category) {
+                case 'general':
+                    responseMessage = 'Your general inquiry has been received.';
+                    break;
+                case 'technical':
+                    responseMessage = 'Technical request is under review.';
+                    break;
+                case 'billing':
+                    responseMessage = 'Billing issue will be handled.';
+                    break;
+                default:
+                    responseMessage = 'Thank you!';
+            }
+            alert(responseMessage); 
+          }
+    });
 
-for (let i = 0; i < navItems.length; i++) {
-  let li = document.createElement('li');
-  let a = document.createElement('a');
-  a.href = `#${navItems[i].toLowerCase()}`;
-  a.textContent = navItems[i];
-  li.appendChild(a);
-  navList.appendChild(li);
-}
-
-document.getElementById('toggleQuestions').addEventListener('click', function () {
-  let questions = document.querySelector('#questions');
-  if (questions.style.display === 'none') {
-    questions.style.display = 'block';
-  } else {
-    questions.style.display = 'none';
-  }
-});
-
+    const navItems = ['Home', 'About us', 'Services', 'Contact'];
+    navList.innerHTML = ''; 
+    navItems.forEach(item => {
+        let li = document.createElement('li');
+        let a = document.createElement('a');
+        a.href = `#${item.toLowerCase()}`;
+        a.textContent = item;
+        li.appendChild(a);
+        navList.appendChild(li);
+    });
 
 // Perdorimi i timeout
-let notification = document.createElement('div');
-
 setTimeout(function () {
-  let aboutUsSection = document.querySelector('#about-us');
-  notification = document.createElement('div'); 
-  notification.textContent = 'Did you know? Ethics is critical for balancing advancements in AI and genetics!';
-  notification.style.background = 'rgba(255, 217, 54, 0.8)';
-  notification.style.padding = '10px';
-  notification.style.borderRadius = '5px';
-  notification.style.marginTop = '20px';
-  notification.style.textAlign = 'center';
-  aboutUsSection.appendChild(notification);
-}, 5000);
+        let aboutUsSection = document.querySelector('#about-us');
+        let notification = document.createElement('div');
+        notification.textContent = 'Did you know? Ethics is critical for balancing advancements in AI and genetics!';
+        notification.style.background = 'rgba(255, 217, 54, 0.8)';
+        notification.style.padding = '10px';
+        notification.style.borderRadius = '5px';
+        notification.style.marginTop = '20px';
+        notification.style.textAlign = 'center';
+        aboutUsSection.appendChild(notification);
+        
+      
+        setTimeout(() => notification.style.display = 'none', 8000);
+    }, 5000); 
 
-setTimeout(function () {
-  if (notification) {
-    notification.style.display = 'none';
-  }
-}, 8000);
-
-
+    
+    setTimeout(function () {
+        alert('Welcome to our platform! We are glad to have you here.');
+    }, 3000);
 });
-
-      //Perdorimi i arrays ne JS
-
-
     </script>
    </body>
 </html>
